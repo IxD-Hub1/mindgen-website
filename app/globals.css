@@ -5053,4 +5053,310 @@ body.theme-dark .ai-stat {
     font-size: 18px;
   }
 }
+/***************************************************
+ * MINDGEN CUSTOM SERVICES LAYOUT (UPDATED)
+ ***************************************************/
 
+.services-results {
+  background-color: #0b0f19;
+  color: #ffffff;
+  padding: 100px 24px;
+  font-family: sans-serif;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* FIX: Centered the header container and text alignment */
+.services-header {
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* FIX: Applied your requested branding green (#51AE60) */
+.services-header h2 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #51AE60;
+  margin-bottom: 20px;
+}
+
+.services-intro {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Premium AI Hero Card Styling */
+.featured-ai-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: linear-gradient(135deg, #121826 0%, #1e293b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .featured-ai-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featured-ai-image-wrap {
+  position: relative;
+  min-height: 320px;
+}
+
+.featured-ai-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-ai-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to right, transparent, #121826);
+}
+
+.featured-ai-content {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.featured-ai-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.featured-ai-content p {
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.featured-offerings h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.featured-offerings ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.bullet-marker {
+  color: #38bdf8;
+  margin-right: 6px;
+}
+
+.prime-service-btn {
+  align-self: flex-start;
+  background: #ffffff;
+  color: #0b0f19;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.prime-service-btn:hover {
+  transform: translateY(-2px);
+  background: #f1f5f9;
+}
+
+/* FIX: Changed layout engine to Flexbox to naturally center trailing items on desktop */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* Individual Core Card Settings */
+.grid-service-item {
+  background: #121826;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  width: calc(33.333% - 16px); /* Clean 3-column split layout */
+  min-width: 340px; /* Prevents columns from getting too skinny */
+  flex-grow: 0; /* Keeps all cards uniform in size */
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.grid-card-main {
+  padding: 32px;
+  cursor: pointer;
+}
+
+.grid-card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+/* Added transition properties directly to text classes for flawless hover changes */
+.grid-card-main h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.grid-card-main p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.grid-card-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+/* Collapsible Offerings Drawer Setup */
+.grid-card-drawer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.is-expanded .grid-card-drawer {
+  grid-template-rows: 1fr;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.drawer-inner-content {
+  overflow: hidden;
+  padding: 0 32px;
+  transition: padding 0.35s ease;
+}
+
+.is-expanded .drawer-inner-content {
+  padding: 24px 32px 32px 32px;
+}
+
+.drawer-inner-content h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.drawer-inner-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.drawer-inner-content li {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.drawer-inner-content li:last-child {
+  border-bottom: none;
+}
+
+/***************************************************
+ * PREMIUM UI IMPROVEMENTS & HOVER TRANSITIONS
+ ***************************************************/
+
+/* FIX: Hover state changes background to #F7FAFE and smooth lifts the card */
+.grid-service-item:hover {
+  background-color: #F7FAFE;
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: transparent;
+}
+
+/* FIX: Inverts text color to background theme code (#0b0f19) on hover */
+.grid-service-item:hover .grid-card-main h3 {
+  color: #0b0f19;
+}
+
+.grid-service-item:hover .grid-card-main p {
+  color: #334155; /* Slate-700 for high readability on light backgrounds */
+}
+
+/* Adapting drawer inner structures for light theme visibility */
+.grid-service-item:hover .grid-card-drawer {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.grid-service-item:hover .is-expanded .grid-card-drawer {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+.grid-service-item:hover .drawer-inner-content h4 {
+  color: #64748b;
+}
+
+.grid-service-item:hover .drawer-inner-content li {
+  color: #1e293b;
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Micro-interaction: Flips the plus/minus icon button colors on hover */
+.grid-service-item:hover .grid-card-toggle {
+  background: #0b0f19;
+  border-color: #0b0f19;
+  color: #ffffff;
+}
+
+/* Responsive breakpoint for mobile screens */
+@media (max-width: 1023px) {
+  .grid-service-item {
+    width: 100%;
+  }
+}
