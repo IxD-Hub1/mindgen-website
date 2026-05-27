@@ -5054,7 +5054,7 @@ body.theme-dark .ai-stat {
   }
 }
 /***************************************************
- * MINDGEN CUSTOM SERVICES LAYOUT (UPDATED)
+ * MINDGEN CUSTOM SPLIT-PANE HUB STYLING
  ***************************************************/
 
 .services-results {
@@ -5069,7 +5069,6 @@ body.theme-dark .ai-stat {
   margin: 0 auto;
 }
 
-/* FIX: Centered the header container and text alignment */
 .services-header {
   margin-bottom: 60px;
   max-width: 800px;
@@ -5078,7 +5077,7 @@ body.theme-dark .ai-stat {
   text-align: center;
 }
 
-/* FIX: Applied your requested branding green (#51AE60) */
+/* Updated to requested Green Color Theme */
 .services-header h2 {
   font-size: 2.75rem;
   font-weight: 800;
@@ -5093,7 +5092,7 @@ body.theme-dark .ai-stat {
   line-height: 1.6;
 }
 
-/* Premium AI Hero Card Styling */
+/* AI Premium Card Base Styling */
 .featured-ai-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -5101,14 +5100,8 @@ body.theme-dark .ai-stat {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 768px) {
-  .featured-ai-card {
-    grid-template-columns: 1fr;
-  }
 }
 
 .featured-ai-image-wrap {
@@ -5186,7 +5179,7 @@ body.theme-dark .ai-stat {
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   text-decoration: none;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .prime-service-btn:hover {
@@ -5194,169 +5187,175 @@ body.theme-dark .ai-stat {
   background: #f1f5f9;
 }
 
-/* FIX: Changed layout engine to Flexbox to naturally center trailing items on desktop */
-.services-grid {
+/* SPLIT PANE ENGINE SETUP */
+.services-hub-pane {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
-}
-
-/* Individual Core Card Settings */
-.grid-service-item {
   background: #121826;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  min-height: 480px;
   overflow: hidden;
-  width: calc(33.333% - 16px); /* Clean 3-column split layout */
-  min-width: 340px; /* Prevents columns from getting too skinny */
-  flex-grow: 0; /* Keeps all cards uniform in size */
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
-.grid-card-main {
-  padding: 32px;
-  cursor: pointer;
-}
-
-.grid-card-title-row {
+/* Sidebar Tab Stack Selection */
+.hub-sidebar-menu {
+  width: 38%;
+  background: rgba(0, 0, 0, 0.18);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 14px;
+  flex-direction: column;
+  padding: 24px 16px;
+  gap: 8px;
 }
 
-/* Added transition properties directly to text classes for flawless hover changes */
-.grid-card-main h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #ffffff;
-  transition: color 0.3s ease;
-}
-
-.grid-card-main p {
+.hub-menu-tab {
+  background: transparent;
+  border: none;
   color: #94a3b8;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  transition: color 0.3s ease;
-}
-
-.grid-card-toggle {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+  text-align: left;
+  padding: 16px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
   display: flex;
   align-items: center;
+  gap: 12px;
+  transition: all 0.25s ease;
+}
+
+.hub-tab-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.25s ease;
+}
+
+/* Requested Active Styling Variant (#F7FAFE) */
+.hub-menu-tab.is-active {
+  background-color: #F7FAFE;
+  color: #0b0f19; /* Dark font value for light backing protection */
+}
+
+.hub-menu-tab.is-active .hub-tab-dot {
+  background: #51AE60;
+  transform: scale(1.5);
+}
+
+.hub-menu-tab:hover:not(.is-active) {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Right Side Render Panel Viewport */
+.hub-display-panel {
+  width: 62%;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
+  background: radial-gradient(circle at top right, rgba(81, 174, 96, 0.05), transparent 60%);
 }
 
-/* Collapsible Offerings Drawer Setup */
-.grid-card-drawer {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(0, 0, 0, 0.15);
+.hub-panel-inner h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
 }
 
-.is-expanded .grid-card-drawer {
-  grid-template-rows: 1fr;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+.hub-panel-description {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
 }
 
-.drawer-inner-content {
-  overflow: hidden;
-  padding: 0 32px;
-  transition: padding 0.35s ease;
-}
-
-.is-expanded .drawer-inner-content {
-  padding: 24px 32px 32px 32px;
-}
-
-.drawer-inner-content h4 {
-  font-size: 0.8rem;
+.hub-panel-offerings h4 {
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
   color: #64748b;
-  margin-bottom: 12px;
-  transition: color 0.3s ease;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
 }
 
-.drawer-inner-content ul {
+.hub-panel-offerings ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Splitting bullet lists inside pane neatly into 2 columns */
+  gap: 14px 24px;
 }
 
-.drawer-inner-content li {
-  color: #cbd5e1;
-  font-size: 0.9rem;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-  transition: color 0.3s ease, border-color 0.3s ease;
+.hub-panel-offerings li {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
-.drawer-inner-content li:last-child {
-  border-bottom: none;
+.bullet-diamond {
+  color: #51AE60;
+  margin-right: 6px;
+}
+
+/* CSS Transition Animation Frames */
+.animate-fade-in {
+  animation: paneFade 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes paneFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /***************************************************
- * PREMIUM UI IMPROVEMENTS & HOVER TRANSITIONS
+ * TABLET & MOBILE RESPONSIVE ADAPTATIONS
  ***************************************************/
+@media (max-width: 991px) {
+  .services-hub-pane {
+    flex-direction: column;
+    min-height: auto;
+  }
 
-/* FIX: Hover state changes background to #F7FAFE and smooth lifts the card */
-.grid-service-item:hover {
-  background-color: #F7FAFE;
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  border-color: transparent;
-}
-
-/* FIX: Inverts text color to background theme code (#0b0f19) on hover */
-.grid-service-item:hover .grid-card-main h3 {
-  color: #0b0f19;
-}
-
-.grid-service-item:hover .grid-card-main p {
-  color: #334155; /* Slate-700 for high readability on light backgrounds */
-}
-
-/* Adapting drawer inner structures for light theme visibility */
-.grid-service-item:hover .grid-card-drawer {
-  background: rgba(0, 0, 0, 0.03);
-}
-
-.grid-service-item:hover .is-expanded .grid-card-drawer {
-  border-top-color: rgba(0, 0, 0, 0.08);
-}
-
-.grid-service-item:hover .drawer-inner-content h4 {
-  color: #64748b;
-}
-
-.grid-service-item:hover .drawer-inner-content li {
-  color: #1e293b;
-  border-bottom-color: rgba(0, 0, 0, 0.06);
-}
-
-/* Micro-interaction: Flips the plus/minus icon button colors on hover */
-.grid-service-item:hover .grid-card-toggle {
-  background: #0b0f19;
-  border-color: #0b0f19;
-  color: #ffffff;
-}
-
-/* Responsive breakpoint for mobile screens */
-@media (max-width: 1023px) {
-  .grid-service-item {
+  /* Converts stacked menu list into horizontal swiping bar */
+  .hub-sidebar-menu {
     width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 16px;
+    scrollbar-width: none; /* Hides horizontal system scrollbar line */
+  }
+  
+  .hub-sidebar-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hub-menu-tab {
+    padding: 12px 18px;
+    font-size: 0.9rem;
+  }
+
+  .hub-display-panel {
+    width: 100%;
+    padding: 32px 24px;
+  }
+  
+  .hub-panel-offerings ul {
+    grid-template-columns: 1fr; /* Drop bullets to single column list tracking on mobile blocks */
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-ai-card {
+    grid-template-columns: 1fr;
+  }
+  .services-header h2 {
+    font-size: 2.2rem;
   }
 }
