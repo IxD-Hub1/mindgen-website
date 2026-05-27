@@ -5054,16 +5054,12 @@ body.theme-dark .ai-stat {
   }
 }
 /***************************************************
- * MINDGEN CUSTOM SPLIT-PANE HUB STYLING
- ***************************************************/
-
-/***************************************************
- * MINDGEN PREMIUM INFINITE PARTNERSHIP MARQUEE
+ * 1. MINDGEN PREMIUM INFINITE PARTNERSHIP MARQUEE (CONTRAST FIX)
  ***************************************************/
 
 .partners-section {
-  background-color: #0b0f19; /* Aligns with the Services background color */
-  padding: 80px 24px;
+  background-color: #0b0f19; /* Keeps the overall page section dark and premium */
+  padding: 100px 24px;
   overflow: hidden;
   font-family: sans-serif;
   border-top: 1px solid rgba(255, 255, 255, 0.03);
@@ -5084,7 +5080,7 @@ body.theme-dark .ai-stat {
   font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: #51AE60; /* Matches your brand green */
+  color: #51AE60; /* Brand Green */
   margin-bottom: 16px;
 }
 
@@ -5116,15 +5112,14 @@ body.theme-dark .ai-stat {
   padding: 20px 0;
 }
 
-/* Pauses layout conveyor loop smoothly on cursor hover */
 .marquee-viewport:hover .marquee-track {
   animation-play-state: paused;
 }
 
-/* INDIVIDUAL PARTNER CARDS */
+/* INDIVIDUAL PARTNER CARDS (LIGHT GREY CONTRAST BASE) */
 .partner-logo-card {
-  background: rgba(18, 24, 38, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: #cbd5e1; /* Smooth light grey base so dark logos instantly pop */
+  border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 24px 32px;
   border-radius: 12px;
   width: 260px;
@@ -5134,7 +5129,7 @@ body.theme-dark .ai-stat {
   justify-content: center;
   text-align: center;
   gap: 16px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   flex-shrink: 0;
 }
 
@@ -5150,38 +5145,38 @@ body.theme-dark .ai-stat {
   max-height: 100%;
   max-width: 80%;
   object-fit: contain;
-  filter: grayscale(100%) opacity(60%); /* Modern premium layout default */
+  filter: grayscale(100%) opacity(75%); /* Clean uniform appearance on default view */
   transition: all 0.3s ease;
 }
 
 .logo-fallback-text {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #64748b;
+  color: #334155;
 }
 
 .partner-tier-badge {
   font-size: 0.75rem;
-  font-weight: 500;
-  color: #64748b;
+  font-weight: 600;
+  color: #475569; /* Dark slate text for flawless legibility on light grey */
   line-height: 1.3;
   transition: color 0.3s ease;
 }
 
-/* PREMIUM HOVER GLOW INTERACTION */
+/* INTERACTIVE STATE: CARDS SNAP TO PURE WHITE */
 .partner-logo-card:hover {
-  background: #1e293b;
-  border-color: rgba(81, 174, 96, 0.3);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  background: #ffffff; /* Transitions cleanly to crisp pure white */
+  border-color: rgba(81, 174, 96, 0.5); /* Vibrant green border accent on highlight */
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25); /* Adds striking depth over dark void */
 }
 
 .partner-logo-card:hover .logo-wrapper img {
-  filter: grayscale(0%) opacity(100%); /* Snaps back into native brand identity colors */
+  filter: grayscale(0%) opacity(100%); /* Brings native brand colors to life instantly */
 }
 
 .partner-logo-card:hover .partner-tier-badge {
-  color: #38bdf8; /* Highlight tier information text dynamically */
+  color: #51AE60; /* Font dynamically changes color to match brand green */
 }
 
 /* ACTION BUTTON LINE */
@@ -5216,9 +5211,8 @@ body.theme-dark .ai-stat {
   100% { transform: translateX(calc(-50% - 16px)); }
 }
 
-
 /***************************************************
- * MINDGEN SERVICES SECTION DESKTOP STYLES
+ * 2. MINDGEN SERVICES SECTION (RESTORED DEEP DARK THEME)
  ***************************************************/
 
 .services-results {
@@ -5241,7 +5235,6 @@ body.theme-dark .ai-stat {
   text-align: center;
 }
 
-/* Updated to requested Green Color Theme */
 .services-header h2 {
   font-size: 2.75rem;
   font-weight: 800;
@@ -5397,10 +5390,10 @@ body.theme-dark .ai-stat {
   transition: all 0.25s ease;
 }
 
-/* Requested Active Styling Variant (#F7FAFE) */
+/* Active Tab Highlight Styling (#F7FAFE) */
 .hub-menu-tab.is-active {
   background-color: #F7FAFE;
-  color: #0b0f19; /* Dark font value for light backing protection */
+  color: #0b0f19;
 }
 
 .hub-menu-tab.is-active .hub-tab-dot {
@@ -5450,7 +5443,7 @@ body.theme-dark .ai-stat {
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Splitting bullet lists inside pane neatly into 2 columns */
+  grid-template-columns: 1fr 1fr;
   gap: 14px 24px;
 }
 
@@ -5477,7 +5470,7 @@ body.theme-dark .ai-stat {
 
 
 /***************************************************
- * RESPONSIVE MOBILE & TABLET ADAPTATIONS
+ * 3. RESPONSIVE MOBILE & TABLET ADAPTATIONS
  ***************************************************/
 @media (max-width: 991px) {
   .services-hub-pane {
@@ -5485,7 +5478,6 @@ body.theme-dark .ai-stat {
     min-height: auto;
   }
 
-  /* Converts stacked menu list into horizontal swiping bar */
   .hub-sidebar-menu {
     width: 100%;
     flex-direction: row;
@@ -5494,7 +5486,7 @@ body.theme-dark .ai-stat {
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     padding: 16px;
-    scrollbar-width: none; /* Hides horizontal system scrollbar line */
+    scrollbar-width: none;
   }
   
   .hub-sidebar-menu::-webkit-scrollbar {
@@ -5512,7 +5504,7 @@ body.theme-dark .ai-stat {
   }
   
   .hub-panel-offerings ul {
-    grid-template-columns: 1fr; /* Drop bullets to single column list tracking on mobile blocks */
+    grid-template-columns: 1fr;
   }
 }
 
@@ -5541,7 +5533,7 @@ body.theme-dark .ai-stat {
   
   .marquee-track {
     gap: 20px;
-    animation-duration: 25s; /* Speed up loop slightly on smaller viewports */
+    animation-duration: 25s;
   }
 
   .featured-ai-card {
@@ -5553,7 +5545,6 @@ body.theme-dark .ai-stat {
   }
 }
 
-/* Separate mobile keyframe engine safety loop */
 @keyframes mobileScrollMarquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-50% - 10px)); }

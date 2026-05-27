@@ -1,18 +1,18 @@
 "use client";
 
 const partners = [
-  { name: "AWS", logo: "/assets/assets/images/partners/AWS.svg", tier: "Advanced Tier Services Partner" },
-  { name: "Adobe", logo: "/assets/assets/images/partners/Adobe.svg", tier: "Gold Solution Partner" },
-  { name: "Microsoft", logo: "/assets/assets/images/partners/Microsoft.svg", tier: "Microsoft Cloud Partner" },
-  { name: "Google", logo: "/assets/assets/images/partners/Google.svg", tier: "Top Reseller and Provider" },
-  { name: "Salesforce", logo: "/assets/assets/images/partners/Salesforce.svg", tier: "Summit-Level Partner" },
-  { name: "Acquia", logo: "/assets/assets/images/partners/Acquia.svg", tier: "Elite Partner" },
-  { name: "Snowflake", logo: "/assets/assets/images/partners/Snowflake.svg", tier: "Services Partner Select Tier" },
-  { name: "Anthropic", logo: "/assets/assets/images/partners/Anthropic.svg", tier: "Service Partner" },
-  { name: "Optimizely", logo: "/assets/assets/images/partners/Optimizely.svg", tier: "Platinum Partner" },
-  { name: "Fabric", logo: "/assets/assets/images/partners/Fabric.svg", tier: "Solution Partner" },
-  { name: "Iterable", logo: "/assets/assets/images/partners/Iterable.svg", tier: "Innovator Solution Partner" },
-  { name: "ServiceNow", logo: "/assets/assets/images/partners/ServiceNow.svg", tier: "Solution Partner" },
+  { name: "AWS", logo: "/assets/images/partners/AWS.svg", tier: "Advanced Tier Services Partner" },
+  { name: "Adobe", logo: "/assets/images/partners/Adobe.svg", tier: "Gold Solution Partner" },
+  { name: "Microsoft", logo: "/assets/images/partners/Microsoft.svg", tier: "Microsoft Cloud Partner" },
+  { name: "Google", logo: "/assets/images/partners/Google.svg", tier: "Top Reseller and Provider" },
+  { name: "Salesforce", logo: "/assets/images/partners/Salesforce.svg", tier: "Summit-Level Partner" },
+  { name: "Acquia", logo: "/assets/images/partners/Acquia.svg", tier: "Elite Partner" },
+  { name: "Snowflake", logo: "/assets/images/partners/Snowflake.svg", tier: "Services Partner Select Tier" },
+  { name: "Anthropic", logo: "/assets/images/partners/Anthropic.svg", tier: "Service Partner" },
+  { name: "Optimizely", logo: "/assets/images/partners/Optimizely.svg", tier: "Platinum Partner" },
+  { name: "Fabric", logo: "/assets/images/partners/Fabric.svg", tier: "Solution Partner" },
+  { name: "Iterable", logo: "/assets/images/partners/Iterable.svg", tier: "Innovator Solution Partner" },
+  { name: "ServiceNow", logo: "/assets/images/partners/ServiceNow.svg", tier: "Solution Partner" },
 ];
 
 export default function PartnershipsSection() {
