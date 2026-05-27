@@ -5054,3 +5054,198 @@ body.theme-dark .ai-stat {
   }
 }
 
+/***************************************************
+ * MINDGEN PREMIUM INFINITE PARTNERSHIP MARQUEE
+ ***************************************************/
+
+.partners-section {
+  background-color: #0b0f19; /* Aligns with the Services background color */
+  padding: 80px 24px;
+  overflow: hidden;
+  font-family: sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.partners-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.partners-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 50px auto;
+}
+
+.partners-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #51AE60; /* Matches your brand green */
+  margin-bottom: 16px;
+}
+
+.partners-intro {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* MARQUEE WINDOW TRACK ENGINE */
+.marquee-viewport {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  display: flex;
+  mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 32px;
+  animation: scrollMarquee 40s linear infinite;
+  padding: 20px 0;
+}
+
+/* Pauses layout conveyor loop smoothly on cursor hover */
+.marquee-viewport:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* INDIVIDUAL PARTNER CARDS */
+.partner-logo-card {
+  background: rgba(18, 24, 38, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 24px 32px;
+  border-radius: 12px;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.logo-wrapper {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo-wrapper img {
+  max-height: 100%;
+  max-width: 80%;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(60%); /* Modern premium layout default */
+  transition: all 0.3s ease;
+}
+
+.logo-fallback-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.partner-tier-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #64748b;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+/* PREMIUM HOVER GLOW INTERACTION */
+.partner-logo-card:hover {
+  background: #1e293b;
+  border-color: rgba(81, 174, 96, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.partner-logo-card:hover .logo-wrapper img {
+  filter: grayscale(0%) opacity(100%); /* Snaps back into native brand identity colors */
+}
+
+.partner-logo-card:hover .partner-tier-badge {
+  color: #38bdf8; /* Highlight tier information text dynamically */
+}
+
+/* ACTION BUTTON LINE */
+.partners-action-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.partners-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.partners-btn:hover {
+  border-color: #51AE60;
+  color: #51AE60;
+  background: rgba(81, 174, 96, 0.05);
+}
+
+/* LOOP ANIMATION FRAME ENGINE */
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 16px)); }
+}
+
+/***************************************************
+ * RESPONSIVE MOBILE & TABLET COMPRESSION
+ ***************************************************/
+@media (max-width: 768px) {
+  .partners-section {
+    padding: 60px 16px;
+  }
+  
+  .partners-header h2 {
+    font-size: 2rem;
+  }
+
+  .partners-header {
+    margin-bottom: 32px;
+  }
+
+  .partner-logo-card {
+    width: 210px;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .logo-wrapper {
+    height: 35px;
+  }
+  
+  .marquee-track {
+    gap: 20px;
+    animation-duration: 25s; /* Speed up loop slightly on smaller viewports */
+  }
+
+  @keyframes scrollMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 10px)); }
+  }
+}
