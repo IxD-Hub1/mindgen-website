@@ -33,6 +33,12 @@ body {
   background: var(--bg-base);
 }
 
+/* Typography Alignment Reset */
+h1, h2, h3, h4, h5, h6, 
+input, button, select, textarea {
+  font-family: inherit; /* Automatically grabs "Nunito Sans" from the body */
+}
+
 .site-header-wrap {
   position: absolute;
   top: 0;
@@ -300,7 +306,7 @@ body {
 }
 
 .work-card {
-  background: #cbc9d1;
+  background: var(--card);
   overflow: hidden;
 }
 
@@ -683,6 +689,7 @@ body {
 .insight-card {
   display: flex;
   flex-direction: column;
+  background: var(--card);
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
@@ -2495,7 +2502,7 @@ body {
   }
 }
 
-/* Light theme overrides */
+/* Light theme overrides (Cleaned of Partnership Pollutions) */
 .mega-nav {
   background:
     radial-gradient(circle at 12% 35%, rgba(57, 167, 230, 0.1), transparent 34%),
@@ -2507,8 +2514,6 @@ body {
 .mega-col p,
 .featured-copy p,
 .services-intro,
-.partners-intro,
-.partner-card p,
 .service-content p,
 .service-offerings li,
 .consent-copy,
@@ -2525,8 +2530,6 @@ body {
 .services-results h2,
 .service-head h3,
 .service-offerings h4,
-.partners h2,
-.partner-logo,
 .innovate-toggle,
 .innovate-testimonial > p,
 .author-block h3,
@@ -2545,8 +2548,8 @@ body {
   background: #f7fafe;
 }
 
-.industry-showcase,
-.partners,
+/* Removed .partners from this light background declaration */
+.industry-showcase, 
 .footer-bottom {
   background: #edf3fb;
 }
@@ -2637,6 +2640,19 @@ body.theme-dark .innovate-submit {
   background: transparent;
 }
 
+/* Alternative: Subtle Semi-Transparent Hover */
+body.theme-dark .contact-btn:hover,
+body.theme-dark .learn-btn:hover,
+body.theme-dark .service-btn:hover,
+body.theme-dark .partners-btn:hover,
+body.theme-dark .innovate-submit:hover {
+  background: rgba(255, 255, 255, 0.15); /* Subtle white tint */
+  color: #ffffff;                        /* Keeps text white */
+  border-color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
 body.theme-dark .mega-nav {
   background:
     radial-gradient(circle at 12% 35%, rgba(42, 122, 188, 0.2), transparent 34%),
@@ -2689,11 +2705,11 @@ body.theme-dark .footer-top {
 
 body.theme-dark .industry-showcase,
 body.theme-dark .partners {
-  background: #10264b;
+  background: #0d203f;
 }
 
 body.theme-dark .footer-bottom {
-  background: #0f2344;
+  background: #091528;
 }
 
 body.theme-dark .industry-tabs,
@@ -5059,11 +5075,12 @@ body.theme-dark .ai-stat {
 
 /* LIGHT MODE (DEFAULT VIEW) */
 .partners-section {
-  background-color: #EAF0F9; /* Perfectly balanced soft blue-grey tint, slightly darker than #EDF3FB */
+  /* Noticeably darkened blue-grey tint for enhanced section contrast */
+  background-color: #D3DFEE; 
   padding: 100px 24px;
   overflow: hidden;
   font-family: sans-serif;
-  border-top: 1px solid rgba(73, 95, 135, 0.08);
+  border-top: 1px solid rgba(73, 95, 135, 0.12);
   transition: background-color 0.3s ease;
 }
 
@@ -5080,15 +5097,16 @@ body.theme-dark .ai-stat {
 
 .partners-header h2 {
   font-size: 2.5rem;
-  font-weight: 800;
+  /* Optimized from 800 to an elegant, clean medium weight */
+  font-weight: 500; 
   letter-spacing: -0.02em;
-  color: #46414E; /* Custom Requested Title Slate */
+  color: #46414E;
   margin-bottom: 16px;
   transition: color 0.3s ease;
 }
 
 .partners-intro {
-  color: #495F87; /* Custom Requested Body Steel Blue */
+  color: #495F87;
   font-size: 1.1rem;
   line-height: 1.5;
   transition: color 0.3s ease;
@@ -5122,7 +5140,7 @@ body.theme-dark .ai-stat {
 
 /* LIGHT MODE CARDS (Floating White Tiles) */
 .partner-logo-card {
-  background: #ffffff; /* Crisp white floating card on soft tinted runway background */
+  background: #ffffff;
   border: 1px solid rgba(73, 95, 135, 0.08);
   padding: 24px 32px;
   border-radius: 12px;
@@ -5171,7 +5189,7 @@ body.theme-dark .ai-stat {
 /* LIGHT MODE HOVER INTERACTION */
 .partner-logo-card:hover {
   background: #ffffff;
-  border-color: #99C0E7; /* Highlight Accent Blue */
+  border-color: #99C0E7;
   transform: translateY(-6px);
   box-shadow: 0 15px 30px rgba(73, 95, 135, 0.12);
 }
@@ -5181,7 +5199,7 @@ body.theme-dark .ai-stat {
 }
 
 .partner-logo-card:hover .partner-tier-badge {
-  color: #1e3a8a; /* Deep contrast dark blue text focus */
+  color: #1e3a8a;
 }
 
 .partners-btn {
@@ -5190,7 +5208,7 @@ body.theme-dark .ai-stat {
   color: #46414E;
   padding: 12px 28px;
   border-radius: 6px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   cursor: pointer;
@@ -5203,19 +5221,20 @@ body.theme-dark .ai-stat {
   background: rgba(153, 192, 231, 0.15);
 }
 
-
-/* SYSTEM DARK MODE MODIFIERS (Triggers automatically via app root classes) */
+/* SYSTEM DARK MODE MODIFIERS */
 .dark .partners-section,
 .dark-mode .partners-section,
 [data-theme="dark"] .partners-section {
-  background-color: #0b0f19; /* Back to your original premium dark void */
+  /* Deeper, premium midnight navy tone to differentiate sections */
+  background-color: #070b13; 
   border-top-color: rgba(255, 255, 255, 0.03);
 }
 
 .dark .partners-header h2,
 .dark-mode .partners-header h2,
 [data-theme="dark"] .partners-header h2 {
-  color: #51AE60; /* Reverts to Brand Green on dark view */
+  color: #51AE60;
+  font-weight: 500 !important;
 }
 
 .dark .partners-intro,
@@ -5227,7 +5246,7 @@ body.theme-dark .ai-stat {
 .dark .partner-logo-card,
 .dark-mode .partner-logo-card,
 [data-theme="dark"] .partner-logo-card {
-  background: #cbd5e1; /* The high contrast light grey solution to show dark brand logos */
+  background: #cbd5e1;
   border-color: transparent;
   box-shadow: none;
 }
@@ -5275,7 +5294,7 @@ body.theme-dark .ai-stat {
 
 /* LIGHT MODE (DEFAULT VIEW) */
 .services-results {
-  background-color: #F7FAFE; /* Custom requested light framework background */
+  background-color: #F7FAFE;
   color: #46414E;
   padding: 100px 24px;
   font-family: sans-serif;
@@ -5297,15 +5316,16 @@ body.theme-dark .ai-stat {
 
 .services-header h2 {
   font-size: 2.75rem;
-  font-weight: 800;
+  /* Clean 500 typography weight alignment */
+  font-weight: 500; 
   letter-spacing: -0.02em;
-  color: #46414E; /* Matching uniform headline scale */
+  color: #46414E;
   margin-bottom: 20px;
   transition: color 0.3s ease;
 }
 
 .services-intro {
-  color: #495F87; /* Matching uniform description scale */
+  color: #495F87;
   font-size: 1.1rem;
   line-height: 1.6;
   transition: color 0.3s ease;
@@ -5314,7 +5334,8 @@ body.theme-dark .ai-stat {
 /* Light Mode Premium Interface Cards */
 .featured-ai-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* Locks the split view layout architecture safely */
+  grid-template-columns: 1fr 1fr; 
   background: #ffffff;
   border: 1px solid rgba(73, 95, 135, 0.1);
   border-radius: 16px;
@@ -5333,6 +5354,7 @@ body.theme-dark .ai-stat {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .featured-ai-overlay {
@@ -5352,12 +5374,13 @@ body.theme-dark .ai-stat {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #1e3a8a; /* Deep Tech Blue Accent */
+  color: #1e3a8a;
   margin-bottom: 12px;
 }
 
 .featured-ai-content h3 {
   font-size: 1.8rem;
+  font-weight: 500;
   color: #46414E;
   margin-bottom: 16px;
 }
@@ -5386,7 +5409,7 @@ body.theme-dark .ai-stat {
 }
 
 .bullet-marker {
-  color: #99C0E7; /* Custom requested light blue bullet index markers */
+  color: #99C0E7;
   margin-right: 6px;
   font-weight: bold;
 }
@@ -5397,7 +5420,7 @@ body.theme-dark .ai-stat {
   color: #ffffff;
   padding: 14px 28px;
   border-radius: 8px;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   text-decoration: none;
@@ -5439,7 +5462,7 @@ body.theme-dark .ai-stat {
   text-align: left;
   padding: 16px 20px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
@@ -5456,7 +5479,6 @@ body.theme-dark .ai-stat {
   transition: all 0.25s ease;
 }
 
-/* Active tab highlight adjustments using requested color palette */
 .hub-menu-tab.is-active {
   background-color: #99C0E7;
   color: #1e3a8a;
@@ -5483,7 +5505,7 @@ body.theme-dark .ai-stat {
 
 .hub-panel-inner h3 {
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #46414E;
   margin-bottom: 16px;
 }
@@ -5536,6 +5558,7 @@ body.theme-dark .ai-stat {
 .dark-mode .services-header h2,
 [data-theme="dark"] .services-header h2 {
   color: #51AE60;
+  font-weight: 500 !important;
 }
 
 .dark .services-intro,
@@ -5568,6 +5591,7 @@ body.theme-dark .ai-stat {
 .dark-mode .featured-ai-content h3,
 [data-theme="dark"] .featured-ai-content h3 {
   color: #ffffff;
+  font-weight: 500 !important;
 }
 
 .dark .featured-ai-content p,
@@ -5593,6 +5617,7 @@ body.theme-dark .ai-stat {
 [data-theme="dark"] .prime-service-btn {
   background: #ffffff;
   color: #0b0f19;
+  font-weight: 500;
 }
 
 .dark .prime-service-btn:hover,
@@ -5621,6 +5646,7 @@ body.theme-dark .ai-stat {
 .dark-mode .hub-menu-tab,
 [data-theme="dark"] .hub-menu-tab {
   color: #94a3b8;
+  font-weight: 500;
 }
 
 .dark .hub-menu-tab.is-active,
@@ -5653,6 +5679,7 @@ body.theme-dark .ai-stat {
 .dark-mode .hub-panel-inner h3,
 [data-theme="dark"] .hub-panel-inner h3 {
   color: #ffffff;
+  font-weight: 500 !important;
 }
 
 .dark .hub-panel-description,
