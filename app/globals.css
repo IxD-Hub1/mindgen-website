@@ -5075,7 +5075,6 @@ body.theme-dark .ai-stat {
 
 /* LIGHT MODE (DEFAULT VIEW) */
 .partners-section {
-  /* Noticeably darkened blue-grey tint for enhanced section contrast */
   background-color: #D3DFEE; 
   padding: 100px 24px;
   overflow: hidden;
@@ -5097,10 +5096,9 @@ body.theme-dark .ai-stat {
 
 .partners-header h2 {
   font-size: 2.5rem;
-  /* Optimized from 800 to an elegant, clean medium weight */
   font-weight: 500; 
   letter-spacing: -0.02em;
-  color: #46414E;
+  color: #182547; /* Enforced Brand Navy Alignment */
   margin-bottom: 16px;
   transition: color 0.3s ease;
 }
@@ -5138,7 +5136,7 @@ body.theme-dark .ai-stat {
   animation-play-state: paused;
 }
 
-/* LIGHT MODE CARDS (Floating White Tiles) */
+/* LIGHT MODE CARDS */
 .partner-logo-card {
   background: #ffffff;
   border: 1px solid rgba(73, 95, 135, 0.08);
@@ -5176,6 +5174,7 @@ body.theme-dark .ai-stat {
   font-size: 1.3rem;
   font-weight: 700;
   color: #46414E;
+  transition: color 0.3s ease;
 }
 
 .partner-tier-badge {
@@ -5221,72 +5220,59 @@ body.theme-dark .ai-stat {
   background: rgba(153, 192, 231, 0.15);
 }
 
-/* SYSTEM DARK MODE MODIFIERS */
-.dark .partners-section,
-.dark-mode .partners-section,
-[data-theme="dark"] .partners-section {
-  /* Deeper, premium midnight navy tone to differentiate sections */
-  background-color: #070b13; 
-  border-top-color: rgba(255, 255, 255, 0.03);
+/* --- PARTNERSHIP SECTION DARK OVERRIDES --- */
+body.theme-dark .partners-section {
+  background-color: #070b13 !important;
+  background: #070b13 !important;
+  border-top-color: rgba(255, 255, 255, 0.03) !important;
 }
 
-.dark .partners-header h2,
-.dark-mode .partners-header h2,
-[data-theme="dark"] .partners-header h2 {
-  color: #51AE60;
-  font-weight: 500 !important;
+body.theme-dark .partners-header h2 {
+  color: #ffffff !important;
 }
 
-.dark .partners-intro,
-.dark-mode .partners-intro,
-[data-theme="dark"] .partners-intro {
-  color: #94a3b8;
+body.theme-dark .partners-intro {
+  color: #94a3b8 !important;
 }
 
-.dark .partner-logo-card,
-.dark-mode .partner-logo-card,
-[data-theme="dark"] .partner-logo-card {
-  background: #cbd5e1;
-  border-color: transparent;
-  box-shadow: none;
+/* Fixes Marquee Card Background Leak */
+body.theme-dark .partner-logo-card {
+  background: #304066 !important;
+  background-color: #304066 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 }
 
-.dark .partner-logo-card .partner-tier-badge,
-.dark-mode .partner-logo-card .partner-tier-badge,
-[data-theme="dark"] .partner-logo-card .partner-tier-badge {
-  color: #475569;
+body.theme-dark .partner-logo-card .logo-fallback-text {
+  color: #ffffff !important;
 }
 
-/* DARK MODE HOVER OVERRIDES */
-.dark .partner-logo-card:hover,
-.dark-mode .partner-logo-card:hover,
-[data-theme="dark"] .partner-logo-card:hover {
-  background: #ffffff;
-  border-color: #51AE60;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.35);
+body.theme-dark .partner-logo-card .partner-tier-badge {
+  color: #94a3b8 !important;
 }
 
-.dark .partner-logo-card:hover .partner-tier-badge,
-.dark-mode .partner-logo-card:hover .partner-tier-badge,
-[data-theme="dark"] .partner-logo-card:hover .partner-tier-badge {
-  color: #51AE60;
+/* Dark Mode Card Hover Mechanics */
+body.theme-dark .partner-logo-card:hover {
+  background: #1e293b !important;
+  background-color: #1e293b !important;
+  border-color: #2B97E7 !important;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4) !important;
 }
 
-.dark .partners-btn,
-.dark-mode .partners-btn,
-[data-theme="dark"] .partners-btn {
-  border-color: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+body.theme-dark .partner-logo-card:hover .partner-tier-badge {
+  color: #2B97E7 !important;
 }
 
-.dark .partners-btn:hover,
-.dark-mode .partners-btn:hover,
-[data-theme="dark"] .partners-btn:hover {
-  border-color: #51AE60;
-  color: #51AE60;
-  background: rgba(81, 174, 96, 0.05);
+body.theme-dark .partners-btn {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
 }
 
+body.theme-dark .partners-btn:hover {
+  border-color: #2B97E7 !important;
+  color: #2B97E7 !important;
+  background: rgba(81, 174, 96, 0.05) !important;
+}
 
 /***************************************************
  * 2. PREMIUM MULTI-THEME SERVICES LAYOUT
@@ -5316,10 +5302,9 @@ body.theme-dark .ai-stat {
 
 .services-header h2 {
   font-size: 2.75rem;
-  /* Clean 500 typography weight alignment */
   font-weight: 500; 
   letter-spacing: -0.02em;
-  color: #46414E;
+  color: #182547; /* Enforced Brand Navy Alignment */
   margin-bottom: 20px;
   transition: color 0.3s ease;
 }
@@ -5331,10 +5316,8 @@ body.theme-dark .ai-stat {
   transition: color 0.3s ease;
 }
 
-/* Light Mode Premium Interface Cards */
 .featured-ai-card {
   display: grid;
-  /* Locks the split view layout architecture safely */
   grid-template-columns: 1fr 1fr; 
   background: #ffffff;
   border: 1px solid rgba(73, 95, 135, 0.1);
@@ -5433,7 +5416,6 @@ body.theme-dark .ai-stat {
   color: #1e3a8a;
 }
 
-/* SPLIT PANE GRAPHIC HUB (LIGHT CONFIGURATION) */
 .services-hub-pane {
   display: flex;
   background: #ffffff;
@@ -5545,168 +5527,118 @@ body.theme-dark .ai-stat {
   margin-right: 6px;
 }
 
-
-/* SERVICES DARK MODE MODIFIERS */
-.dark .services-results,
-.dark-mode .services-results,
-[data-theme="dark"] .services-results {
-  background-color: #0b0f19;
-  color: #ffffff;
+/* --- SERVICES HUB SECTION DARK OVERRIDES --- */
+body.theme-dark .services-results {
+  background-color: #13284F !important;
+  background: #13284F !important;
+  color: #ffffff !important;
 }
 
-.dark .services-header h2,
-.dark-mode .services-header h2,
-[data-theme="dark"] .services-header h2 {
-  color: #51AE60;
-  font-weight: 500 !important;
+body.theme-dark .services-header h2 {
+  color: #ffffff !important;
 }
 
-.dark .services-intro,
-.dark-mode .services-intro,
-[data-theme="dark"] .services-intro {
-  color: #94a3b8;
+body.theme-dark .services-intro {
+  color: #94a3b8 !important;
 }
 
-.dark .featured-ai-card,
-.dark-mode .featured-ai-card,
-[data-theme="dark"] .featured-ai-card {
-  background: linear-gradient(135deg, #121826 0%, #1e293b 100%);
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+/* Fixes White Card Leaks in Services Section */
+body.theme-dark .featured-ai-card {
+  background: linear-gradient(135deg, #121826 0%, #1e293b 100%) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35) !important;
 }
 
-.dark .featured-ai-overlay,
-.dark-mode .featured-ai-overlay,
-[data-theme="dark"] .featured-ai-overlay {
-  background: linear-gradient(to right, transparent, #121826);
+body.theme-dark .featured-ai-overlay {
+  background: linear-gradient(to right, transparent, #121826) !important;
 }
 
-.dark .badge,
-.dark-mode .badge,
-[data-theme="dark"] .badge {
-  color: #38bdf8;
+body.theme-dark .badge {
+  color: #38bdf8 !important;
 }
 
-.dark .featured-ai-content h3,
-.dark-mode .featured-ai-content h3,
-[data-theme="dark"] .featured-ai-content h3 {
-  color: #ffffff;
-  font-weight: 500 !important;
+body.theme-dark .featured-ai-content h3 {
+  color: #ffffff !important;
 }
 
-.dark .featured-ai-content p,
-.dark-mode .featured-ai-content p,
-[data-theme="dark"] .featured-ai-content p {
-  color: #cbd5e1;
+body.theme-dark .featured-ai-content p {
+  color: #cbd5e1 !important;
 }
 
-.dark .featured-offerings h4,
-.dark-mode .featured-offerings h4,
-[data-theme="dark"] .featured-offerings h4 {
-  color: #94a3b8;
+body.theme-dark .featured-offerings h4 {
+  color: #94a3b8 !important;
 }
 
-.dark .bullet-marker,
-.dark-mode .bullet-marker,
-[data-theme="dark"] .bullet-marker {
-  color: #38bdf8;
+body.theme-dark .bullet-marker {
+  color: #38bdf8 !important;
 }
 
-.dark .prime-service-btn,
-.dark-mode .prime-service-btn,
-[data-theme="dark"] .prime-service-btn {
-  background: #ffffff;
-  color: #0b0f19;
-  font-weight: 500;
+body.theme-dark .prime-service-btn {
+  background: #ffffff !important;
+  color: #0b0f19 !important;
 }
 
-.dark .prime-service-btn:hover,
-.dark-mode .prime-service-btn:hover,
-[data-theme="dark"] .prime-service-btn:hover {
-  background: #f1f5f9;
-  color: #0b0f19;
+body.theme-dark .prime-service-btn:hover {
+  background: #f1f5f9 !important;
+  color: #0b0f19 !important;
 }
 
-.dark .services-hub-pane,
-.dark-mode .services-hub-pane,
-[data-theme="dark"] .services-hub-pane {
-  background: #121826;
-  border-color: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+/* Fixes Tab Component White Panel Leak */
+body.theme-dark .services-hub-pane {
+  background: #121826 !important;
+  background-color: #121826 !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4) !important;
 }
 
-.dark .hub-sidebar-menu,
-.dark-mode .hub-sidebar-menu,
-[data-theme="dark"] .hub-sidebar-menu {
-  background: rgba(0, 0, 0, 0.18);
-  border-right-color: rgba(255, 255, 255, 0.06);
+body.theme-dark .hub-sidebar-menu {
+  background: rgba(0, 0, 0, 0.22) !important;
+  border-right-color: rgba(255, 255, 255, 0.06) !important;
 }
 
-.dark .hub-menu-tab,
-.dark-mode .hub-menu-tab,
-[data-theme="dark"] .hub-menu-tab {
-  color: #94a3b8;
-  font-weight: 500;
+body.theme-dark .hub-menu-tab {
+  color: #94a3b8 !important;
 }
 
-.dark .hub-menu-tab.is-active,
-.dark-mode .hub-menu-tab.is-active,
-[data-theme="dark"] .hub-menu-tab.is-active {
-  background-color: #F7FAFE;
-  color: #0b0f19;
+body.theme-dark .hub-menu-tab.is-active {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
 }
 
-.dark .hub-menu-tab.is-active .hub-tab-dot,
-.dark-mode .hub-menu-tab.is-active .hub-tab-dot,
-[data-theme="dark"] .hub-menu-tab.is-active .hub-tab-dot {
-  background: #51AE60;
+body.theme-dark .hub-menu-tab.is-active .hub-tab-dot {
+  background: #2B97E7 !important;
 }
 
-.dark .hub-menu-tab:hover:not(.is-active),
-.dark-mode .hub-menu-tab:hover:not(.is-active),
-[data-theme="dark"] .hub-menu-tab:hover:not(.is-active) {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.03);
+body.theme-dark .hub-menu-tab:hover:not(.is-active) {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.03) !important;
 }
 
-.dark .hub-display-panel,
-.dark-mode .hub-display-panel,
-[data-theme="dark"] .hub-display-panel {
-  background: radial-gradient(circle at top right, rgba(81, 174, 96, 0.05), transparent 60%);
+body.theme-dark .hub-display-panel {
+  background: radial-gradient(circle at top right, rgba(81, 174, 96, 0.05), transparent 60%) !important;
 }
 
-.dark .hub-panel-inner h3,
-.dark-mode .hub-panel-inner h3,
-[data-theme="dark"] .hub-panel-inner h3 {
-  color: #ffffff;
-  font-weight: 500 !important;
+body.theme-dark .hub-panel-inner h3 {
+  color: #ffffff !important;
 }
 
-.dark .hub-panel-description,
-.dark-mode .hub-panel-description,
-[data-theme="dark"] .hub-panel-description {
-  color: #cbd5e1;
+body.theme-dark .hub-panel-description {
+  color: #cbd5e1 !important;
 }
 
-.dark .hub-panel-offerings h4,
-.dark-mode .hub-panel-offerings h4,
-[data-theme="dark"] .hub-panel-offerings h4 {
-  color: #64748b;
+body.theme-dark .hub-panel-offerings h4 {
+  color: #64748b !important;
 }
 
-.dark .hub-panel-offerings li,
-.dark-mode .hub-panel-offerings li,
-[data-theme="dark"] .hub-panel-offerings li {
-  color: #e2e8f0;
+body.theme-dark .hub-panel-offerings li {
+  color: #e2e8f0 !important;
 }
 
-.dark .bullet-diamond,
-.dark-mode .bullet-diamond,
-[data-theme="dark"] .bullet-diamond {
-  color: #51AE60;
+body.theme-dark .bullet-diamond {
+  color: #2B97E7 !important;
 }
 
-/* LOOP ANIMATION FRAME ENGINE */
+/* LOOP ANIMATION ENGINE */
 @keyframes scrollMarquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-50% - 16px)); }
@@ -5714,7 +5646,7 @@ body.theme-dark .ai-stat {
 
 
 /***************************************************
- * 3. RESPONSIVE LAYOUT RESPONSIVENESS MEDIA MODES
+ * 3. RESPONSIVE MEDIA BREAKPOINTS
  ***************************************************/
 @media (max-width: 991px) {
   .services-hub-pane {
