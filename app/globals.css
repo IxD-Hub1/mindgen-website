@@ -142,9 +142,9 @@ input, button, select, textarea {
 }
 
 .contact-btn {
-  border: 2px solid rgba(24, 37, 71, 0.9);
-  background: transparent;
-  color: #182547;
+  border: 2px solid transparent;
+  background: #1E3A8A;
+  color: #ffffff;
   padding: 9px 22px;
   font-size: 12px;
   font-weight: 700;
@@ -1660,7 +1660,7 @@ input, button, select, textarea {
 }
 
 .theme-toggle-btn:hover {
-  border-color: var(--brand-blue);
+  background-color: #0D1E3A;
   color: var(--brand-blue);
 }
 
@@ -5202,9 +5202,9 @@ body.theme-dark .ai-stat {
 }
 
 .partners-btn {
-  background: transparent;
-  border: 1px solid #495F87;
-  color: #46414E;
+  background:  #1e3a8a;
+  border: 1px solid transparent;
+  color: #ffffff;
   padding: 12px 28px;
   border-radius: 6px;
   font-weight: 500;
@@ -5215,9 +5215,9 @@ body.theme-dark .ai-stat {
 }
 
 .partners-btn:hover {
-  border-color: #1e3a8a;
-  color: #1e3a8a;
-  background: rgba(153, 192, 231, 0.15);
+  border-color: transparent;
+  color: #ffffff;
+  background: #99C0E7;
 }
 
 /* --- PARTNERSHIP SECTION DARK OVERRIDES --- */
@@ -5264,14 +5264,15 @@ body.theme-dark .partner-logo-card:hover .partner-tier-badge {
 }
 
 body.theme-dark .partners-btn {
-  border-color: rgba(255, 255, 255, 0.15) !important;
+  background:  #1E3A8A !important;
+  border-color: transparent !important;
   color: #ffffff !important;
 }
 
 body.theme-dark .partners-btn:hover {
-  border-color: #2B97E7 !important;
-  color: #2B97E7 !important;
-  background: rgba(81, 174, 96, 0.05) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  background: #2B97E7 !important;
 }
 
 /***************************************************
@@ -5709,5 +5710,467 @@ body.theme-dark .bullet-diamond {
   }
   .services-header h2 {
     font-size: 2.2rem;
+  }
+}
+
+/* ==========================================================================
+   PRODUCTION OPTIMIZATION: UNIFIED INDUSTRY SHOWCASE COMPONENT
+   ========================================================================== */
+
+.industry-showcase {
+  background-color: #D3DFEE !important;
+  background: #D3DFEE !important;
+  padding: 100px 0;
+  transition: background-color 0.3s ease;
+}
+
+body.theme-dark .industry-showcase {
+  background-color: #070B13 !important;
+  background: #070B13 !important;
+}
+
+/* Play/Pause Controller Core Positioning */
+.autoplay-toggle-wrapper {
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+.autoplay-toggle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(81, 174, 96, 0.12);
+  border: 1.5px solid rgba(81, 174, 96, 0.3);
+  color: #51AE60;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.autoplay-toggle-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  background: rgba(81, 174, 96, 0.2);
+}
+
+.autoplay-toggle-btn.paused {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.25);
+  color: #EF4444;
+  padding-left: 2px;
+}
+
+.autoplay-toggle-btn.paused:hover {
+  background: rgba(239, 68, 68, 0.18);
+}
+
+/* Insight Navigation Link Normalization */
+.mini-icon-card-link {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block;
+  outline: none;
+}
+
+
+/* ==========================================================================
+   GLOBAL COMPONENT STYLES (Applies to ALL Screen Sizes: Mobile, Tablet, Desktop)
+   ========================================================================== */
+
+/* The Primary Action Button Styling */
+.industry-action-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 24px !important;
+  border: transparent !important;
+  background: #1e3a8a !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-radius: 10px !important;  
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.industry-action-btn:hover {
+  background: #99C0E7 !important;
+  color: #1e3a8a !important;
+}
+
+/* Mini Icon Card Component Structure */
+.mini-icon-card {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  padding: 12px 16px !important;
+  background: rgba(255, 255, 255, 0.45) !important;
+  border-radius: 8px !important;
+  backdrop-filter: blur(4px) !important;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+body.theme-dark .mini-icon-card {
+  background: #1a2334 !important; /* Lighter than #070B13 so it stands out */
+  border: 1px solid rgba(255, 255, 255, 0.03) !important; /* Optional: adds a subtle crisp edge */
+}
+
+.mini-icon-card-link:hover .mini-icon-card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  transform: translateX(6px) !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05) !important;
+}
+
+body.theme-dark .mini-icon-card-link:hover .mini-icon-card {
+  background: #13284F !important; /* Micro-interaction lift on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Inner Mini Icon Circle Engine */
+.mini-icon-box {
+  width: 28px !important;
+  height: 28px !important;
+  background: rgba(81, 174, 96, 0.12) !important;
+  color: #1E3A8A !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  flex-shrink: 0 !important;
+  margin-top: 2px !important;
+}
+
+body.theme-dark .mini-icon-box {
+  color: #38BDF8 !important; /* Changes the actual icon to a crisp, visible light blue */
+  background: rgba(153, 192, 231, 0.15) !important; /* Gives the circle a soft blue glow tint */
+}
+
+.mini-card-text {
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: left !important;
+}
+
+.mini-tag {
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  color: #EF4444 !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 2px !important;
+}
+
+.mini-icon-card h4 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+}
+
+
+/* ==========================================================================
+   DESKTOP RESPONSIVE LAYOUT (Sizing & Alignment Engine Only)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .industry-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .industry-dashboard-frame {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    margin-top: 40px;
+    height: 540px; 
+    align-items: stretch;
+  }
+
+  .dashboard-media-panel {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  .dashboard-media-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .dashboard-content-panel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 5px 0;
+  }
+
+  .panel-top-details {
+    margin-bottom: auto;
+  }
+
+  .featured-headline {
+    font-size: 1.85rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+  }
+
+  .featured-paragraph {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: #1E293B !important;
+    margin: 0 0 24px 0;
+  }
+
+  body.theme-dark .featured-paragraph {
+    color: #E2E8F0 !important;
+  }
+
+  .panel-integrated-insights {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    padding-top: 16px;
+  }
+
+  body.theme-dark .panel-integrated-insights {
+    border-top-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE LAYOUT (Sizing & Alignment Engine Only)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .industry-showcase {
+    padding: 60px 16px !important;
+    overflow-x: hidden !important;
+  }
+
+  .industry-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Core Layout Stack Shift */
+  .industry-dashboard-frame {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important; 
+    gap: 32px !important;
+    margin-top: 24px !important;
+  }
+
+  .dashboard-media-panel {
+    width: 100% !important;
+    height: 320px !important; 
+    border-radius: 8px !important;
+    overflow: hidden !important;
+  }
+
+  .dashboard-media-panel img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .dashboard-content-panel {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  /* Insights Grid Stack Linkage Row */
+  .panel-integrated-insights {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    margin-top: 24px !important;
+    border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+    padding-top: 16px !important;
+  }
+  
+  body.theme-dark .panel-integrated-insights {
+    border-top-color: rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .mini-icon-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Typography Fluid Sizing overrides */
+  .featured-headline {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .featured-paragraph {
+    font-size: 0.96rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+/* ==========================================================================
+   MEGA NAV ENGINE & THEME TOGGLE OVERRIDES
+   ========================================================================== */
+
+/* Hide mega menus by default */
+.mega-nav {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Show panel cleanly when triggered by React active hook state */
+.mega-nav.visible-panel {
+  display: block !important;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Fixes the dark mode button hover color inconsistencies */
+body.theme-dark #themeToggle:hover {
+  background-color: #ffffff !important;
+  color: #070b13 !important;
+  border-color: #ffffff !important;
+}
+/* ==========================================================================
+   PRODUCTION REVISION: HORIZONTAL CLIENT MARQUEE SCROLLER (HOVER-TO-PAUSE)
+   ========================================================================== */
+
+.clients {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  background: transparent;
+}
+
+.carousel-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+/* Linear scrolling calculation engine */
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: marqueeContinuous 30s linear infinite;
+}
+
+/* AUTOMATIC HOVER HOOK: Safely halts marquee progression natively when hovering anywhere in the track */
+.carousel-wrap:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+/* Rigid container configuration for individual image cards */
+.logo-card {
+  position: relative;
+  width: 240px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.card-media-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.logo-card .card-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Transparent white overlay layer */
+.card-white-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+/* Typography configuration matching layout mockups */
+.logo-card .card-label-text {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff; /* Default readable white over image background */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* ==========================================================================
+   INTERACTIVE CARD HOVER STATES
+   ========================================================================== */
+
+.logo-card:hover .card-bg {
+  transform: scale(1.05);
+}
+
+.logo-card:hover .card-white-overlay {
+  opacity: 1;
+}
+
+/* Shifts text layer to contrast brand color on overlay activation */
+.logo-card:hover .card-label-text {
+  color: #182547 !important;
+  text-shadow: none;
+}
+
+/* Continuous loops track keyframe math */
+@keyframes marqueeContinuous {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Moves exactly halfway across our double array track */
   }
 }

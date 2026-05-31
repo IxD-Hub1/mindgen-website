@@ -17,9 +17,9 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>
+      {/* Handled: Suppressed the Grammarly extension hydration warning */}
+      <body suppressHydrationWarning>
         {children}
-        <Script src="/assets/js/script.js" strategy="afterInteractive" />
       </body>
     </html>
   );

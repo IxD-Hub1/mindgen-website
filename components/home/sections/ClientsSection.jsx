@@ -1,3 +1,5 @@
+"use client";
+
 const clientCards = [
   ["https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80", "Team collaboration background", "iserv."],
   ["https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=900&q=80", "Laptop and workspace background", "COMMERZBANK"],
@@ -9,20 +11,23 @@ const clientCards = [
 ];
 
 export default function ClientsSection() {
+  // Combines two matching card sets to build a flawless infinite wrapping stream
+  const structuralLoopTrack = [...clientCards, ...clientCards];
+
   return (
     <section id="clients" className="clients" aria-label="Client logos" data-component="clients">
       <div className="carousel-wrap">
-        <div className="carousel" id="clientCarousel">
-          {clientCards.map(([src, alt, label]) => (
-            <article className="logo-card" key={label}>
-              <img className="card-bg" src={src} alt={alt} />
-              <span>{label}</span>
+        <div className="carousel-track">
+          {structuralLoopTrack.map(([src, alt, label], index) => (
+            <article className="logo-card" key={`${label}-${index}`}>
+              <div className="card-media-wrapper">
+                <img className="card-bg" src={src} alt={alt} />
+                <div className="card-white-overlay"></div>
+              </div>
+              <span className="card-label-text">{label}</span>
             </article>
           ))}
         </div>
-      </div>
-      <div className="carousel-controls">
-        <button id="togglePlay" className="control-btn" aria-label="Pause carousel">II</button>
       </div>
     </section>
   );
