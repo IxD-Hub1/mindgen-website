@@ -142,7 +142,7 @@ input, button, select, textarea {
 }
 
 .contact-btn {
-  border: 2px solid transparent;
+  border: 2px solid rgba(24, 37, 71, 0.9);
   background: #1E3A8A;
   color: #ffffff;
   padding: 9px 22px;
