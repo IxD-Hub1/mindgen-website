@@ -1466,13 +1466,13 @@ input, button, select, textarea {
   margin-top: 26px;
   width: min(100%, 260px);
   align-self: center;
-  border: 2px solid #80cdf0;
+  border: 1px solid #80cdf0;
   border-radius: 999px;
   background: transparent;
   color: #80cdf0;
   padding: 10px 16px;
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -2646,8 +2646,8 @@ body.theme-dark .learn-btn:hover,
 body.theme-dark .service-btn:hover,
 body.theme-dark .partners-btn:hover,
 body.theme-dark .innovate-submit:hover {
-  background: rgba(255, 255, 255, 0.15); /* Subtle white tint */
-  color: #ffffff;                        /* Keeps text white */
+  background: #ffffff; /* Subtle white tint */
+  color: #0E131E;                        /* Keeps text white */
   border-color: #ffffff;
   cursor: pointer;
   transition: background 0.2s ease;
@@ -5216,7 +5216,7 @@ body.theme-dark .ai-stat {
 
 .partners-btn:hover {
   border-color: transparent;
-  color: #ffffff;
+  color: #1e3a8a;
   background: #99C0E7;
 }
 
@@ -5253,8 +5253,8 @@ body.theme-dark .partner-logo-card .partner-tier-badge {
 
 /* Dark Mode Card Hover Mechanics */
 body.theme-dark .partner-logo-card:hover {
-  background: #1e293b !important;
-  background-color: #1e293b !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
   border-color: #2B97E7 !important;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4) !important;
 }
@@ -5264,9 +5264,9 @@ body.theme-dark .partner-logo-card:hover .partner-tier-badge {
 }
 
 body.theme-dark .partners-btn {
-  background:  #1E3A8A !important;
+  background:  #ffffff !important;
   border-color: transparent !important;
-  color: #ffffff !important;
+  color: #0b0f19 !important;
 }
 
 body.theme-dark .partners-btn:hover {
@@ -5580,8 +5580,8 @@ body.theme-dark .prime-service-btn {
 }
 
 body.theme-dark .prime-service-btn:hover {
-  background: #f1f5f9 !important;
-  color: #0b0f19 !important;
+  background: #2B97E7 !important;
+  color: #fffff !important;
 }
 
 /* Fixes Tab Component White Panel Leak */
@@ -5803,6 +5803,25 @@ body.theme-dark .industry-showcase {
 .industry-action-btn:hover {
   background: #99C0E7 !important;
   color: #1e3a8a !important;
+}
+
+body.theme-dark .industry-action-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 24px !important;
+  border: transparent !important;
+  background: #ffffff !important;
+  color: #0b0f19 !important;
+  font-weight: 700 !important;
+  border-radius: 10px !important;  
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+body.theme-dark .industry-action-btn:hover {
+  background: #99C0E7 !important;
+  color: #ffffff !important;
 }
 
 /* Mini Icon Card Component Structure */
