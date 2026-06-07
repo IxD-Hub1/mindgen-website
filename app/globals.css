@@ -2698,8 +2698,7 @@ body.theme-dark .footer-brandline {
 
 body.theme-dark .clients,
 body.theme-dark .services-results,
-body.theme-dark .innovate-contact,
-body.theme-dark .footer-top {
+body.theme-dark .innovate-contact {
   background: #13284f;
 }
 
@@ -2708,8 +2707,12 @@ body.theme-dark .partners {
   background: #0d203f;
 }
 
+body.theme-dark .footer-top {
+  background: #070B13;
+}
+
 body.theme-dark .footer-bottom {
-  background: #091528;
+  background: #141C28;
 }
 
 body.theme-dark .industry-tabs,
@@ -5581,7 +5584,7 @@ body.theme-dark .prime-service-btn {
 
 body.theme-dark .prime-service-btn:hover {
   background: #2B97E7 !important;
-  color: #fffff !important;
+  color: #ffffff !important;
 }
 
 /* Fixes Tab Component White Panel Leak */
@@ -5820,7 +5823,7 @@ body.theme-dark .industry-action-btn {
 }
 
 body.theme-dark .industry-action-btn:hover {
-  background: #99C0E7 !important;
+  background: #2B97E7 !important;
   color: #ffffff !important;
 }
 
@@ -6192,4 +6195,120 @@ body.theme-dark #themeToggle:hover {
   100% {
     transform: translateX(-50%); /* Moves exactly halfway across our double array track */
   }
+}
+
+/* ==========================================================================
+   SITE FOOTER: ALIGNMENT, LOGO SWAP & MOBILE OPTIMIZATION
+   ========================================================================== */
+
+.footer-top {
+  background-color: #D3DFEE;
+}
+ody.theme-dark .footer-bottom {
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+b
+
+/* -------------------------------------------
+   1. THE DARK MODE LOGO SWAP ENGINE
+   ------------------------------------------- */
+.footer-logo {
+  display: block;
+  max-width: 220px;
+  height: auto;
+  margin-bottom: 24px;
+  /* Forces the light-mode SVG by default */
+  content: url('/assets/images/mindgen-logo.svg'); 
+}
+
+/* Automatically injects the dark-mode SVG when the theme switches */
+body.theme-dark .footer-logo {
+  content: url('/assets/images/mindgen-logo-dark.svg') !important;
+}
+
+/* -------------------------------------------
+   2. MOBILE VIEW: CENTER ALIGNMENT (< 768px)
+   ------------------------------------------- */
+@media (max-width: 768px) {
+  .site-footer {
+    text-align: center !important;
+  }
+
+  /* Centers the brand logo */
+  .footer-logo {
+    margin: 0 auto 30px auto !important; 
+  }
+
+  /* Wraps and centers the navigation links */
+  .footer-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px 20px !important;
+    line-height: 1.8 !important;
+  }
+
+  /* Stacks the phone number and social icons */
+  .footer-contact-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    margin: 30px 0 !important;
+  }
+
+  .footer-social {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 16px !important;
+  }
+
+  /* Centers regional text */
+  .footer-regions {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    margin: 20px 0 !important;
+  }
+
+  /* Wraps legal links neatly */
+  .footer-legal {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px 16px !important;
+    line-height: 1.6 !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Custom Native React Carousel Animations */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carousel-content-track {
+  animation: fadeSlideIn 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure dots look good in dark mode */
+body.theme-dark .carousel-dots button {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+body.theme-dark .carousel-dots button[style*="scale(1.2)"] {
+  background-color: #99C0E7 !important; /* Active dot color in dark mode */
 }

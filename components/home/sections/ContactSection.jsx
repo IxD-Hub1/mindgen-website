@@ -1,12 +1,37 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+// The new expanded testimonial data array
+const testimonials = [
+  {
+    quote: "Thank you so much for asking the right questions, co-innovating with us along the way, and always being receptive and providing us valid feedback on the solution and code. On behalf of the member portal technical team, thank you again for all the hard work and effort that you have put in to get our project to production. It was great working with you.",
+    author: "Linitha Balan",
+    title: "SENIOR APPLICATION DEVELOPER",
+    company: "vsp."
+  },
+  {
+    quote: "MindGen completely transformed our cloud infrastructure. Their team didn't just write code; they acted as true strategic partners, helping us architect a highly scalable environment that reduced our operational latency by over 40%. The level of engineering maturity they bring is unmatched.",
+    author: "Marcus Chen",
+    title: "CHIEF TECHNOLOGY OFFICER",
+    company: "NexaFlow"
+  },
+  {
+    quote: "Their approach to omnichannel integration allowed us to seamlessly connect our physical storefronts with our digital inventory. The transition was flawless, and the predictive analytics dashboard they built has completely revolutionized how we handle peak holiday demand.",
+    author: "Sarah Jenkins",
+    title: "VP OF DIGITAL PRODUCT",
+    company: "RetailEdge"
+  }
+];
 
 export default function ContactSection() {
   const [isOpen, setIsOpen] = useState(true);
   const [captchaChecked, setCaptchaChecked] = useState(false);
-  const [marketingOptIn, setMarketingOptIn] = useState(false); // Issue 6 State Tracker
-  const [formStatus, setFormStatus] = useState('idle'); // idle, submitting, success, error
+  const [marketingOptIn, setMarketingOptIn] = useState(false);
+  const [formStatus, setFormStatus] = useState('idle');
+  
+  // Carousel State
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const [formData, setFormData] = useState({
     'biz-email': '',
@@ -31,13 +56,12 @@ export default function ContactSection() {
     setFormStatus('submitting');
 
     try {
-      // Connects directly to our new Next.js internal server route
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
-          marketingOptIn: marketingOptIn // Appends the newsletter preference selection
+          marketingOptIn: marketingOptIn
         }),
       });
 
@@ -54,6 +78,14 @@ export default function ContactSection() {
       setFormStatus('error');
     }
   };
+
+  // Optional: Auto-play functionality for the carousel
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+    }, 8000); // Swaps every 8 seconds
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section id="contact" className="innovate-contact" aria-label="Let's innovate together" data-component="contact">
@@ -72,18 +104,44 @@ export default function ContactSection() {
 
         {isOpen && (
           <div className="innovate-body" id="innovateBody">
-            <div className="innovate-testimonial">
+            
+            {/* Upgraded Testimonial Carousel Section */}
+            <div className="innovate-testimonial carousel-wrapper">
               <span className="quote-mark" aria-hidden="true">&ldquo;</span>
-              <p>
-                Thank you so much for asking the right questions, co-innovating with us along the way, and always being receptive and
-                providing us valid feedback on the solution and code. On behalf of the member portal technical team, thank you again for
-                all the hard work and effort that you have put in to get our project to production. It was great working with you.
-              </p>
-              <div className="author-block">
-                <span className="author-line"></span>
-                <h3>Linitha Balan</h3>
-                <p>SENIOR APPLICATION DEVELOPER, VSP</p>
-                <div className="author-brand">vsp.</div>
+              
+              <div className="carousel-content-track">
+                <p className="carousel-quote">
+                  {testimonials[currentSlide].quote}
+                </p>
+                <div className="author-block">
+                  <span className="author-line"></span>
+                  <h3>{testimonials[currentSlide].author}</h3>
+                  <p>{testimonials[currentSlide].title}, {testimonials[currentSlide].company.toUpperCase()}</p>
+                  <div className="author-brand" style={{ fontSize: '1.2rem', fontWeight: 'bold', marginTop: '4px' }}>
+                    {testimonials[currentSlide].company}
+                  </div>
+                </div>
+              </div>
+
+              {/* Interactive Navigation Dots */}
+              <div className="carousel-dots" style={{ display: 'flex', gap: '8px', marginTop: '30px' }}>
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                    style={{
+                      width: '10px',
+                      height: '10px',
+                      borderRadius: '50%',
+                      border: 'none',
+                      cursor: 'pointer',
+                      transition: 'all 0.3s ease',
+                      backgroundColor: currentSlide === index ? '#1E3A8A' : '#c1c1c1',
+                      transform: currentSlide === index ? 'scale(1.2)' : 'scale(1)'
+                    }}
+                  />
+                ))}
               </div>
             </div>
 
@@ -100,7 +158,6 @@ export default function ContactSection() {
               <label htmlFor="company-name">Company Name*</label>
               <input id="company-name" name="company-name" type="text" required value={formData['company-name']} onChange={handleInputChange} />
 
-              {/* Issue 6: Marketing Outreach Selection Box Layout Row */}
               <div className="marketing-optin-row" style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', margin: '20px 0' }}>
                 <input 
                   id="marketing-check"
@@ -109,12 +166,11 @@ export default function ContactSection() {
                   onChange={(e) => setMarketingOptIn(e.target.checked)}
                   style={{ width: '18px', height: '18px', marginTop: '2px', cursor: 'pointer' }}
                 />
-                <label htmlFor="marketing-check" style={{ fontSize: '0.88rem', cursor: 'pointer', userSelect: 'none', lineHeight: '1.4', fontWeight: '400' }}>
+                <label htmlFor="marketing-check" style={{ fontSize: '0.88rem', cursor: 'pointer', userSelect: 'none', lineHeight: '1.4', fontWeight: '600', color: 'inherit' }}>
                   I would like to receive corporate updates, case studies, and occasional marketing or promotional materials from MindGen.
                 </label>
               </div>
 
-              {/* Issue 5 Fix: Re-engineered Interactive Captcha Engine Container */}
               <div 
                 className={`captcha-box ${captchaChecked ? 'verified' : ''}`} 
                 onClick={() => setCaptchaChecked(!captchaChecked)}
@@ -131,7 +187,6 @@ export default function ContactSection() {
                 <span className="captcha-badge">reCAPTCHA</span>
               </div>
 
-              {/* Dynamic Status Display Text Alerts */}
               <button className="innovate-submit" type="submit" disabled={formStatus === 'submitting'}>
                 {formStatus === 'submitting' ? 'SENDING...' : 'SUBMIT'}
               </button>
