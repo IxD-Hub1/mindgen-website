@@ -1,32 +1,51 @@
+'use client';
+
 export default function SiteFooter() {
+  
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="site-footer" aria-label="Footer">
       <div className="footer-top">
         <div className="footer-container">
+          
+          {/* 1. Premium Circular Back-to-Top Button */}
+          <div className="back-to-top-wrapper">
+            <button className="back-to-top-btn" onClick={scrollToTop} aria-label="Scroll back to top">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 19V5M5 12l7-7 7 7"/>
+              </svg>
+            </button>
+          </div>
+
           <div className="footer-brandline">
             <img
               src="/assets/images/mindgen-logo.svg"
               alt="MindGen logo"
               className="footer-logo"
-              data-light-logo="/assets/images/mindgen-logo.svg"
-              data-dark-logo="/assets/images/mindgen-logo-dark.svg"
             />
           </div>
 
           <nav className="footer-links" aria-label="Footer primary">
-            <a href="#">Co-Innovation</a>
-            <a href="#">Partners</a>
-            <a href="#">Client Stories</a>
-            <a href="#">Training</a>
-            <a href="#">Perspectives</a>
-            <a href="#">Events</a>
+            <a href="/solutions">Solutions</a>
+            <a href="/industries">Industries</a>
+            <a href="/case-studies">Case Studies</a>
+            <a href="/insights">Insights</a>
             <a href="/about-us">About</a>
             <a href="/careers">Careers</a>
             <a href="/contact-us">Contact</a>
           </nav>
 
-          <div className="footer-contact-row">
-            <span className="footer-phone">PHONE: 00000 00000</span>
+          {/* 2. Stacked Emails and Social Icons */}
+          <div className="footer-contact-column">
+            <div className="footer-emails">
+              <a href="mailto:admin@mindgen.in">admin@mindgen.in</a>
+              <span className="email-divider">|</span>
+              <a href="mailto:coo@mindgen.in">coo@mindgen.in</a>
+            </div>
+
             <div className="footer-social" aria-label="Social media links">
               <a href="#" aria-label="LinkedIn">
                 <svg className="footer-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -52,27 +71,28 @@ export default function SiteFooter() {
                   <path d="M5 4l5.7 7.8L5.5 20H8l4-5.3L16 20h3L13 11.6 18.2 4h-2.5L12 8.8 8.5 4H5z"></path>
                 </svg>
               </a>
-              <a href="#" aria-label="RSS">
-                <svg className="footer-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="6" cy="18" r="2"></circle>
-                  <path d="M4 11a9 9 0 0 1 9 9"></path>
-                  <path d="M4 6a14 14 0 0 1 14 14"></path>
-                </svg>
-              </a>
             </div>
           </div>
 
           <div className="footer-divider"></div>
 
-          <nav className="footer-regions" aria-label="Regions">
-            <a href="#">Chennai</a>
-            <a href="#">Mumbai</a>
-          </nav>
+          <div className="footer-addresses">
+            <div className="address-block">
+              <strong>Mumbai Office</strong>
+              <p>1A107, Wework, Raheja Platinum, Sagbaugh Road,<br />Marol, Andheri East, Mumbai - 400059, Maharashtra.</p>
+            </div>
+            <div className="address-block">
+              <strong>Chennai Office</strong>
+              <p>No 5, Syndicate Bank Colony, 200 feet Road,<br />Kovilambakkam, Chennai - 600117, Tamil Nadu.</p>
+            </div>
+          </div>
+          
         </div>
       </div>
 
       <div className="footer-bottom">
         <div className="footer-container footer-bottom-inner">
+          {/* 3. Re-aligned Bottom Bar */}
           <div className="footer-legal">
             <span>&copy; 2026 MindGen</span>
             <a href="#">LEGAL NOTICES</a>

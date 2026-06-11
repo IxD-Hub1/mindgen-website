@@ -997,11 +997,6 @@ input, button, select, textarea {
   cursor: pointer;
 }
 
-.innovate-contact {
-  background: #13284f;
-  padding: 84px 0 92px;
-}
-
 .innovate-container {
   width: 100%;
   margin: 0 auto;
@@ -1664,28 +1659,6 @@ input, button, select, textarea {
   color: var(--brand-blue);
 }
 
-.innovate-contact.is-collapsed {
-  padding: 30px 0 28px;
-}
-
-.innovate-contact.is-collapsed .innovate-container {
-  grid-template-columns: 1fr;
-  padding: 0 clamp(16px, 3vw, 42px);
-}
-
-.innovate-contact.is-collapsed .innovate-title-wrap {
-  display: flex;
-  justify-content: center;
-}
-
-.innovate-contact.is-collapsed .innovate-body {
-  display: none;
-}
-
-.innovate-contact.is-collapsed .innovate-caret {
-  transform: rotate(-135deg) translateY(-2px);
-}
-
 @media (max-width: 1400px) {
   .main-nav {
     gap: 28px;
@@ -1964,10 +1937,6 @@ input, button, select, textarea {
 
   .partners-btn {
     margin-top: 56px;
-  }
-
-  .innovate-contact {
-    padding: 64px 0 72px;
   }
 
   .innovate-container {
@@ -2339,11 +2308,7 @@ input, button, select, textarea {
     padding: 11px 18px;
   }
 
-  .innovate-contact {
-    padding: 52px 0 60px;
-  }
-
-  .innovate-container {
+    .innovate-container {
     width: 100%;
     padding: 0 16px;
     grid-template-columns: 1fr;
@@ -2420,15 +2385,7 @@ input, button, select, textarea {
     gap: 26px;
   }
 
-  .innovate-contact.is-collapsed {
-    padding: 22px 0;
-  }
-
-  .innovate-contact.is-collapsed .innovate-container {
-    padding: 0 16px;
-  }
-
-  .footer-top {
+   .footer-top {
     padding: 28px 0 20px;
   }
 
@@ -2543,7 +2500,6 @@ input, button, select, textarea {
 
 .clients,
 .services-results,
-.innovate-contact,
 .footer-top {
   background: #f7fafe;
 }
@@ -2697,8 +2653,7 @@ body.theme-dark .footer-brandline {
 }
 
 body.theme-dark .clients,
-body.theme-dark .services-results,
-body.theme-dark .innovate-contact {
+body.theme-dark .services-results {
   background: #13284f;
 }
 
@@ -6311,4 +6266,733 @@ body.theme-dark .carousel-dots button {
 }
 body.theme-dark .carousel-dots button[style*="scale(1.2)"] {
   background-color: #99C0E7 !important; /* Active dot color in dark mode */
+}
+
+/* ==========================================================================
+   FOOTER TYPOGRAPHY, LAYOUT & BUTTON UI
+   ========================================================================== */
+
+/* Light/Dark Text Colors */
+.footer-emails, 
+.footer-addresses {
+  color: #182547; 
+}
+body.theme-dark .footer-emails, 
+body.theme-dark .footer-addresses {
+  color: #ffffff;
+}
+
+/* Stacked Contact Layout */
+.footer-contact-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Fixed Email Typography (Matches default site font) */
+.footer-emails {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.footer-emails a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-emails a:hover {
+  opacity: 0.7;
+}
+
+.email-divider {
+  opacity: 0.4;
+}
+
+.footer-addresses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 30px 0 10px 0;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.address-block strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.address-block p {
+  margin: 0;
+}
+
+/* Re-aligned Bottom Legal Bar */
+.footer-bottom-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* --- Premium Circular Back-to-Top Button --- */
+.back-to-top-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.back-to-top-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(24, 37, 71, 0.2);
+  background-color: transparent;
+  color: #182547;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.back-to-top-btn:hover {
+  background-color: #182547;
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(24, 37, 71, 0.15);
+}
+
+/* Dark Mode Button Overrides */
+body.theme-dark .back-to-top-btn {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+body.theme-dark .back-to-top-btn:hover {
+  background-color: #ffffff;
+  color: #0b1120;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.15);
+}
+
+/* Contact Form 2-Column Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+}
+
+.form-full-width {
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure mobile screens drop back to a single column */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   CONTACT FORM: CONTRAST FIX & MODERN INPUT STYLING
+   ========================================================================== */
+
+/* 1. Clear Labels */
+.innovate-form label {
+  color: #182547; /* Crisp dark blue for light mode */
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block; /* Forces inputs to sit neatly below the label */
+  font-size: 0.9rem;
+}
+
+body.theme-dark .innovate-form label {
+  color: #ffffff; /* Flips to white in dark mode */
+}
+
+/* 2. Modern Inputs & Dropdowns */
+.innovate-form input[type="text"],
+.innovate-form input[type="email"],
+.innovate-form input[type="tel"],
+.innovate-form select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(24, 37, 71, 0.2);
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #182547;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* 3. Customizing the Select Dropdown Arrow */
+.innovate-form select {
+  cursor: pointer;
+  appearance: none; /* Removes the ugly default OS dropdown arrow */
+  /* Adds a sleek custom SVG arrow */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23182547%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px top 50%;
+  background-size: 12px auto;
+  padding-right: 40px; /* Make room for the arrow */
+}
+
+/* Hover & Focus States */
+.innovate-form input:focus,
+.innovate-form select:focus {
+  outline: none;
+  border-color: #1E3A8A;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+/* ==========================================================================
+   4. DARK MODE OVERRIDES
+   ========================================================================== */
+body.theme-dark .innovate-form input[type="text"],
+body.theme-dark .innovate-form input[type="email"],
+body.theme-dark .innovate-form input[type="tel"],
+body.theme-dark .innovate-form select {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Flips the dropdown arrow to white for dark mode */
+body.theme-dark .innovate-form select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+/* Ensures the dropdown options menu doesn't become invisible */
+body.theme-dark .innovate-form select option {
+  background-color: #0b1120; 
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   PREMIUM ENTERPRISE CONTACT SECTION (BENTO-BOX UI)
+   ========================================================================== */
+
+.premium-contact-section {
+  padding: 100px 5%;
+  background-color: #f8fafc; /* Very soft light gray/blue background */
+  position: relative;
+}
+
+body.theme-dark .premium-contact-section {
+  background-color: #13284F;
+}
+
+.premium-contact-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* --- LEFT PANEL: Typography & Carousel Card --- */
+.contact-left-panel {
+  position: sticky;
+  top: 120px;
+}
+
+.contact-premium-heading {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #1E3A8A 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 40px;
+  max-width: 90%;
+}
+
+.premium-testimonial-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-icon {
+  color: #eff6ff;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 80px;
+  height: 80px;
+  z-index: 0;
+}
+
+.carousel-content-track {
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-quote {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #334155;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.author-block h3 {
+  font-size: 1.2rem;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+
+.author-title {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 4px 0;
+}
+
+.author-brand {
+  font-weight: 800;
+  color: #1E3A8A;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+  background-color: #1E3A8A;
+  transform: scale(1.3);
+}
+
+/* --- RIGHT PANEL: Premium Form Card --- */
+.premium-form-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 50px;
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+.innovate-form label {
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.innovate-form input[type="text"],
+.innovate-form input[type="email"],
+.innovate-form input[type="tel"],
+.innovate-form select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px; /* Softer, modern borders */
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.innovate-form input:focus,
+.innovate-form select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.marketing-optin-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.marketing-optin-row label {
+  font-size: 0.85rem;
+  color: #475569;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Custom Captcha styling */
+.captcha-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.captcha-box:hover {
+  border-color: #94a3b8;
+}
+
+.captcha-check {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.captcha-box.verified .captcha-check {
+  background: #10b981;
+  border-color: #10b981;
+}
+
+.captcha-label {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.captcha-badge {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Premium Button */
+.premium-submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #1E3A8A 0%, #1e40af 100%);
+  color: #ffffff;
+  border: none;
+  padding: 18px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(30, 58, 138, 0.2);
+}
+
+.premium-submit-btn:hover {
+  background: #99C0E7;
+  color: #1E3A8A;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px rgba(30, 58, 138, 0.3);
+}
+
+.consent-copy {
+  font-size: 0.8rem;
+  color: #64748b;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* --- DARK MODE OVERRIDES --- */
+body.theme-dark .contact-premium-heading,
+body.theme-dark .innovate-form label,
+body.theme-dark .author-block h3,
+body.theme-dark .captcha-label {
+  color: #ffffff;
+}
+
+body.theme-dark .text-gradient {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+}
+
+body.theme-dark .contact-subtitle,
+body.theme-dark .carousel-quote,
+body.theme-dark .author-title,
+body.theme-dark .marketing-optin-row label {
+  color: #94a3b8;
+}
+
+body.theme-dark .premium-testimonial-card,
+body.theme-dark .premium-form-card {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-dark .innovate-form input[type="text"],
+body.theme-dark .innovate-form input[type="email"],
+body.theme-dark .innovate-form input[type="tel"],
+body.theme-dark .innovate-form select,
+body.theme-dark .captcha-box {
+  background-color: #0f172a;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+body.theme-dark .premium-submit-btn {
+  background: #ffffff;
+  color: #070B13;
+}
+
+body.theme-dark .premium-submit-btn:hover {
+  background: #38BDF8;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px rgba(30, 58, 138, 0.3);
+}
+
+body.theme-dark .quote-icon {
+  color: #334155;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .premium-contact-container {
+    grid-template-columns: 1fr;
+  }
+  .contact-left-panel {
+    position: relative;
+    top: 0;
+  }
+  .contact-premium-heading {
+    font-size: 2.8rem;
+  }
+  .premium-form-card {
+    padding: 30px;
+  }
+}
+
+/* ==========================================================================
+   PREMIUM HERO SECTION STYLING (UPDATED FOR CONTRAST & MOBILE)
+   ========================================================================== */
+
+.premium-hero-layout {
+  max-width: 900px;
+  margin: 0;
+  padding-top: 12vh; /* Increased to push down cleanly past the header */
+  padding-bottom: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+}
+
+/* 1. Light Mode Typography (Default) */
+.premium-hero-layout h1 {
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  line-height: 1.25; /* Fixed vertical line overlapping */
+  margin-bottom: 20px;
+  color: #182547; /* Requested Main Heading Color */
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  overflow-wrap: break-word; /* Prevents awkward horizontal breaking on mobile */
+}
+
+.premium-hero-layout .hero-subheadline {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  color: #3a5279; /* Requested Sub-text Color */
+  font-weight: 500; /* Requested Font Weight */
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+/* 2. Glassmorphic Pain Statement (Light Mode) */
+.hero-pain-statement {
+  background: rgba(255, 255, 255, 0.7); /* Light frosted glass for readability */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-left: 4px solid #1E3A8A;
+  border-radius: 0 12px 12px 0;
+  padding: 24px 32px;
+  max-width: 750px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.hero-pain-statement p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #182547;
+  font-style: italic;
+  font-weight: 500; /* Requested Font Weight */
+  line-height: 1.6;
+}
+
+/* 3. Dark Mode Overrides */
+body.theme-dark .premium-hero-layout h1 {
+  color: #ffffff;
+}
+
+body.theme-dark .premium-hero-layout .hero-subheadline {
+  color: #e2e8f0;
+}
+
+body.theme-dark .hero-pain-statement {
+  background: rgba(15, 23, 42, 0.55);
+  border-left: 4px solid #3b82f6;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.theme-dark .hero-pain-statement p {
+  color: #f8fafc;
+}
+
+/* 4. Call to Action Buttons */
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.hero-btn-primary {
+  padding: 16px 32px;
+  background: #1E3A8A;
+  color: #ffffff;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.4);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-btn-primary:hover {
+  background: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+}
+
+/* Light Mode Secondary Button */
+.hero-btn-secondary {
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #182547;
+  border: 1px solid rgba(24, 37, 71, 0.2);
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-btn-secondary:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Mode Secondary Button Override */
+body.theme-dark .hero-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+body.theme-dark .hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 5. Mobile & Tablet Adjustments */
+@media (max-width: 992px) {
+  .premium-hero-layout {
+    padding-top: 14vh;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .premium-hero-layout {
+    padding-top: 16vh; /* Safely clears the mobile nav menu */
+    padding-bottom: 4vh;
+  }
+  
+  .premium-hero-layout h1 {
+    font-size: 2.2rem;
+    line-height: 1.35; /* Creates breathing room between lines */
+    margin-bottom: 16px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-btn-primary, .hero-btn-secondary {
+    width: 100%;
+  }
+
+  .hero-pain-statement {
+    padding: 20px;
+    border-radius: 8px;
+    border-left: none;
+    border-top: 4px solid #1E3A8A;
+  }
+  
+  body.theme-dark .hero-pain-statement {
+    border-top-color: #3b82f6;
+  }
 }

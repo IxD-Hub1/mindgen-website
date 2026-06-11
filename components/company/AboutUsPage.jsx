@@ -40,20 +40,10 @@ const principles = [
 
 const milestones = [
   {
-    year: "2018",
-    title: "MindGen launches",
-    copy: "Founded to connect practical AI delivery with transformation work that organizations can actually operationalize.",
-  },
-  {
-    year: "2021",
-    title: "Capability expansion",
-    copy: "Broadened into analytics, platform modernization, and experience innovation for more integrated client outcomes.",
-  },
-  {
-    year: "2024",
-    title: "Distributed delivery",
-    copy: "Strengthened a global, remote-first collaboration model supporting teams across India, North America, and beyond.",
-  },
+    year: "2024–2025",
+    title: "MindGen is Formed",
+    copy: "MindGen was shaped as an AI-native strategy and workflow transformation practice, built on the founders’ long experience in marketing, procurement, technology adoption, and business transformation.",
+  }
 ];
 
 const metrics = [
