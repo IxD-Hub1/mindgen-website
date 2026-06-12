@@ -165,19 +165,27 @@ export default function AboutUsPage() {
 
         <section className="about-journey-section">
           <div className="company-shell">
-            <div className="careers-awards-heading about-journey-heading">
-              <p className="careers-mini-label">Our journey</p>
+            <div className="careers-awards-heading about-journey-heading" style={{ textAlign: 'center', marginBottom: '40px' }}>
+              <p className="careers-mini-label">Our Genesis</p>
               <h2>Built for modern transformation.</h2>
             </div>
-            <div className="company-timeline about-timeline">
-              {milestones.map((item) => (
-                <article key={item.year} className="company-timeline-card about-timeline-card">
-                  <span>{item.year}</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.copy}</p>
-                </article>
-              ))}
+            
+            {/* New Centered Founder Statement Card */}
+            <div className="founder-statement-wrapper">
+              <article className="founder-statement-card">
+                <div className="statement-header">
+                  <span className="statement-year">2024–2025</span>
+                  <div className="statement-line"></div>
+                </div>
+                <h3>MindGen is Formed</h3>
+                <p>
+                  MindGen was shaped as an AI-native strategy and workflow transformation practice, 
+                  built on the founders’ long experience in marketing, procurement, technology adoption, 
+                  and business transformation.
+                </p>
+              </article>
             </div>
+
           </div>
         </section>
 

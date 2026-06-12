@@ -6834,7 +6834,8 @@ body.theme-dark .quote-icon {
 .premium-hero-layout h1 {
   font-size: clamp(2.2rem, 5vw, 4.2rem);
   line-height: 1.25; /* Fixed vertical line overlapping */
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 10px;
   color: #182547; /* Requested Main Heading Color */
   font-weight: 500;
   letter-spacing: -0.5px;
@@ -6847,7 +6848,7 @@ body.theme-dark .quote-icon {
   color: #3a5279; /* Requested Sub-text Color */
   font-weight: 500; /* Requested Font Weight */
   max-width: 700px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 /* 2. Glassmorphic Pain Statement (Light Mode) */
@@ -6994,5 +6995,106 @@ body.theme-dark .hero-btn-secondary:hover {
   
   body.theme-dark .hero-pain-statement {
     border-top-color: #3b82f6;
+  }
+}
+
+/* ==========================================================================
+   ABOUT US: COMPANY GENESIS STATEMENT
+   ========================================================================== */
+
+.founder-statement-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.founder-statement-card {
+  background: #ffffff;
+  border: 1px solid rgba(24, 37, 71, 0.1);
+  border-radius: 16px;
+  padding: 40px 50px;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.founder-statement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.1);
+}
+
+.statement-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.statement-year {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #1E3A8A;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: rgba(30, 58, 138, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.statement-line {
+  width: 40px;
+  height: 3px;
+  background: #1E3A8A;
+  border-radius: 2px;
+}
+
+.founder-statement-card h3 {
+  font-size: 1.8rem;
+  color: #182547;
+  margin-bottom: 16px;
+}
+
+.founder-statement-card p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0;
+}
+
+/* Dark Mode Overrides */
+body.theme-dark .founder-statement-card {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-dark .statement-year {
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.15);
+}
+
+body.theme-dark .statement-line {
+  background: #60a5fa;
+}
+
+body.theme-dark .founder-statement-card h3 {
+  color: #ffffff;
+}
+
+body.theme-dark .founder-statement-card p {
+  color: #94a3b8;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .founder-statement-card {
+    padding: 30px 20px;
+  }
+  .founder-statement-card h3 {
+    font-size: 1.5rem;
   }
 }
