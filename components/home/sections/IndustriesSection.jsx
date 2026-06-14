@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 const strategicIndustries = [
   {
     id: "bfsi",
@@ -48,53 +46,37 @@ const strategicIndustries = [
 ];
 
 export default function IndustriesSection() {
-  // Sets the default active industry to the first one
-  const [activeTab, setActiveTab] = useState(strategicIndustries[0]);
-
   return (
-    <section id="industries" className="split-industry-section" aria-label="Industry Solutions">
-      <div className="split-industry-container">
+    <section id="industries" className="industry-showcase" aria-label="Industry Solutions">
+      <div className="industry-container">
         
-        <div className="split-industry-header">
-          <h2>Empowering Industry Leaders to Navigate the Future with End-to-End Innovation</h2>
-          <p>Tailored AI transformations and operational workflows across global enterprise ecosystems.</p>
+        <div className="industry-header-wrap">
+          <h2>
+            Empowering Industry Leaders to Navigate the Future with End-to-End Innovation
+          </h2>
+          <p className="industry-subheadline">
+            Tailored AI transformations and operational workflows across global enterprise ecosystems.
+          </p>
         </div>
 
-        <div className="split-industry-layout">
-          
-          {/* LEFT SIDE: The Interactive Hover List */}
-          <div className="split-list-column">
-            {strategicIndustries.map((industry) => (
-              <button
-                key={industry.id}
-                className={`split-list-item ${activeTab.id === industry.id ? "active" : ""}`}
-                onMouseEnter={() => setActiveTab(industry)}
-                onClick={() => setActiveTab(industry)} // Fallback for mobile tap
-              >
-                {industry.title}
-                <svg className="list-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </button>
-            ))}
-          </div>
-
-          {/* RIGHT SIDE: The Dynamic Stage */}
-          <div className="split-stage-column">
-            {/* The 'key' forces React to re-render and trigger the fade animation on change */}
-            <div className="split-stage-card" key={activeTab.id}>
-              <div className="stage-card-inner">
-                <span className="stage-eyebrow">Industry Focus</span>
-                <h3>{activeTab.title}</h3>
-                <p>{activeTab.copy}</p>
-                <a href={activeTab.link} className="stage-action-btn">
-                  Explore Solutions
-                </a>
-              </div>
-            </div>
-          </div>
-
+        <div className="industry-bento-grid">
+          {strategicIndustries.map((industry) => (
+            <a href={industry.link} className="industry-card-link" key={industry.id}>
+              <article className="industry-bento-card">
+                <div className="card-content-top">
+                  <h3>{industry.title}</h3>
+                  <p>{industry.copy}</p>
+                </div>
+                <div className="card-action-bottom">
+                  <span className="card-cta-text">Explore Solutions</span>
+                  <svg className="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </article>
+            </a>
+          ))}
         </div>
 
       </div>

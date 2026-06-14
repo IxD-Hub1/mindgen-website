@@ -1,5 +1,6 @@
 import Script from "next/script";
 import "./globals.css";
+import { ThemeProvider } from "../components/ThemeProvider"; 
 
 export const metadata = {
   title: "MindGen Website",
@@ -8,7 +9,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -17,9 +18,28 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      {/* Handled: Suppressed the Grammarly extension hydration warning */}
       <body suppressHydrationWarning>
-        {children}
+        
+        {/* THE FIX: Moved the script INSIDE the body so document.body exists when it runs! */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var storedTheme = localStorage.getItem('mindgen-theme');
+                  if (storedTheme === 'dark') {
+                    document.body.classList.add('theme-dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+        
       </body>
     </html>
   );

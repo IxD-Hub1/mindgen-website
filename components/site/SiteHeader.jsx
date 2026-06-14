@@ -1,26 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useTheme } from "../ThemeProvider"; // UPDATE THIS PATH based on where you saved the file!
 
 export default function SiteHeader() {
-  const [isDark, setIsDark] = useState(false);
+  // 1. Pull the global state directly from our ThemeProvider
+  const { isDark, toggleTheme } = useTheme();
+  
   // Now tracks only 'solutions' and 'industries'
   const [activeMega, setActiveMega] = useState(null); 
-
-  useEffect(() => {
-    const isCurrentlyDark = document.body.classList.contains("theme-dark");
-    setIsDark(isCurrentlyDark);
-  }, []);
-
-  const handleThemeToggle = () => {
-    if (isDark) {
-      document.body.classList.remove("theme-dark");
-      setIsDark(false);
-    } else {
-      document.body.classList.add("theme-dark");
-      setIsDark(true);
-    }
-  };
 
   // Helper methods to cleanly manage mouse enter/leave thresholds
   const handleMouseEnter = (menuId) => setActiveMega(menuId);
@@ -68,7 +56,7 @@ export default function SiteHeader() {
             type="button"
             aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
             aria-pressed={isDark ? "true" : "false"}
-            onClick={handleThemeToggle}
+            onClick={toggleTheme} /* Connects directly to the global context function */
           >
             {isDark ? "Light" : "Dark"}
           </button>

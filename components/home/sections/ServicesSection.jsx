@@ -2,151 +2,120 @@
 
 import { useState } from "react";
 
-const services = [
+const strategicServices = [
   {
-    id: "ai",
-    title: "Artificial Intelligence",
-    image: "https://picsum.photos/id/180/1100/680",
-    alt: "Artificial intelligence concept visual",
-    description: "Leverage the full potential of AI with transformative solutions to improve operations, drive growth and scalable innovation for long-term business agility.",
-    link: "/services/artificial-intelligence",
-    offerings: [
-      "AI Co-Innovation Studio Workshops",
-      "AI Strategy, Governance & Adoption",
-      "Generative AI Development & Integration",
-      "Data Modernization for AI Readiness",
-      "AI-Driven Operational Efficiency & Automation",
-      "Custom AI Product Engineering & Innovation",
-      "Platform AI Optimization & Integration Services",
-    ],
+    id: "ai-strategy",
+    title: "AI Strategy & Readiness",
+    copy: "Roadmaps, operating models, and prioritization that connect AI ambition to the realities of enterprise business execution.",
+    features: ["AI Co-Innovation Workshops", "Readiness Audits", "Governance & Security Protocols"],
+    link: "/solutions/ai-strategy",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    id: "experience",
-    title: "Experience Innovation & Design",
-    description: "Elevate your digital presence by creating compelling, results-driven experiences and products that deeply engage customers with your brand.",
-    offerings: ["Customer Journey Strategy", "UX Research & Service Design", "Product Design Systems", "Conversion Optimization Programs"],
+    id: "agentic-workflow",
+    title: "Agentic Workflow Automation",
+    copy: "Leverage autonomous AI agents to streamline complex operational tasks, eliminate bottlenecks, and drastically reduce manual overhead.",
+    features: ["Process Mining", "Autonomous Agent Deployment", "Workflow Optimization"],
+    link: "/solutions/agentic-workflow",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    id: "engineering",
-    title: "Digital Product & Platform Engineering",
-    description: "Modernize legacy applications and optimize platforms to stay competitive and enhance user engagement.",
-    offerings: ["Cloud-native Product Engineering", "API & Microservices Architecture", "Quality Engineering Automation", "Performance & Scalability Optimization"],
+    id: "martech-revops",
+    title: "Martech & RevOps Transformation",
+    copy: "Aligning marketing technology stacks and revenue operations to drive measurable, highly scalable business growth.",
+    features: ["Tech Stack Audits", "CRM & Automation Alignment", "Revenue Funnel Optimization"],
+    link: "/solutions/martech-revops",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    id: "transformation",
-    title: "Enterprise Digital Transformation",
-    description: "Empower your organization with our collaborative approach to digital transformation, optimizing processes, change management, and driving business growth.",
-    offerings: ["Digital Roadmap Development", "Operating Model Transformation", "Enterprise Change Enablement", "Transformation Program Governance"],
+    id: "data-intelligence",
+    title: "Data Intelligence & Dashboards",
+    copy: "Transforming fragmented data lakes into real-time, predictive dashboards designed for rapid executive decision-making.",
+    features: ["Predictive Analytics", "Real-Time BI Dashboards", "Data Infrastructure Modernization"],
+    link: "/solutions/data-intelligence",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    id: "data",
-    title: "Data & Analytics",
-    description: "Discover how our expertise in data and analysis can transform your business through enhanced data visibility to drive success.",
-    offerings: ["Data Strategy & Governance", "Modern Data Platform Engineering", "Business Intelligence & Visualization", "Advanced Analytics & Forecasting"],
+    id: "ai-training",
+    title: "AI Training & Adoption",
+    copy: "Empowering your internal teams with the skills, workflows, and governance needed to safely scale AI tools across the organization.",
+    features: ["Custom Team Upskilling", "Adoption Playbooks", "Change Management"],
+    link: "/solutions/ai-training",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    id: "cloud",
-    title: "Cloud Enablement & Modernization",
-    description: "Unlock the full potential of your infrastructure with our comprehensive cloud services, designed to enhance scale, resilience, and cost efficiency.",
-    offerings: ["Cloud Migration Strategy", "Platform Operations & SRE", "FinOps & Cost Optimization", "Security & Compliance Automation"],
-  },
-  {
-    id: "marketing",
-    title: "Marketing Activation & Loyalty",
-    description: "Engage individuals at every stage of their journey with our comprehensive, data-driven marketing strategies.",
-    offerings: ["Audience & Segmentation Strategy", "Campaign Orchestration & Automation", "Loyalty Program Design", "Attribution & Measurement"],
-  },
-  {
-    id: "commerce",
-    title: "Digital Commerce",
-    description: "Leverage our tailored digital commerce solutions to enhance customer satisfaction, streamline operations, and maximize conversions for your business.",
-    offerings: ["Composable Commerce Architecture", "Checkout & Conversion Optimization", "Marketplace Integration Services", "Merchandising & Personalization"],
-  },
+    id: "business-growth",
+    title: "Business Growth Consulting",
+    copy: "Strategic executive advisory focused on entering new markets, optimizing pricing models, and maximizing overall enterprise value.",
+    features: ["Market Expansion Strategy", "Pricing Optimization", "M&A Technical Due Diligence"],
+    link: "/solutions/business-growth",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+  }
 ];
 
 export default function ServicesSection() {
-  const aiService = services.find((s) => s.id === "ai");
-  const coreServices = services.filter((s) => s.id !== "ai");
-
-  // Track the active item inside our Interactive Hub panel
-  const [activeHubId, setActiveHubId] = useState(coreServices[0].id);
-  const activeService = coreServices.find((s) => s.id === activeHubId);
+  const [activeTab, setActiveTab] = useState(strategicServices[0]);
 
   return (
-    <section id="services" className="services-results" aria-label="Services that drive real results">
-      <div className="services-container">
+    <section id="services" className="split-service-section" aria-label="Our Solutions">
+      <div className="split-service-container">
         
-        <div className="services-header">
+        <div className="split-service-header">
           <h2>Services that Drive Real Results</h2>
-          <p className="services-intro">
-            We bring together a broad set of capabilities across our global integrated teams, 
-            harnessing cutting-edge technology, artificial intelligence, and deep industry expertise.
-          </p>
+          <p>We bring together a broad set of capabilities harnessing artificial intelligence, modern engineering, and deep industry expertise.</p>
         </div>
 
-        {/* FEATURED STANDALONE HERO CARD (Artificial Intelligence) */}
-        {aiService && (
-          <div className="featured-ai-card">
-            <div className="featured-ai-image-wrap">
-              <img src={aiService.image} alt={aiService.alt} />
-              <div className="featured-ai-overlay"></div>
-            </div>
-            <div className="featured-ai-content">
-              <span className="badge">PRIMARY CAPABILITY</span>
-              <h3>{aiService.title}</h3>
-              <p>{aiService.description}</p>
-              
-              <div className="featured-offerings">
-                <h4>Core Architectural Offerings</h4>
-                <ul>
-                  {aiService.offerings.map((item) => (
-                    <li key={item}>
-                      <span className="bullet-marker">✦</span> {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <a className="prime-service-btn" href={aiService.link || "#"}>EXPLORE AI CAPABILITIES</a>
-            </div>
-          </div>
-        )}
-
-        {/* THE SPLIT-PANE INTERACTIVE HUB */}
-        <div className="services-hub-pane">
+        <div className="split-service-layout">
           
-          {/* Left Menu Selection Column */}
-          <div className="hub-sidebar-menu">
-            {coreServices.map((service) => (
+          <div className="split-service-list">
+            {strategicServices.map((service) => (
               <button
                 key={service.id}
-                className={`hub-menu-tab ${activeHubId === service.id ? "is-active" : ""}`}
-                onClick={() => setActiveHubId(service.id)}
+                className={`service-list-item ${activeTab.id === service.id ? "active" : ""}`}
+                onMouseEnter={() => setActiveTab(service)}
+                onClick={() => setActiveTab(service)}
               >
-                <span className="hub-tab-dot"></span>
                 {service.title}
+                <svg className="service-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
               </button>
             ))}
           </div>
 
-          {/* Right Active Details Display Panel */}
-          <div className="hub-display-panel">
-            {activeService && (
-              <div className="hub-panel-inner animate-fade-in">
-                <h3>{activeService.title}</h3>
-                <p className="hub-panel-description">{activeService.description}</p>
+          <div className="split-service-stage">
+            <div className="service-stage-card" key={activeTab.id}>
+              
+              {/* NEW: The Background Image Layer */}
+              <div className="stage-bg-layer">
+                <img src={activeTab.image} alt="" aria-hidden="true" />
+                <div className="stage-bg-overlay"></div>
+              </div>
+
+              {/* Existing Content wrapped to sit above the image */}
+              <div className="service-card-inner">
+                <span className="service-eyebrow">Primary Capability</span>
+                <h3>{activeTab.title}</h3>
+                <p className="service-main-copy">{activeTab.copy}</p>
                 
-                <div className="hub-panel-offerings">
-                  <h4>Offerings Include:</h4>
+                <div className="service-features">
+                  <span className="features-label">Core Offerings</span>
                   <ul>
-                    {activeService.offerings.map((item) => (
-                      <li key={item}>
-                        <span className="bullet-diamond">♦</span> {item}
+                    {activeTab.features.map((feature, idx) => (
+                      <li key={idx}>
+                        <span className="feature-bullet">✦</span> {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
+
+                <a href={activeTab.link} className="service-action-btn">
+                  Explore Capabilities
+                </a>
               </div>
-            )}
+
+            </div>
           </div>
 
         </div>
