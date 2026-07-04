@@ -3,7 +3,7 @@ export default function HeroSection() {
     <section id="hero" className="hero" aria-label="MindGen AI Strategy" data-component="hero">
       <div className="hero-video-wrap" aria-hidden="true">
         <video autoPlay muted loop playsInline className="hero-video">
-          <source src="/assets/videos/MindGen.mp4" type="video/mp4" />
+          <source src="/assets/videos/MindGen Hero Video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
