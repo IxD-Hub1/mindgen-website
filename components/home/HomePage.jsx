@@ -10,6 +10,8 @@ import FrameworkSection from "./sections/FrameworkSection";
 // 1. Import the two new components
 import TrustStrip from "./sections/TrustStrip";
 import ProblemSection from "./sections/ProblemSection";
+import ProofSection from "./sections/ProofSection";
+import ResearchSection from "./sections/ResearchSection";
 
 export default function HomePage() {
   return (
@@ -23,6 +25,8 @@ export default function HomePage() {
         <ServicesSection />
         <IndustriesSection />
         <PartnershipsSection />
+        <ProofSection/>
+        <ResearchSection/>
         <ContactSection />
       </main>
       <SiteFooter />
