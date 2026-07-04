@@ -2,54 +2,55 @@
 
 import { useState } from "react";
 
+// Updated data array using the exact approved copy from the content deck
 const strategicServices = [
   {
     id: "ai-strategy",
     title: "AI Strategy & Readiness",
-    copy: "Roadmaps, operating models, and prioritization that connect AI ambition to the realities of enterprise business execution.",
-    features: ["AI Co-Innovation Workshops", "Readiness Audits", "Governance & Security Protocols"],
+    copy: "Build an AI strategy that can actually be implemented. We help leadership teams identify the right AI opportunities, prioritize use cases, define governance, assess readiness, and create a practical roadmap for execution.",
+    features: ["AI maturity assessment", "Use-case prioritization", "Governance model"],
     link: "/solutions/ai-strategy",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80"
+    bgClass: "bg-mesh-1"
   },
   {
     id: "agentic-workflow",
-    title: "Agentic Workflow Automation",
-    copy: "Leverage autonomous AI agents to streamline complex operational tasks, eliminate bottlenecks, and drastically reduce manual overhead.",
-    features: ["Process Mining", "Autonomous Agent Deployment", "Workflow Optimization"],
-    link: "/solutions/agentic-workflow",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+    title: "Intelligent Workflow Automation",
+    copy: "Redesign work before automating it. We build AI-enabled workflows and agentic systems that reduce manual effort, improve decision speed, connect enterprise systems, and create operational leverage.",
+    features: ["Workflow diagnostics", "AI agent design", "System integration plan"],
+    link: "/solutions/workflow-automation",
+    bgClass: "bg-mesh-2"
   },
   {
-    id: "martech-revops",
-    title: "Martech & RevOps Transformation",
-    copy: "Aligning marketing technology stacks and revenue operations to drive measurable, highly scalable business growth.",
-    features: ["Tech Stack Audits", "CRM & Automation Alignment", "Revenue Funnel Optimization"],
-    link: "/solutions/martech-revops",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+    id: "strategic-intelligence",
+    title: "Strategic Intelligence",
+    copy: "Turn market, policy, customer, and operational signals into sharper decisions. We create research-led intelligence systems, dashboards, briefs, and insight engines for leaders who need clarity before action.",
+    features: ["Market intelligence reports", "Decision dashboards", "Opportunity maps"],
+    link: "/solutions/strategic-intelligence",
+    bgClass: "bg-mesh-3"
   },
   {
-    id: "data-intelligence",
-    title: "Data Intelligence & Dashboards",
-    copy: "Transforming fragmented data lakes into real-time, predictive dashboards designed for rapid executive decision-making.",
-    features: ["Predictive Analytics", "Real-Time BI Dashboards", "Data Infrastructure Modernization"],
-    link: "/solutions/data-intelligence",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+    id: "data-decisions",
+    title: "Data & Decision Systems",
+    copy: "Help leaders see what matters and act faster. We design dashboards, data models, AI-assisted decision workflows, and performance visibility systems for organizations that need sharper execution.",
+    features: ["KPI architecture", "Decision workflow design", "AI insight layers"],
+    link: "/solutions/data-decisions",
+    bgClass: "bg-mesh-4"
   },
   {
-    id: "ai-training",
-    title: "AI Training & Adoption",
-    copy: "Empowering your internal teams with the skills, workflows, and governance needed to safely scale AI tools across the organization.",
-    features: ["Custom Team Upskilling", "Adoption Playbooks", "Change Management"],
-    link: "/solutions/ai-training",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
+    id: "customer-growth",
+    title: "Customer Growth Intelligence",
+    copy: "Connect marketing, customer data, journeys, and revenue operations. We help teams improve segmentation, personalization, campaign performance, and customer experience using AI and analytics.",
+    features: ["Customer journey mapping", "Campaign intelligence", "Revenue operations dashboards"],
+    link: "/solutions/customer-growth",
+    bgClass: "bg-mesh-5"
   },
   {
-    id: "business-growth",
-    title: "Business Growth Consulting",
-    copy: "Strategic executive advisory focused on entering new markets, optimizing pricing models, and maximizing overall enterprise value.",
-    features: ["Market Expansion Strategy", "Pricing Optimization", "M&A Technical Due Diligence"],
-    link: "/solutions/business-growth",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+    id: "ai-adoption",
+    title: "AI Adoption & Training",
+    copy: "Help teams understand, trust, and use AI responsibly. We design practical enablement programs for leaders, managers, and teams so AI adoption becomes part of daily work, not a one-time workshop.",
+    features: ["Leadership AI workshops", "Use-case playbooks", "Responsible AI guidance"],
+    link: "/solutions/ai-adoption",
+    bgClass: "bg-mesh-6"
   }
 ];
 
@@ -57,12 +58,13 @@ export default function ServicesSection() {
   const [activeTab, setActiveTab] = useState(strategicServices[0]);
 
   return (
-    <section id="services" className="split-service-section" aria-label="Our Solutions">
+    <section id="services" className="split-service-section" aria-label="Transformation Programs">
       <div className="split-service-container">
         
         <div className="split-service-header">
-          <h2>Services that Drive Real Results</h2>
-          <p>We bring together a broad set of capabilities harnessing artificial intelligence, modern engineering, and deep industry expertise.</p>
+          {/* Updated exact headline and subheadline from the copy deck */}
+          <h2>Transformation Programs Built Around Business Outcomes</h2>
+          <p>MindGen does not begin with tools. We begin with the business outcome, then design the strategy, workflow, data, and AI system required to achieve it.</p>
         </div>
 
         <div className="split-service-layout">
@@ -87,20 +89,18 @@ export default function ServicesSection() {
           <div className="split-service-stage">
             <div className="service-stage-card" key={activeTab.id}>
               
-              {/* NEW: The Background Image Layer */}
-              <div className="stage-bg-layer">
-                <img src={activeTab.image} alt="" aria-hidden="true" />
+              {/* REMOVED UNSPLASH IMAGES - Replaced with premium CSS gradients */}
+              <div className={`stage-bg-layer ${activeTab.bgClass}`}>
                 <div className="stage-bg-overlay"></div>
               </div>
 
-              {/* Existing Content wrapped to sit above the image */}
               <div className="service-card-inner">
-                <span className="service-eyebrow">Primary Capability</span>
+                <span className="service-eyebrow">Program Focus</span>
                 <h3>{activeTab.title}</h3>
                 <p className="service-main-copy">{activeTab.copy}</p>
                 
                 <div className="service-features">
-                  <span className="features-label">Core Offerings</span>
+                  <span className="features-label">Key Deliverables</span>
                   <ul>
                     {activeTab.features.map((feature, idx) => (
                       <li key={idx}>
@@ -111,7 +111,7 @@ export default function ServicesSection() {
                 </div>
 
                 <a href={activeTab.link} className="service-action-btn">
-                  Explore Capabilities
+                  Explore Solutions
                 </a>
               </div>
 
@@ -119,7 +119,6 @@ export default function ServicesSection() {
           </div>
 
         </div>
-
       </div>
     </section>
   );

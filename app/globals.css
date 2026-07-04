@@ -5452,80 +5452,116 @@ body.theme-dark .founder-statement-card p {
 }
 
 /* ==========================================================================
-   1. PREMIUM "HOLLOW TYPOGRAPHY" MARQUEE CLIENT
+   HOME: TRUST STRIP / CREDIBILITY STRIP (Replaces Marquee)
    ========================================================================== */
-
-.ecosystem-marquee-section {
-  background-color: #f8fafc; /* Crisp white/gray background */
-  padding: 60px 0;
-  overflow: hidden;
+   
+/* Light Mode (Default) */
+.trust-strip {
+  background-color: #f8fafc; /* Crisp light gray background */
   border-top: 1px solid rgba(24, 37, 71, 0.05);
   border-bottom: 1px solid rgba(24, 37, 71, 0.05);
-}
-
-.text-marquee-wrap {
+  padding: 32px 0;
   width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.text-marquee-track {
-  display: inline-block;
-  animation: textScroll 70s linear infinite;
+.trust-strip-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-/* The Ultra-Modern Stroke Design - UPDATED */
-.text-marquee-track h2 {
-  font-size: 4.5rem; 
-  font-weight: 900;
-  color: rgba(24, 37, 71, 0.04); /* Adds a very faint fill so it isn't completely empty */
-  -webkit-text-stroke: 2px rgba(24, 37, 71, 0.6); /* Darkened the outline from 0.3 to 0.6 */
-  margin: 0;
-  display: inline-block;
-  letter-spacing: 2px;
+.trust-strip-label {
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
-  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
-/* Fills in with brand blue when the user hovers over the section */
-.ecosystem-marquee-section:hover .text-marquee-track h2 {
-  color: #182547;
-  -webkit-text-stroke: 0px;
+.trust-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
-.marquee-dot {
-  color: #3b82f6; 
-  margin: 0 50px;
-  -webkit-text-stroke: 0px; /* Keeps the dot solid */
+.trust-metric-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-@keyframes textScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.trust-icon {
+  color: #182547; /* MindGen Brand Dark Blue */
+  flex-shrink: 0;
 }
 
-/* Dark Mode Overrides for Marquee */
-body.theme-dark .ecosystem-marquee-section {
-  background-color: #13284F;
-  border-color: rgba(255, 255, 255, 0.05);
+.trust-metric-text {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
 }
 
-body.theme-dark .text-marquee-track h2 {
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
+.trust-metric-text strong {
+  color: #0f172a;
+  font-weight: 800;
+  display: block; /* Stacks the number on top of the text for maximum readability */
 }
-
-body.theme-dark .ecosystem-marquee-section:hover .text-marquee-track h2 {
-  color: #ffffff;
-}
-
 
 /* ==========================================================================
-   2. ELEVATED BENTO TAGS ON #D3DFEE BACKGROUND PARTNERSHIP
+   DARK MODE OVERRIDES
    ========================================================================== */
+body.theme-dark .trust-strip {
+  background-color: #13284F; /* Matches the specific dark blue of your old marquee */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
 
+body.theme-dark .trust-strip-label {
+  color: #94a3b8;
+}
+
+body.theme-dark .trust-icon {
+  color: #3b82f6; /* Vibrant blue accent to pop on dark backgrounds */
+}
+
+body.theme-dark .trust-metric-text {
+  color: #cbd5e1;
+}
+
+body.theme-dark .trust-metric-text strong {
+  color: #ffffff; /* Crisp white for the bolded metrics */
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .trust-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .trust-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .trust-strip-label {
+    text-align: left;
+  }
+}
+
+/* ==========================================================================
+   HOME: TECHNOLOGY ECOSYSTEMS
+   ========================================================================== */
 .ecosystems-section {
-  padding: 100px 5%;
-  background-color: #D3DFEE; /* Restored your original requested background! */
+  padding: 100px 0;
+  background-color: #ffffff; 
   transition: background-color 0.3s ease;
 }
 
@@ -5533,22 +5569,78 @@ body.theme-dark .ecosystem-marquee-section:hover .text-marquee-track h2 {
   max-width: 1100px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 24px;
+}
+
+.ecosystems-header {
+  margin-bottom: 48px;
 }
 
 .ecosystems-header h2 {
-  font-size: 2.8rem;
-  color: #182547;
+  font-size: 2.5rem;
+  color: #0f172a;
   margin-bottom: 20px;
   font-weight: 800;
-  letter-spacing: -0.5px;
 }
 
 .ecosystems-intro {
   font-size: 1.15rem;
-  color: #3a5279;
-  max-width: 750px;
-  margin: 0 auto 60px auto;
+  color: #475569;
+  max-width: 800px;
+  margin: 0 auto;
   line-height: 1.6;
+}
+
+/* Tab Navigation */
+.tech-tabs-wrapper {
+  margin-bottom: 40px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.tech-tabs-scroll {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tech-tabs-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.tech-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  padding: 16px 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tech-tab-btn:hover {
+  color: #1E3A8A;
+}
+
+.tech-tab-btn.active {
+  color: #1E3A8A;
+  border-bottom-color: #1E3A8A;
+}
+
+/* Dynamic Display Area */
+.tech-display-area {
+  min-height: 120px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ecosystems-grid {
@@ -5556,85 +5648,90 @@ body.theme-dark .ecosystem-marquee-section:hover .text-marquee-track h2 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 60px;
 }
 
-/* Upgraded from basic pills to premium elevated cards */
 .ecosystem-pill {
-  background: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  color: #182547;
-  padding: 18px 36px;
-  border-radius: 12px; /* Sleeker, architectural shape */
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 16px 32px;
+  border-radius: 8px;
   font-weight: 700;
   font-size: 1.1rem;
-  letter-spacing: 0.5px;
-  box-shadow: 0 10px 25px rgba(24, 37, 71, 0.06); /* Soft, premium drop shadow */
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
   cursor: default;
 }
 
 .ecosystem-pill:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(24, 37, 71, 0.12);
-  border-color: #99C0E7;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+  border-color: #cbd5e1;
   color: #1E3A8A;
 }
 
-/* Legal Disclaimer */
-.ecosystems-disclaimer {
-  border-top: 1px solid rgba(24, 37, 71, 0.1);
-  padding-top: 30px;
-  margin-top: 20px;
+/* Simple animation for swapping tabs */
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
 }
 
-.ecosystems-disclaimer p {
-  font-size: 0.85rem;
-  color: #495F87;
-  font-style: italic;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Dark Mode Overrides for Grid */
+/* ==========================================================================
+   DARK MODE OVERRIDES
+   ========================================================================== */
 body.theme-dark .ecosystems-section {
-  background-color: #070b13; /* Deep dark to match your previous theme */
+  background-color: #0b1329; 
 }
 
 body.theme-dark .ecosystems-header h2 {
-  color: #ffffff;
+  color: #f8fafc;
 }
 
-body.theme-dark .ecosystems-intro,
-body.theme-dark .ecosystems-disclaimer p {
+body.theme-dark .ecosystems-intro {
+  color: #cbd5e1;
+}
+
+body.theme-dark .tech-tabs-wrapper {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-dark .tech-tab-btn {
   color: #94a3b8;
 }
 
+body.theme-dark .tech-tab-btn:hover {
+  color: #60a5fa;
+}
+
+body.theme-dark .tech-tab-btn.active {
+  color: #60a5fa;
+  border-bottom-color: #60a5fa;
+}
+
 body.theme-dark .ecosystem-pill {
-  background: #1e293b;
+  background: #13284F;
   border-color: rgba(255, 255, 255, 0.05);
   color: #e2e8f0;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 body.theme-dark .ecosystem-pill:hover {
-  background: #2B97E7;
-  color: #ffffff;
-  border-color: transparent;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border-color: #3b82f6;
+  color: #60a5fa;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* Mobile Adjustments */
+/* Responsive */
 @media (max-width: 768px) {
-  .text-marquee-track h2 {
-    font-size: 2.5rem;
-  }
-  .ecosystems-header h2 {
-    font-size: 2.2rem;
+  .tech-tabs-scroll {
+    justify-content: flex-start;
+    padding-bottom: 8px;
   }
   .ecosystem-pill {
-    padding: 14px 24px;
+    padding: 12px 24px;
     font-size: 1rem;
   }
 }
@@ -5644,7 +5741,7 @@ body.theme-dark .ecosystem-pill:hover {
    ========================================================================== */
 
 .industry-showcase {
-  background-color: #D3DFEE; 
+  background-color: #F8FAFC; 
   padding: 100px 5%;
   transition: background-color 0.3s ease;
 }
@@ -5690,7 +5787,7 @@ body.theme-dark .ecosystem-pill:hover {
 
 /* Premium Card Styling */
 .industry-bento-card {
-  background: #ffffff;
+  background: #D3DFEE;
   border: 1px solid rgba(24, 37, 71, 0.08);
   border-radius: 16px;
   padding: 32px;
@@ -5752,7 +5849,7 @@ body.theme-dark .ecosystem-pill:hover {
    ========================================================================== */
 
 body.theme-dark .industry-showcase {
-  background-color: #070B13;
+  background-color: #13284F;
 }
 
 body.theme-dark .industry-header-wrap h2 {
@@ -5809,12 +5906,32 @@ body.theme-dark .industry-card-link:hover .card-content-top h3 {
   min-width: 280px; /* Safely wraps on mobile/tablet */
 }
 
+/* Add this to your existing Industry CSS */
+.industry-icon-wrapper {
+  color: #64748b;
+  margin-bottom: 20px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+body.theme-dark .industry-icon-wrapper {
+  color: #94a3b8;
+}
+
+.industry-card-link:hover .industry-icon-wrapper {
+  color: #1E3A8A;
+  transform: scale(1.05);
+}
+
+body.theme-dark .industry-card-link:hover .industry-icon-wrapper {
+  color: #60a5fa;
+}
+
 /* ==========================================================================
    SERVICES SHOWCASE: SPLIT-STAGE INTERACTION
    ========================================================================== */
 
 .split-service-section {
-  background-color: #F7FAFE; /* Your exact requested light theme background */
+  background-color: #D3DFEE; /* Your exact requested light theme background */
   padding: 100px 5%;
   transition: background-color 0.3s ease;
   border-top: 1px solid rgba(24, 37, 71, 0.05);
@@ -6035,8 +6152,8 @@ body.theme-dark .stage-bg-overlay {
 }
 
 .service-action-btn:hover {
-  background: #99C0E7;
-  color: #1e3a8a;
+  background: #2B97E7;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -6045,7 +6162,7 @@ body.theme-dark .stage-bg-overlay {
    ========================================================================== */
 
 body.theme-dark .split-service-section {
-  background-color: #13284F !important; /* Your exact requested dark theme background */
+  background-color: #070B13 !important; /* Your exact requested dark theme background */
   border-top-color: rgba(255, 255, 255, 0.05);
 }
 
@@ -6057,7 +6174,7 @@ body.theme-dark .service-list-item { color: #94a3b8; }
 body.theme-dark .service-list-item:hover,
 body.theme-dark .service-list-item.active {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.15);
   border-left-color: #2B97E7;
   box-shadow: none;
 }
@@ -6125,6 +6242,14 @@ body.theme-dark .service-action-btn:hover {
   }
   .service-list-item .service-arrow { display: none; }
 }
+
+/* Add this to the bottom of your Services CSS block */
+.bg-mesh-1 { background: radial-gradient(at 0% 0%, #1e3a8a 0px, transparent 50%), radial-gradient(at 100% 100%, #0f172a 0px, transparent 50%); background-color: #172554; }
+.bg-mesh-2 { background: radial-gradient(at 100% 0%, #3b82f6 0px, transparent 50%), radial-gradient(at 0% 100%, #1e3a8a 0px, transparent 50%); background-color: #0f172a; }
+.bg-mesh-3 { background: radial-gradient(at 50% 0%, #2563eb 0px, transparent 50%), radial-gradient(at 50% 100%, #172554 0px, transparent 50%); background-color: #020617; }
+.bg-mesh-4 { background: radial-gradient(at 0% 100%, #1d4ed8 0px, transparent 50%), radial-gradient(at 100% 0%, #0f172a 0px, transparent 50%); background-color: #1e3a8a; }
+.bg-mesh-5 { background: radial-gradient(at 100% 100%, #3b82f6 0px, transparent 50%), radial-gradient(at 0% 0%, #020617 0px, transparent 50%); background-color: #172554; }
+.bg-mesh-6 { background: radial-gradient(at 50% 50%, #1e3a8a 0px, transparent 100%); background-color: #0f172a; }
 
 /* ==========================================================================
    ABOUT US PAGE: COLOR-OPTIMIZED & BRAND ALIGNED
@@ -6831,3 +6956,362 @@ body.theme-dark .contact-office-list span::before { background: #60a5fa; }
   .form-row { grid-template-columns: 1fr; }
 }
 
+/* ==========================================================================
+   HOME: PROBLEM SECTION (Why AI Fails)
+   ========================================================================== */
+.problem-section {
+  padding: 80px 0;
+  background-color: #D3DFEE;
+}
+
+.problem-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.problem-header {
+  text-align: center;
+  margin-bottom: 56px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.problem-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 24px;
+}
+
+.problem-intro {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+/* Card Styling with Subtle Colored Edge */
+.problem-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #1E3A8A; /* The subtle colored left edge */
+  border-radius: 6px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Keeps cards equal height */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Interaction: Lift and Glow */
+.problem-card:hover {
+  transform: translateY(-4px); /* Lifts 4px */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+}
+
+.problem-icon {
+  color: #64748b;
+  margin-bottom: 20px;
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover Interaction: Icon Glow */
+.problem-card:hover .problem-icon {
+  color: #3b82f6; /* Shifts to blue */
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.4)); /* Creates the glow */
+}
+
+.problem-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.problem-content p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.problem-closing {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1E3A8A;
+  padding-top: 24px;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* ==========================================================================
+   DARK MODE OVERRIDES
+   ========================================================================== */
+body.theme-dark .problem-section {
+  background-color: #0b1329; /* Matches global dark theme */
+}
+
+body.theme-dark .problem-header h2,
+body.theme-dark .problem-content h3 {
+  color: #f8fafc;
+}
+
+body.theme-dark .problem-intro,
+body.theme-dark .problem-content p {
+  color: #cbd5e1;
+}
+
+body.theme-dark .problem-card {
+  background: #13284F;
+  border-color: rgba(255, 255, 255, 0.05);
+  border-left-color: #3b82f6; /* Brighter blue for dark mode edge */
+}
+
+body.theme-dark .problem-card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+body.theme-dark .problem-icon {
+  color: #94a3b8;
+}
+
+body.theme-dark .problem-card:hover .problem-icon {
+  color: #60a5fa;
+  filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.6));
+}
+
+body.theme-dark .problem-closing {
+  color: #60a5fa;
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .problem-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .problem-grid { grid-template-columns: 1fr; }
+  .problem-header h2 { font-size: 2rem; }
+}
+
+/* Add a smooth transition to the heading */
+.problem-content h3 {
+  transition: color 0.3s ease;
+}
+
+/* Light Mode: Heading changes to brand blue on hover */
+.problem-card:hover .problem-content h3 {
+  color: #1E3A8A;
+}
+
+/* Dark Mode: Heading changes to vibrant blue on hover */
+body.theme-dark .problem-card:hover .problem-content h3 {
+  color: #60a5fa; 
+}
+
+/* ==========================================================================
+   HOME: MINDGEN FRAMEWORK (Updated for Uniform Micro-Motions)
+   ========================================================================== */
+.framework-section {
+  padding: 100px 0;
+  background-color: #f8fafc; 
+}
+
+.framework-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.framework-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 64px auto;
+}
+
+.framework-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 24px;
+}
+
+.framework-intro {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+/* Framework Connecting Line Architecture */
+.framework-stages-wrapper {
+  position: relative;
+  margin-bottom: 56px;
+}
+
+.framework-connecting-line {
+  position: absolute;
+  top: 40px; 
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: #cbd5e1;
+  z-index: 1;
+}
+
+.framework-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* UPDATED: Added transition for the 4px hover lift */
+.framework-card {
+  text-align: center;
+  background: transparent;
+  transition: transform 0.3s ease; 
+}
+
+/* UPDATED: Card now lifts 4px on hover, matching the Problem section */
+.framework-card:hover {
+  transform: translateY(-4px);
+}
+
+.framework-icon-wrap {
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+  border: 2px solid #1E3A8A;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px auto;
+  color: #1E3A8A;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease, filter 0.3s ease;
+}
+
+/* UPDATED: Icon wrap now inverts and glows on hover */
+.framework-card:hover .framework-icon-wrap {
+  background: #1E3A8A;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(30, 58, 138, 0.2);
+  filter: drop-shadow(0 0 8px rgba(30, 58, 138, 0.4)); /* Added Icon Glow */
+}
+
+/* UPDATED: Added transition to the stage label text */
+.stage-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #3b82f6;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+/* UPDATED: Text transitions to dark blue on hover */
+.framework-card:hover .stage-label {
+  color: #1E3A8A;
+}
+
+.framework-content p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.framework-action {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.framework-btn-primary {
+  display: inline-block;
+  background-color: #1E3A8A;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.framework-btn-primary:hover {
+  background-color: #2B97E7;
+}
+
+/* ==========================================================================
+   DARK MODE OVERRIDES
+   ========================================================================== */
+body.theme-dark .framework-section {
+  background-color: #13284F;
+}
+
+body.theme-dark .framework-header h2 {
+  color: #f8fafc;
+}
+
+body.theme-dark .framework-intro,
+body.theme-dark .framework-content p {
+  color: #cbd5e1;
+}
+
+body.theme-dark .framework-connecting-line {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-dark .framework-icon-wrap {
+  background: #13284F;
+  border-color: #3b82f6;
+  color: #60a5fa;
+}
+
+/* UPDATED: Dark mode hover glow */
+body.theme-dark .framework-card:hover .framework-icon-wrap {
+  background: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+  filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.6));
+}
+
+/* UPDATED: Dark mode text hover brightens the blue */
+body.theme-dark .framework-card:hover .stage-label {
+  color: #93c5fd; 
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .framework-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 48px;
+  }
+  .framework-connecting-line {
+    display: none; 
+  }
+}
+
+@media (max-width: 576px) {
+  .framework-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,11 +1,15 @@
 import ContactSection from "./sections/ContactSection";
-import ClientsSection from "./sections/ClientsSection";
 import HeroSection from "./sections/HeroSection";
 import IndustriesSection from "./sections/IndustriesSection";
 import PartnershipsSection from "./sections/PartnershipsSection";
 import ServicesSection from "./sections/ServicesSection";
 import SiteFooter from "../site/SiteFooter";
 import SiteHeader from "../site/SiteHeader";
+import FrameworkSection from "./sections/FrameworkSection";
+
+// 1. Import the two new components
+import TrustStrip from "./sections/TrustStrip";
+import ProblemSection from "./sections/ProblemSection";
 
 export default function HomePage() {
   return (
@@ -13,9 +17,11 @@ export default function HomePage() {
       <SiteHeader />
       <main>
         <HeroSection />
-        <ClientsSection />
-        <IndustriesSection />
+        <TrustStrip />
+        <ProblemSection />
+        <FrameworkSection />
         <ServicesSection />
+        <IndustriesSection />
         <PartnershipsSection />
         <ContactSection />
       </main>

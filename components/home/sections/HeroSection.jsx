@@ -12,24 +12,24 @@ export default function HeroSection() {
       
       <div className="hero-content premium-hero-layout">
         
-        <h1>AI-Native Strategy &amp; Workflow Transformation for Growth-Focused Businesses</h1>
+        <h1>Build an Al-Native Business, Not Just Another Al Project</h1>
         
         <p className="hero-subheadline">
-          MindGen helps companies think clearly, redesign workflows, adopt AI responsibly, and scale measurable business outcomes.
+          MindGen helps enterprises, governments, and growth-focused organizations redesign strategy, workflows, data, and decision systems to create measurable business outcomes with Al.
         </p>
         
         <div className="hero-cta-group">
           <a href="/contact-us" className="hero-btn-primary">
-            Book an AI Strategy Call
+            Book A Strategy Workshop
           </a>
           <a href="/solutions/ai-strategy" className="hero-btn-secondary">
-            Take the AI Readiness Assessment
+            Assess Your Al Readiness
           </a>
         </div>
 
         <div className="hero-pain-statement">
           <p>
-            "Most companies are experimenting with AI, but struggling to convert it into workflow, revenue, and measurable business value."
+            <strong>Al does not fail because the technology is weak.</strong> Al fails when strategy, workflows, data, governance, and people are not redesigned together. MindGen closes that execution gap.
           </p>
         </div>
         
