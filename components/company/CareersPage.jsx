@@ -23,22 +23,23 @@ const cultureCards = [
   {
     title: "Work You Want",
     copy: "Choose projects where your curiosity, craft, and problem-solving style can do their best work.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
+    // Updated to abstract/architectural textures
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Empowered by Belonging",
     copy: "We build teams where people can contribute fully, speak candidly, and keep learning from one another.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Innovative Client Work",
     copy: "Our delivery teams move between AI strategy, digital products, experience design, and modernization programs.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Stay Connected",
     copy: "Remote-friendly collaboration, intentional planning, and healthy communication are built into the day-to-day.",
-    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1557672172-298e090bd0f1?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -103,7 +104,7 @@ export default function CareersPage() {
 
             <div className="careers-growth-grid">
               {growthCards.map((item) => (
-                <article key={item.title} className="careers-growth-card">
+                <article key={item.title} className="careers-growth-card premium-hover-card">
                   <span className="careers-growth-line" aria-hidden="true"></span>
                   <h3>{item.title}</h3>
                   <p>{item.copy}</p>
@@ -116,7 +117,7 @@ export default function CareersPage() {
                 <article
                   key={item.title}
                   className="careers-culture-card"
-                  style={{ backgroundImage: `linear-gradient(180deg, rgba(10, 18, 36, 0.04), rgba(10, 18, 36, 0.76)), url(${item.image})` }}
+                  style={{ backgroundImage: `linear-gradient(180deg, rgba(10, 18, 36, 0.04), rgba(10, 18, 36, 0.85)), url(${item.image})` }}
                 >
                   <div className="careers-culture-copy">
                     <h3>{item.title}</h3>
@@ -141,7 +142,9 @@ export default function CareersPage() {
             <div className="careers-benefits-list">
               {benefits.map((item) => (
                 <div key={item} className="careers-benefit-item">
-                  <span aria-hidden="true">✓</span>
+                  <svg className="principle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <p>{item}</p>
                 </div>
               ))}
@@ -149,7 +152,6 @@ export default function CareersPage() {
           </div>
         </section>
 
-        {/* --- REPLACED FAKE JOB BOARD WITH TALENT NETWORK FORM --- */}
         <section className="talent-network-section">
           <div className="company-shell talent-network-grid">
             <div className="talent-network-copy">
@@ -209,6 +211,21 @@ export default function CareersPage() {
 
                 <button type="submit" className="talent-submit-btn">Submit Profile</button>
               </form>
+            </div>
+          </div>
+        </section>
+
+        {/* --- INJECTED MISSING AWARDS SECTION --- */}
+        <section className="careers-awards-section">
+          <div className="company-shell">
+            <div className="careers-awards-grid">
+              {awards.map((item) => (
+                <article key={item.title} className="careers-award-card premium-hover-card">
+                  <span className="award-meta">{item.meta}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.copy}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>

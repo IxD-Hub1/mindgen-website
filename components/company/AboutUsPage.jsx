@@ -62,9 +62,9 @@ export default function AboutUsPage() {
               thinking, and engineering execution so transformation stays grounded in the realities of the business.
             </p>
             <div className="about-hero-badges">
-              <span>AI Strategy</span>
-              <span>Product Thinking</span>
-              <span>Engineering Execution</span>
+              <span className="premium-badge">AI Strategy</span>
+              <span className="premium-badge">Product Thinking</span>
+              <span className="premium-badge">Engineering Execution</span>
             </div>
           </div>
         </section>
@@ -83,7 +83,7 @@ export default function AboutUsPage() {
 
               <div className="about-focus-grid">
                 {focusAreas.map((item) => (
-                  <article key={item.title} className="about-focus-card">
+                  <article key={item.title} className="about-focus-card premium-hover-card">
                     <span className="about-growth-line" aria-hidden="true"></span>
                     <h3>{item.title}</h3>
                     <p>{item.copy}</p>
@@ -108,7 +108,9 @@ export default function AboutUsPage() {
             <div className="about-principles-list">
               {principles.map((item) => (
                 <div key={item} className="about-principle-item">
-                  <span aria-hidden="true">✓</span>
+                  <svg className="principle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
                   <p>{item}</p>
                 </div>
               ))}
@@ -124,7 +126,7 @@ export default function AboutUsPage() {
             </div>
             <div className="about-capabilities-grid">
               {capabilityPillars.map((item) => (
-                <article key={item.title} className="about-capability-card">
+                <article key={item.title} className="about-capability-card premium-hover-card">
                   <h3>{item.title}</h3>
                   <p>{item.copy}</p>
                 </article>
@@ -137,7 +139,7 @@ export default function AboutUsPage() {
           <div className="company-shell">
             <div className="about-metrics-grid">
               {metrics.map((item) => (
-                <article key={item.value} className="about-metric-card">
+                <article key={item.value} className="about-metric-card premium-hover-card">
                   <strong>{item.value}</strong>
                   <p>{item.label}</p>
                 </article>
@@ -177,7 +179,7 @@ export default function AboutUsPage() {
                 <p className="about-section-kicker">Partner with MindGen</p>
                 <h2>Looking for a team that can connect AI ambition to execution?</h2>
               </div>
-              <a href="/contact-us" className="about-pill-btn">Contact us</a>
+              <a href="/#contact" className="about-pill-btn strategy-btn">Book a Strategy Workshop</a>
             </div>
           </div>
         </section>

@@ -4477,6 +4477,77 @@ body.theme-dark .careers-reputation-section {  background: #0b1120; }
 }
 
 /* ==========================================================================
+   CAREERS PAGE: AWARDS SECTION & ENHANCEMENTS
+   ========================================================================== */
+.careers-growth-card {
+  padding: 32px;
+}
+
+.careers-awards-section {
+  background: #f8fafc;
+  padding: 80px 0 20px;
+}
+
+.careers-awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.careers-award-card {
+  padding: 40px 32px;
+}
+
+.award-meta {
+  display: inline-block;
+  background: rgba(30, 58, 138, 0.08);
+  color: #1E3A8A;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.careers-award-card h3 {
+  font-size: 1.4rem;
+  color: #182547;
+  margin-bottom: 12px;
+}
+
+.careers-award-card p {
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Dark Mode Overrides for Awards */
+body.theme-dark .careers-awards-section {
+  background: #070B13;
+}
+
+body.theme-dark .award-meta {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+}
+
+body.theme-dark .careers-award-card h3 {
+  color: #ffffff;
+}
+
+body.theme-dark .careers-award-card p {
+  color: #94a3b8;
+}
+
+@media (max-width: 992px) {
+  .careers-awards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
    MEGA NAV ENGINE & THEME TOGGLE OVERRIDES
    ========================================================================== */
 
@@ -5287,9 +5358,10 @@ body.theme-dark .workshop-deliverables li p {
 }
 
 /* ==========================================================================
-   ABOUT US: COMPANY GENESIS STATEMENT
+   ABOUT US PAGE: FULL STYLESHEET (Layout + Enterprise Enhancements)
    ========================================================================== */
 
+/* --- 1. Company Genesis Statement (Your Original Layout) --- */
 .founder-statement-wrapper {
   display: flex;
   justify-content: center;
@@ -5353,11 +5425,117 @@ body.theme-dark .workshop-deliverables li p {
   margin: 0;
 }
 
-/* Dark Mode Overrides */
-body.theme-dark .founder-statement-card {
+/* --- 2. Universal Premium Card Hover Lift (New) --- */
+.premium-hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 1px solid rgba(24, 37, 71, 0.05);
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.premium-hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.06);
+  border-color: #93c5fd;
+}
+
+/* --- 3. Hero Badges (New) --- */
+.about-hero-badges {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.premium-badge {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.premium-badge:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* --- 4. SVG Principle Icons (New) --- */
+.about-principle-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.principle-icon {
+  color: #1E3A8A;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* --- 5. High-Contrast Metrics (New) --- */
+.about-metric-card {
+  padding: 40px;
+  text-align: center;
+}
+
+.about-metric-card strong {
+  display: block;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #1E3A8A;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.about-metric-card p {
+  font-size: 1.05rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* --- 6. Funnel-Aligned CTA Button (New) --- */
+.about-pill-btn.strategy-btn {
+  background: #ffffff;
+  color: #1E3A8A;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.about-pill-btn.strategy-btn:hover {
+  background: #38BDF8;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* ==========================================================================
+   ABOUT US: DARK MODE OVERRIDES (Merged)
+   ========================================================================== */
+body.theme-dark .founder-statement-card,
+body.theme-dark .premium-hover-card {
   background: #1e293b;
   border-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-dark .founder-statement-card:hover,
+body.theme-dark .premium-hover-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 body.theme-dark .statement-year {
@@ -5365,16 +5543,33 @@ body.theme-dark .statement-year {
   background: rgba(96, 165, 250, 0.15);
 }
 
+/* Replace with this corrected block */
 body.theme-dark .statement-line {
   background: #60a5fa;
 }
 
-body.theme-dark .founder-statement-card h3 {
+body.theme-dark .principle-icon {
+  color: #60a5fa;
+  background: transparent;
+}
+
+body.theme-dark .founder-statement-card h3,
+body.theme-dark .about-metric-card strong {
   color: #ffffff;
 }
 
-body.theme-dark .founder-statement-card p {
+body.theme-dark .founder-statement-card p,
+body.theme-dark .about-metric-card p {
   color: #94a3b8;
+}
+
+body.theme-dark .about-pill-btn.strategy-btn {
+  background: #1E3A8A;
+  color: #ffffff;
+}
+
+body.theme-dark .about-pill-btn.strategy-btn:hover {
+  background: #38BDF8;
 }
 
 /* Mobile Adjustments */
@@ -5621,7 +5816,7 @@ body.theme-dark .trust-metric-text strong {
    DARK MODE OVERRIDES (Restored to #070b13)
    ========================================================================== */
 body.theme-dark .ecosystems-section {
-  background-color: #070b13; /* Deep dark to match your previous theme */
+  background-color: #0B1329; /* Deep dark to match your previous theme */
 }
 
 body.theme-dark .ecosystems-header h2 {
@@ -6105,7 +6300,7 @@ body.theme-dark .stage-bg-overlay {
    ========================================================================== */
 
 body.theme-dark .split-service-section {
-  background-color: #070B13 !important; /* Your exact requested dark theme background */
+  background-color: #0B1329 !important; /* Your exact requested dark theme background */
   border-top-color: rgba(255, 255, 255, 0.05);
 }
 
@@ -6796,14 +6991,17 @@ body.theme-dark .about-principle-item p { color: #ffffff; }
   font-weight: 500;
 }
 
-.contact-check-list li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: -2px;
+.contact-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #334155;
+  font-weight: 500;
+}
+.contact-check-list li svg {
   color: #3b82f6;
-  font-weight: 800;
-  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .contact-office-list {
@@ -6897,6 +7095,25 @@ body.theme-dark .contact-office-list span::before { background: #60a5fa; }
   .contact-card-grid, .contact-form-grid, .contact-band-grid { grid-template-columns: 1fr; }
   .contact-cards-section { margin-top: 0; padding-top: 40px; }
   .form-row { grid-template-columns: 1fr; }
+}
+
+/* Form Inputs Dark Mode */
+body.theme-dark .contact-form-card input,
+body.theme-dark .contact-form-card select {
+  background: #0f172a;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Submit Button Dark Mode */
+body.theme-dark .contact-submit-btn {
+  background: #ffffff;
+  color: #182547;
+}
+
+body.theme-dark .contact-submit-btn:hover {
+  background: #38BDF8;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
 }
 
 /* ==========================================================================

@@ -26,8 +26,6 @@ const contactCards = [
 const offices = ["Chennai", "Mumbai"];
 
 export default function ContactUsPage() {
-  // --- HOMEPAGE FORM STATE LOGIC ---
-  const [captchaChecked, setCaptchaChecked] = useState(false);
   const [marketingOptIn, setMarketingOptIn] = useState(false);
   const [formStatus, setFormStatus] = useState("idle");
 
@@ -45,11 +43,10 @@ export default function ContactUsPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!captchaChecked) {
-      alert("Please confirm you are not a robot.");
-      return;
-    }
     setFormStatus("submitting");
+    
+    // Note: Official reCAPTCHA validation logic should go here before the fetch
+    
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -64,7 +61,6 @@ export default function ContactUsPage() {
           "country-city": "", "company-size": "", "service-interest": "", 
           "budget-range": "", "timeline": "" 
         });
-        setCaptchaChecked(false);
         setMarketingOptIn(false);
       } else {
         setFormStatus("error");
@@ -96,7 +92,7 @@ export default function ContactUsPage() {
           <div className="company-shell">
             <div className="contact-card-grid">
               {contactCards.map((item) => (
-                <article key={item.title} className="contact-feature-card">
+                <article key={item.title} className="contact-feature-card premium-hover-card">
                   <h3>{item.title}</h3>
                   <a href={`mailto:${item.detail}`} className="contact-email-link">{item.detail}</a>
                   <p>{item.copy}</p>
@@ -109,7 +105,6 @@ export default function ContactUsPage() {
         <section className="contact-form-section">
           <div className="company-shell contact-form-grid">
             
-            {/* The wrapper keeps the white background and shadow intact */}
             <div className="contact-form-card">
               <div className="contact-form-header">
                 <p className="contact-section-kicker">Send us a note</p>
@@ -117,8 +112,9 @@ export default function ContactUsPage() {
                 <p className="form-subheading">Tell us about your business challenges. Our team of AI and strategy experts will help you build a roadmap to measurable ROI.</p>
               </div>
 
-              {/* --- UNIFIED HOMEPAGE FORM --- */}
               <form className="innovate-form" onSubmit={handleSubmit}>
+                
+                {/* Standard Inputs */}
                 <div className="form-full-width">
                   <label htmlFor="enquiry-type">Type of Enquiry*</label>
                   <select id="enquiry-type" name="enquiry-type" required value={formData["enquiry-type"]} onChange={handleInputChange}>
@@ -205,17 +201,6 @@ export default function ContactUsPage() {
                   </label>
                 </div>
 
-                <div className={`captcha-box ${captchaChecked ? "verified" : ""}`} onClick={() => setCaptchaChecked(!captchaChecked)}>
-                  <span className="captcha-check">
-                    {captchaChecked && (<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>)}
-                  </span>
-                  <span className="captcha-label">I'm not a robot</span>
-                  <div className="recaptcha-brand">
-                    <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA logo" width="24" />
-                    <small>reCAPTCHA<br/>Privacy - Terms</small>
-                  </div>
-                </div>
-
                 <button className="premium-submit-btn contact-submit-btn" type="submit" disabled={formStatus === "submitting"}>
                   {formStatus === "submitting" ? "SENDING..." : "SEND BUSINESS BRIEF"}
                 </button>
@@ -242,9 +227,18 @@ export default function ContactUsPage() {
               <div className="contact-aside-card">
                 <p className="contact-section-kicker">What to expect</p>
                 <ul className="contact-check-list">
-                  <li>Response within 1 business day</li>
-                  <li>Intro call tailored to your business context</li>
-                  <li>Clear next steps after the conversation</li>
+                  <li>
+                    <svg className="principle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Response within 1 business day
+                  </li>
+                  <li>
+                    <svg className="principle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Intro call tailored to your business context
+                  </li>
+                  <li>
+                    <svg className="principle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Clear next steps after the conversation
+                  </li>
                 </ul>
               </div>
 
