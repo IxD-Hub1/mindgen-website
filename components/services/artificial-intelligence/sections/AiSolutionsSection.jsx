@@ -1,3 +1,5 @@
+"use client";
+
 const solutions = [
   ["/assets/images/services/ai/Supply Chain.webp", "Supply chain leaders reviewing operational metrics", "Supply Chain", "Build a more agile, resilient, and customer-centric supply chain with AI-guided planning, visibility, and response.", "Explore MindGen AI for supply chain"],
   ["/assets/images/services/ai/finance.webp", "Finance and business dashboard discussion", "Finance", "Enhance cashflows, boost revenue, and optimise profit margins with AI-powered insights and finance workflows.", "Explore MindGen AI in finance"],
@@ -15,15 +17,16 @@ export default function AiSolutionsSection() {
           <h2>Be more productive, faster, across every team in your business.</h2>
           <p>Create tangible value across every part of your business, from supply chain to finance, procurement, HR, customer experience, and IT.</p>
         </div>
-
         <div className="ai-solution-grid">
           {solutions.map(([src, alt, title, copy, cta]) => (
-            <article className="ai-solution-card" key={title}>
-              <img src={src} alt={alt} />
+            <article className="ai-solution-card premium-hover-card" key={title}>
+              <div className="ai-card-img-wrapper">
+                <img src={src} alt={alt} />
+              </div>
               <div className="ai-solution-copy">
                 <h3>{title}</h3>
                 <p>{copy}</p>
-                <a href="#ai-contact">{cta}</a>
+                <a href="#ai-contact" className="text-link">{cta} &rarr;</a>
               </div>
             </article>
           ))}
