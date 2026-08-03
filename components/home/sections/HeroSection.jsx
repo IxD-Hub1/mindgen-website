@@ -12,24 +12,29 @@ export default function HeroSection() {
       
       <div className="hero-content premium-hero-layout">
         
-        <h1>Build an Al-Native Business, Not Just Another Al Project</h1>
+        <h1>Build an AI-Native Business, Not Just Another AI Project</h1>
         
         <p className="hero-subheadline">
-          MindGen helps enterprises, governments, and growth-focused organizations redesign strategy, workflows, data, and decision systems to create measurable business outcomes with Al.
+          MindGen helps enterprises, governments, and growth-focused organizations redesign strategy, workflows, data, and decision systems to create measurable business outcomes with AI.
         </p>
         
         <div className="hero-cta-group">
           <a href="/contact-us" className="hero-btn-primary">
             Book A Strategy Workshop
           </a>
-          <a href="/solutions/ai-strategy" className="hero-btn-secondary">
-            Assess Your Al Readiness
+          <a
+            href="https://mindgen-airi-production.up.railway.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-btn-secondary"
+          >
+            Assess Your AI Readiness
           </a>
         </div>
 
         <div className="hero-pain-statement">
           <p>
-            <strong>Al does not fail because the technology is weak.</strong> Al fails when strategy, workflows, data, governance, and people are not redesigned together. MindGen closes that execution gap.
+            <strong>AI does not fail because the technology is weak.</strong> AI fails when strategy, workflows, data, governance, and people are not redesigned together. MindGen closes that execution gap.
           </p>
         </div>
         
