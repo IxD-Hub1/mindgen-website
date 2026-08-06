@@ -46,6 +46,37 @@ const metrics = [
   { value: "24/7", label: "Distributed collaboration model spanning strategy, build, and support" },
 ];
 
+const foundersData = [
+  {
+    name: "S. Thirugnana Sambandam",
+    role: "FOUNDER",
+    stats: [
+      { value: "~20 yrs", label: "CORPORATE STRATEGY" },
+      { value: "180+", label: "BRANDS TRANSFORMED" },
+      { value: "IIM Indore", label: "ALUMNUS" }
+    ],
+    bio: [
+      "A corporate strategist and AI transformation leader with nearly two decades of experience across FMCG, real estate, healthcare and diversified industries, having led strategy and business transformation for over 180 brands. An alumnus of IIM Indore, with Strategy Management qualifications from Australia and Executive Management in Artificial Intelligence, he brings a rare combination of business strategy, technology and governance expertise.",
+      "As Founder of MindGen Pvt Ltd he is driving enterprise and public-sector AI adoption through strategic consulting and AI-native solutions. He has contributed to strategy, public policy and governance initiatives, serving as an Advisor to the Governors of Tamil Nadu and West Bengal, and is associated with the Indo-Australia Business Council."
+    ],
+    award: "Under his leadership MindGen was honoured with the Best AI Startup Award at the AICRA Summit, supported by the Ministry of Electronics and Information Technology (MeitY), Government of India."
+  },
+  {
+    name: "Manas Panda",
+    role: "CO-FOUNDER & COO",
+    stats: [
+      { value: "22+ yrs", label: "MARKETING & GROWTH" },
+      { value: "APAC • MENA\nSouth Asia • Africa", label: "MARKETS BUILT" },
+      { value: "MoneyGram\nInternational", label: "APAC, ME & AFRICA LEADERSHIP" }
+    ],
+    bio: [
+      "A growth-driven marketing leader and AI strategist with more than 22 years of experience across consumer marketing, MarTech, go-to-market, business growth and global market expansion. He works at the intersection of business, data, product and execution, helping organisations move from AI ideas to practical, scalable systems that improve decision-making, customer experience, workflow efficiency and revenue growth.",
+      "At MindGen he leads Forward Deployment Engineering — working closely with clients to understand their real business challenges, data gaps, workflows and growth priorities, then designing and deploying AI-led solutions that are usable, measurable and commercially relevant.",
+      "He has worked across Asia Pacific, South Asia, MENA, Africa and other international markets, building omnichannel strategies, managing regional portfolios, driving ROI-led campaigns and scaling business outcomes — including a leadership role at MoneyGram International covering APAC, the Middle East and Africa."
+    ]
+  }
+];
+
 export default function AboutUsPage() {
   return (
     <>
@@ -91,6 +122,52 @@ export default function AboutUsPage() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* --- NEW FOUNDERS SECTION --- */}
+        <section className="about-founders-section">
+          <div className="company-shell">
+            
+            <div className="founders-intro">
+              <p className="about-mini-label">Leadership</p>
+              <h2>Guided by four decades of combined experience in strategy, AI, and global market growth.</h2>
+              <p>
+                MindGen is built by an operating team that has delivered AI transformation for enterprises and public sector bodies, successfully taking products and brands to market across the Asia Pacific, Middle East, and Africa.
+              </p>
+            </div>
+
+            <div className="founders-grid">
+              {foundersData.map((founder, index) => (
+                <article key={founder.name} className="founder-card">
+                  <aside className="founder-sidebar">
+                    <div className="founder-header">
+                      <h3>{founder.name}</h3>
+                      <span className="founder-role">{founder.role}</span>
+                    </div>
+                    <div className="founder-stats">
+                      {founder.stats.map((stat, i) => (
+                        <div key={i} className="stat-item">
+                          <span className="stat-value">{stat.value}</span>
+                          <span className="stat-label">{stat.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </aside>
+                  <div className="founder-bio">
+                    {founder.bio.map((paragraph, i) => (
+                      <p key={i}>{paragraph}</p>
+                    ))}
+                    {founder.award && (
+                      <div className="award-callout">
+                        <strong>Honoured:</strong> {founder.award.replace('Honoured with the ', '')}
+                      </div>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+
           </div>
         </section>
 
@@ -179,7 +256,7 @@ export default function AboutUsPage() {
                 <p className="about-section-kicker">Partner with MindGen</p>
                 <h2>Looking for a team that can connect AI ambition to execution?</h2>
               </div>
-              <a href="/#contact" className="about-pill-btn strategy-btn">Book a Strategy Workshop</a>
+              <a href="/contact-us" className="about-pill-btn strategy-btn">Book a Strategy Workshop</a>
             </div>
           </div>
         </section>

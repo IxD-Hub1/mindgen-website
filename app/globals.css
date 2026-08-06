@@ -5583,6 +5583,241 @@ body.theme-dark .about-pill-btn.strategy-btn:hover {
 }
 
 /* ==========================================================================
+   ABOUT US PAGE: FOUNDERS SECTION STYLES (UPGRADED)
+   ========================================================================== */
+
+.about-founders-section {
+  padding: 80px 0;
+  background: #D3DFEE; /* A very soft, premium cool-grey */
+}
+
+.founders-intro {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 64px;
+}
+
+.founders-intro h2 {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  color: #182547;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.founders-intro p {
+  font-size: 1.15rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.founders-grid {
+  display: grid;
+  gap: 40px;
+}
+
+/* Upgraded to an interactive card */
+.founder-card {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 48px;
+  padding: 48px;
+  background: #ffffff;
+  border: 1px solid rgba(24, 37, 71, 0.06);
+  border-radius: 24px;
+  box-shadow: 0 12px 36px rgba(24, 37, 71, 0.04);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle top accent line instead of a heavy border */
+.founder-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1E3A8A, #14b8a6);
+  opacity: 0.8;
+}
+
+.founder-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(24, 37, 71, 0.08);
+  border-color: rgba(20, 184, 166, 0.3); /* Teal glow on hover */
+}
+
+.founder-header h3 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #1E3A8A;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.founder-role {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #14b8a6; 
+  margin-bottom: 28px;
+}
+
+.founder-stats {
+  background: #f8fafc;
+  padding: 32px 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(24, 37, 71, 0.04);
+}
+
+.stat-item {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(24, 37, 71, 0.08);
+}
+
+.stat-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* Highlighted numbers to draw the eye */
+.stat-value {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #182547; /* Changed back to heavy navy */
+  margin-bottom: 6px;
+  white-space: pre-line; 
+  line-height: 1.3;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.founder-bio p {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.founder-bio p:last-of-type {
+  margin-bottom: 0;
+}
+
+.award-callout {
+  margin-top: 32px;
+  padding: 24px 28px;
+  background: rgba(20, 184, 166, 0.05); /* Soft teal background */
+  border-left: 4px solid #14b8a6; 
+  font-size: 1rem;
+  color: #182547;
+  line-height: 1.6;
+  border-radius: 0 12px 12px 0;
+}
+
+/* --- Dark Mode Overrides for Founders --- */
+body.theme-dark .about-founders-section {
+  background: #13284F;
+}
+
+body.theme-dark .founders-intro h2,
+body.theme-dark .founder-header h3,
+body.theme-dark .award-callout {
+  color: #ffffff;
+}
+
+body.theme-dark .founders-intro p,
+body.theme-dark .founder-bio p {
+  color: #94a3b8;
+}
+
+body.theme-dark .founder-card {
+  background: #0f172a;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+body.theme-dark .founder-card:hover {
+  border-color: #2dd4bf;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6);
+}
+
+body.theme-dark .founder-role,
+body.theme-dark .stat-value {
+  color: #2dd4bf; 
+}
+
+body.theme-dark .founder-stats {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.theme-dark .award-callout {
+  background: rgba(45, 212, 191, 0.1);
+  border-left-color: #2dd4bf;
+}
+
+body.theme-dark .stat-item {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-dark .stat-label {
+  color: #94a3b8;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 960px) {
+  .founder-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px;
+  }
+  .founder-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 24px;
+  }
+  .stat-item {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+@media (max-width: 600px) {
+  .founder-card {
+    padding: 24px;
+  }
+  .founder-stats {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .stat-item {
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(24, 37, 71, 0.08);
+  }
+  body.theme-dark .stat-item {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+  .stat-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+/* ==========================================================================
    HOME: TRUST STRIP / CREDIBILITY STRIP (Replaces Marquee)
    ========================================================================== */
    
@@ -6462,20 +6697,24 @@ body.theme-dark .service-action-btn:hover {
 
 /* --- REUSABLE ABOUT TYPOGRAPHY --- */
 .about-mini-label {
-  color: #1E3A8A; /* Brand primary blue */
+  color: #475569; /* Brand primary blue */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.85rem;
+  font-size: 1.15rem;
   margin-bottom: 12px;
 }
 
 /* --- INTRO & STORY SECTION --- */
-.about-intro-section,
-.about-capabilities-section,
-.about-metrics-section {
+.about-intro-section {
   background: #f8fafc;
   padding: 80px 0;
+}
+
+.about-capabilities-section,
+.about-metrics-section {
+  background: #D3DFEE;
+  padding: 30px 0;
 }
 
 .about-story-grid {
@@ -6542,7 +6781,7 @@ body.theme-dark .service-action-btn:hover {
 
 /* --- PRINCIPLES SECTION --- */
 .about-principles-section {
-  background: #D3DFEE; /* Breaking up the flow with light blue */
+  background: #F8FAFC; /* Breaking up the flow with light blue */
   padding: 100px 0;
 }
 
@@ -6561,7 +6800,7 @@ body.theme-dark .service-action-btn:hover {
 }
 
 .about-principles-copy p {
-  color: #3a5279;
+  color: #475569;
   font-size: 1.15rem;
   line-height: 1.6;
 }
@@ -6778,9 +7017,9 @@ body.theme-dark .service-action-btn:hover {
    DARK MODE OVERRIDES
    ========================================================================== */
 body.theme-dark .about-page { background: #070B13; color: #ffffff; }
-body.theme-dark .about-intro-section, 
+body.theme-dark .about-intro-section { background: #070B13; } 
 body.theme-dark .about-capabilities-section, 
-body.theme-dark .about-metrics-section { background: #070B13; }
+body.theme-dark .about-metrics-section { background: #13284F; }
 body.theme-dark .about-mini-label { color: #60a5fa; }
 body.theme-dark .about-story-panel, 
 body.theme-dark .about-focus-card, 
@@ -6801,7 +7040,7 @@ body.theme-dark .about-growth-line { background: #38bdf8; }
 body.theme-dark .about-section-heading h2 { color: #ffffff; }
 body.theme-dark .about-metric-card strong { color: #38bdf8; }
 
-body.theme-dark .about-principles-section { background: #13284F; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+body.theme-dark .about-principles-section { background: #070B13; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
 body.theme-dark .about-principles-copy h2 { color: #ffffff; }
 body.theme-dark .about-principles-copy p { color: #cbd5e1; }
 body.theme-dark .about-principle-item { background: #1e293b; border-color: rgba(255,255,255,0.05); }
