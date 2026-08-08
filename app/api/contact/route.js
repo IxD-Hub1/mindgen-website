@@ -33,7 +33,7 @@ export async function POST(request) {
 
     // Updated internal lead notification
     const teamNotificationOptions = {
-      from: `"MindGen Web Engine" <ravikianjadhav10@gmail.com>`,
+      from: `"MindGen Web Engine" <ravikiranjadhav10@gmail.com>`,
       to: 'weixdhub@gmail.com', // Keep your actual email here!
       subject: `🚨 New Lead [${enquiryType}]: ${companyName}`,
       html: `
@@ -61,7 +61,7 @@ export async function POST(request) {
     };
 
     const customerThankYouOptions = {
-      from: `"MindGen" <weixdhub@gmail.com>`, 
+      from: `"MindGen" <ravikiranjadhav10@gmail.com>`, 
       to: email, 
       subject: `Thank you for contacting MindGen`,
       html: `

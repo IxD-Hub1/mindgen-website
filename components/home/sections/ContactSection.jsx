@@ -18,21 +18,33 @@ export default function ContactSection() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
     setFormStatus('submitting');
     
-    // Simulate API call
-    setTimeout(() => {
-      setFormStatus('success');
-      setFormData({ 
-        'enquiry-type': 'Strategy Workshop', 'first-name': '', 'last-name': '', 
-        'biz-email': '', 'phone-number': '', 'company-name': '', 
-        'country-city': '', 'company-size': '', 'service-interest': '', 
-        'budget-range': '', 'timeline': '' 
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, marketingOptIn }),
       });
-      setMarketingOptIn(false);
-    }, 1500);
+
+      if (response.ok) {
+        setFormStatus('success');
+        setFormData({ 
+          'enquiry-type': 'Strategy Workshop', 'first-name': '', 'last-name': '', 
+          'biz-email': '', 'phone-number': '', 'company-name': '', 
+          'country-city': '', 'company-size': '', 'service-interest': '', 
+          'budget-range': '', 'timeline': '' 
+        });
+        setMarketingOptIn(false);
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setFormStatus('error');
+    }
   };
 
   return (
