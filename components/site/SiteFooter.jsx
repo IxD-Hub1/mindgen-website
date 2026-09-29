@@ -30,7 +30,7 @@ export default function SiteFooter() {
 
           <nav className="footer-links" aria-label="Footer primary">
             <a href="/solutions">Solutions</a>
-            <a href="/industries">Industries</a>
+            <a href="/#industries">Industries</a> {/* Updated anchor link */}
             <a href="/case-studies">Case Studies</a>
             <a href="/insights">Insights</a>
             <a href="/about-us">About</a>
@@ -80,10 +80,13 @@ export default function SiteFooter() {
             <div className="address-block">
               <strong>Mumbai Office</strong>
               <p>1A107, Wework, Raheja Platinum, Sagbaugh Road,<br />Marol, Andheri East, Mumbai - 400059, Maharashtra.</p>
+              {/* UPDATE MANAS BHAI'S NUMBER BELOW */}
+              <a href="tel:+919987748581" className="footer-phone">+91 99877 48581</a>
             </div>
             <div className="address-block">
               <strong>Chennai Office</strong>
               <p>No 5, Syndicate Bank Colony, 200 feet Road,<br />Kovilambakkam, Chennai - 600117, Tamil Nadu.</p>
+              <a href="tel:+919840555084" className="footer-phone">+91 98405 55084</a>
             </div>
           </div>
           
@@ -92,14 +95,12 @@ export default function SiteFooter() {
 
       <div className="footer-bottom">
         <div className="footer-container footer-bottom-inner">
-          {/* 3. Re-aligned Bottom Bar */}
+          {/* 3. Re-aligned Bottom Bar (Newsroom/Accessibility removed) */}
           <div className="footer-legal">
             <span>&copy; 2026 MindGen</span>
-            <a href="#">LEGAL NOTICES</a>
-            <a href="#">NEWSROOM</a>
-            <a href="#">PRIVACY</a>
-            <a href="#">ACCESSIBILITY</a>
-            <a href="#">COOKIE SETTINGS</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="#" onClick={(e) => e.preventDefault()}>Cookie Settings</a>
           </div>
         </div>
       </div>

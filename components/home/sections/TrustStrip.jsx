@@ -1,3 +1,53 @@
+'use client';
+
+import { useState, useEffect, useRef } from 'react';
+
+// Lightweight custom counter component
+const AnimatedCounter = ({ end, suffix, label }) => {
+  const [count, setCount] = useState(0);
+  const nodeRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          let start = 0;
+          const duration = 1500; // 1.5 seconds to finish counting
+          const incrementTime = 30;
+          const totalSteps = Math.ceil(duration / incrementTime);
+          const stepValue = end / totalSteps;
+
+          const counter = setInterval(() => {
+            start += stepValue;
+            if (start >= end) {
+              setCount(end);
+              clearInterval(counter);
+            } else {
+              setCount(Math.ceil(start));
+            }
+          }, incrementTime);
+
+          // Disconnect so it only animates the very first time they scroll to it
+          observer.disconnect(); 
+        }
+      },
+      { threshold: 0.5 } // Triggers when 50% of the element is visible
+    );
+
+    if (nodeRef.current) {
+      observer.observe(nodeRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [end]);
+
+  return (
+    <strong ref={nodeRef}>
+      {count}{suffix} {label}
+    </strong>
+  );
+};
+
 export default function TrustStrip() {
   return (
     <section className="trust-strip" aria-label="MindGen Credibility and Experience">
@@ -15,7 +65,8 @@ export default function TrustStrip() {
               <rect width="20" height="14" x="2" y="6" rx="2" />
             </svg>
             <p className="trust-metric-text">
-              <strong>20+ years</strong> of transformation experience
+              <AnimatedCounter end={20} suffix="+" label="years" />
+              of transformation experience
             </p>
           </div>
 
@@ -26,7 +77,8 @@ export default function TrustStrip() {
               <path d="M2 12h20" />
             </svg>
             <p className="trust-metric-text">
-              <strong>75+ countries</strong> served through founding-team experience
+              <AnimatedCounter end={75} suffix="+" label="countries" />
+              served through founding-team experience
             </p>
           </div>
 
@@ -36,7 +88,8 @@ export default function TrustStrip() {
               <path d="m9 12 2 2 4-4" />
             </svg>
             <p className="trust-metric-text">
-              <strong>Enterprise &amp; government</strong> advisory mindset
+              <strong>Enterprise &amp; government</strong>
+              advisory mindset
             </p>
           </div>
 
@@ -46,7 +99,8 @@ export default function TrustStrip() {
               <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
             </svg>
             <p className="trust-metric-text">
-              <strong>Strategy, AI, data,</strong> workflow, and growth expertise
+              <strong>Strategy, AI, data,</strong>
+              workflow, and growth expertise
             </p>
           </div>
 
