@@ -12,11 +12,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^15.5.15",
-    "nodemailer": "^9.0.5",
-    "postcss": "^8.5.26",
+    "next": "^16.4.3",
+    "nodemailer": "^10.2.1",
+    "postcss": "^8.5.32",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.5",
+    "source-map-js": "^1.2.2"
   }
 }
