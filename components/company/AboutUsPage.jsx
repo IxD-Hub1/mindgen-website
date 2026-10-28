@@ -49,31 +49,89 @@ const metrics = [
 const foundersData = [
   {
     name: "S. Thirugnana Sambandam",
-    role: "FOUNDER",
+    role: "FOUNDER & CEO",
+    image: "", // Add actual path when ready
     stats: [
-      { value: "~20 yrs", label: "CORPORATE STRATEGY" },
+      { value: "16+ yrs", label: "STRATEGY & GOVERNANCE" },
       { value: "180+", label: "BRANDS TRANSFORMED" },
-      { value: "IIM Indore", label: "ALUMNUS" }
+      { value: "IIM Indore", label: "EXECUTIVE AI ALUMNUS" }
     ],
     bio: [
-      "A corporate strategist and AI transformation leader with nearly two decades of experience across FMCG, real estate, healthcare and diversified industries, having led strategy and business transformation for over 180 brands. An alumnus of IIM Indore, with Strategy Management qualifications from Australia and Executive Management in Artificial Intelligence, he brings a rare combination of business strategy, technology and governance expertise.",
-      "As Founder of MindGen Pvt Ltd he is driving enterprise and public-sector AI adoption through strategic consulting and AI-native solutions. He has contributed to strategy, public policy and governance initiatives, serving as an Advisor to the Governors of Tamil Nadu and West Bengal, and is associated with the Indo-Australia Business Council."
+      "S. Thirugnana Sambandam is a strategy and management professional with over 16 years of experience across corporate leadership, strategic advisory, and governance initiatives. He pursued studies in Strategy Management in Australia and has worked with PwC, before moving into middle and senior management roles across diverse corporate organisations.",
+      "Over the course of his career, he has contributed to the strategy, positioning, and growth of more than 180 brands across multiple sectors, working closely with company chairpersons, promoters, senior leadership teams, and organisations on business and strategic management initiatives. His academic and executive learning credentials include specialisation in Environmental Economics and an Executive Management Programme in Artificial Intelligence from IIM Indore.",
+      "As Co-Founder of MindGen, he plays a key role in shaping the company’s strategic direction, institutional positioning, governance approach, and ecosystem development. He supports the company in identifying high-value opportunities, strengthening institutional credibility, and building partnerships that can accelerate the adoption and commercialisation of MindGen’s AI-led solutions."
     ],
-    award: "Under his leadership MindGen was honoured with the Best AI Startup Award at the AICRA Summit, supported by the Ministry of Electronics and Information Technology (MeitY), Government of India."
+    award: "Beyond the corporate sector, he has contributed to public-sector strategy, governance, and institutional initiatives. He served as an Advisor to the Governor of Tamil Nadu from 2022 to 2026 and currently serves as Principal Advisor to the Hon’ble Governor of West Bengal."
   },
   {
     name: "Manas Panda",
     role: "CO-FOUNDER & COO",
+    image: "/assets/images/founders/manas.jpg", // Add actual path when ready
     stats: [
-      { value: "22+ yrs", label: "MARKETING & GROWTH" },
+      { value: "22+ yrs", label: "AI STRATEGY & MARTECH" },
       { value: "APAC • MENA\nSouth Asia • Africa", label: "MARKETS BUILT" },
-      { value: "MoneyGram\nInternational", label: "APAC, ME & AFRICA LEADERSHIP" }
+      { value: "IIM Bangalore\nIIM Indore", label: "ALUMNUS" }
     ],
     bio: [
-      "A growth-driven marketing leader and AI strategist with more than 22 years of experience across consumer marketing, MarTech, go-to-market, business growth and global market expansion. He works at the intersection of business, data, product and execution, helping organisations move from AI ideas to practical, scalable systems that improve decision-making, customer experience, workflow efficiency and revenue growth.",
-      "At MindGen he leads Forward Deployment Engineering — working closely with clients to understand their real business challenges, data gaps, workflows and growth priorities, then designing and deploying AI-led solutions that are usable, measurable and commercially relevant.",
-      "He has worked across Asia Pacific, South Asia, MENA, Africa and other international markets, building omnichannel strategies, managing regional portfolios, driving ROI-led campaigns and scaling business outcomes — including a leadership role at MoneyGram International covering APAC, the Middle East and Africa."
+      "Manas Panda is an AI strategist, transformation consultant, and growth-driven marketing leader with over 22 years of experience across AI-led transformation, MarTech, Go-To-Market strategy, business growth, customer experience, and international market expansion. His experience spans APAC, South Asia, MENA, Africa, and international markets, with leadership roles across MoneyGram International, Paragon Group UK, HH Global, and DDB Mudra Group.",
+      "Over the course of his career, he has worked across global and regional markets, connecting business strategy, marketing, technology, data, operations, and customer experience to deliver measurable growth and transformation. His experience includes building and managing complex client, partner, vendor, and delivery ecosystems.",
+      "As Co-Founder & COO of MindGen Pvt Ltd, he leads AI strategy, product development, Forward Deployment Engineering, go-to-market, and commercialisation initiatives. He works closely with organisations to identify business challenges, data and workflow gaps, prioritise high-value AI use cases, and translate them into practical, scalable, and measurable AI-led solutions."
     ]
+  },
+  {
+    name: "Dr. P Pavithra",
+    role: "CO-FOUNDER & DIRECTOR",
+    image: "", // Add actual path when ready
+    stats: [
+      { value: "10+ yrs", label: "EDTECH & INSTITUTIONS" },
+      { value: "Forbes India", label: "MARQUEE EDUPRENEUR 2019" },
+      { value: "PebHok", label: "TRADEMARKED BRAND FOUNDER" }
+    ],
+    bio: [
+      "Dr. Pavithra is an education entrepreneur and healthcare professional with over 10 years of experience across education, early learning, EdTech, and institution building. She pursued Dentistry from Annamalai University and spent nearly five years in the healthcare sector before transitioning into education and entrepreneurship.",
+      "Over the past decade, she has built and developed her own trademarked education brand, PebHok, creating learning and training initiatives across multiple locations. Through her EdTech and preschool ventures, she has trained more than 1,000 learners and supported the education and development of thousands of primary and preschool children.",
+      "For MindGen, her background can inform educator readiness, Health-Tech design, assessment journeys and institutional adoption. This complements the founding team’s strategy, growth and AI implementation experience."
+    ],
+    award: "Her work received national recognition when she was featured in the Forbes India Marquee Edition 2019 among 35 Edupreneurs recognised for their contribution to children’s education in India. Her institution has also been recognised as a Great Place to Study."
+  }
+];
+
+const flywheelData = [
+  {
+    num: "01",
+    stage: "Diagnose",
+    activity: "Business, process, data and customer-journey diagnostics",
+    effect: "Consulting revenue; discovery of repeatable pain points"
+  },
+  {
+    num: "02",
+    stage: "Design",
+    activity: "AI roadmap, workflow redesign, product concept and governance",
+    effect: "Creates domain and workflow IP"
+  },
+  {
+    num: "03",
+    stage: "Build",
+    activity: "AI applications, dashboards, agents, integrations and operating systems",
+    effect: "Converts know-how into reusable software; accounting treatment requires review"
+  },
+  {
+    num: "04",
+    stage: "Deploy",
+    activity: "Forward-deployed implementation, adoption and measurement",
+    effect: "Produces real-world evidence and implementation revenue"
+  },
+  {
+    num: "05",
+    stage: "Productise",
+    activity: "Standard packaging, modules, APIs, data schemas and controls",
+    effect: "Improves gross margin and repeatability"
+  },
+  {
+    num: "06",
+    stage: "Scale",
+    activity: "Subscription, usage, enterprise contracts and channel distribution",
+    effect: "Creates recurring revenue and potential valuation multiple expansion"
   }
 ];
 
@@ -138,9 +196,21 @@ export default function AboutUsPage() {
             </div>
 
             <div className="founders-grid">
-              {foundersData.map((founder, index) => (
+              {foundersData.map((founder) => (
                 <article key={founder.name} className="founder-card">
                   <aside className="founder-sidebar">
+                    
+                    {/* NEW IMAGE PLACEHOLDER */}
+                    <div className="founder-image-wrapper">
+                      {founder.image ? (
+                        <img src={founder.image} alt={founder.name} className="founder-photo" />
+                      ) : (
+                        <div className="founder-photo-fallback">
+                           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                      )}
+                    </div>
+
                     <div className="founder-header">
                       <h3>{founder.name}</h3>
                       <span className="founder-role">{founder.role}</span>
@@ -160,7 +230,7 @@ export default function AboutUsPage() {
                     ))}
                     {founder.award && (
                       <div className="award-callout">
-                        <strong>Honoured:</strong> {founder.award.replace('Honoured with the ', '')}
+                        <strong>Highlight:</strong> {founder.award}
                       </div>
                     )}
                   </div>
@@ -171,27 +241,35 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        <section className="about-principles-section">
-          <div className="company-shell about-principles-grid">
-            <div className="about-principles-copy">
-              <p className="about-mini-label">How we work</p>
-              <h2>We turn potential into performance with clarity at every step.</h2>
+        <section className="about-flywheel-section">
+          <div className="company-shell">
+            
+            <div className="flywheel-header">
+              <p className="about-mini-label">How We Work</p>
+              <h2>The Services-to-Product Value Flywheel</h2>
               <p>
-                That means aligning stakeholders early, building responsibly, and creating experiences that teams can adopt. Our role
-                is to make transformation feel executable, not abstract.
+                We do not just build software; we engineer measurable business outcomes. Our proven six-stage operational loop turns strategic consulting into scalable, proprietary AI products.
               </p>
             </div>
 
-            <div className="about-principles-list">
-              {principles.map((item) => (
-                <div key={item} className="about-principle-item">
-                  <svg className="principle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <p>{item}</p>
-                </div>
+            <div className="flywheel-grid">
+              {flywheelData.map((item) => (
+                <article key={item.num} className="flywheel-card">
+                  <div className="flywheel-card-front">
+                    <span className="flywheel-num">{item.num}</span>
+                    <h3>{item.stage}</h3>
+                    <p className="flywheel-activity">{item.activity}</p>
+                  </div>
+                  
+                  {/* Hidden by default, reveals on hover */}
+                  <div className="flywheel-card-reveal">
+                    <span className="reveal-label">Economic Effect</span>
+                    <p>{item.effect}</p>
+                  </div>
+                </article>
               ))}
             </div>
+
           </div>
         </section>
 

@@ -5479,20 +5479,6 @@ body.theme-dark .workshop-deliverables li p {
   transform: translateY(-2px);
 }
 
-/* --- 4. SVG Principle Icons (New) --- */
-.about-principle-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.principle-icon {
-  color: #1E3A8A;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
 /* --- 5. High-Contrast Metrics (New) --- */
 .about-metric-card {
   padding: 40px;
@@ -5560,11 +5546,6 @@ body.theme-dark .statement-year {
 /* Replace with this corrected block */
 body.theme-dark .statement-line {
   background: #60a5fa;
-}
-
-body.theme-dark .principle-icon {
-  color: #60a5fa;
-  background: transparent;
 }
 
 body.theme-dark .founder-statement-card h3,
@@ -5829,6 +5810,197 @@ body.theme-dark .stat-label {
     padding-bottom: 0;
     border-bottom: none;
   }
+}
+
+/* --- Founder Photo Integrations --- */
+.founder-image-wrapper {
+  width: 140px; /* Reduced from 100% */
+  height: 140px; /* Fixed height for a perfect square */
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: #e2e8f0;
+  border: 1px solid rgba(24, 37, 71, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.founder-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.founder-card:hover .founder-photo {
+  transform: scale(1.05); /* Subtle zoom effect on card hover */
+}
+
+.founder-photo-fallback {
+  color: #94a3b8;
+}
+
+body.theme-dark .founder-image-wrapper {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   ABOUT PAGE: FLYWHEEL SECTION (HOW WE WORK)
+   ========================================================================== */
+
+.about-flywheel-section {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+
+.flywheel-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+.flywheel-header h2 {
+  font-size: 2.5rem;
+  color: #0f172a;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.flywheel-header p {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.flywheel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.flywheel-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+}
+
+.flywheel-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #cbd5e1;
+  transition: background 0.4s ease;
+}
+
+.flywheel-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+
+.flywheel-card:hover::before {
+  background: #3b82f6; /* Switches to brand blue on hover */
+}
+
+.flywheel-num {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #e2e8f0;
+  line-height: 1;
+  margin-bottom: 24px;
+  display: block;
+  transition: color 0.4s ease;
+}
+
+.flywheel-card:hover .flywheel-num {
+  color: rgba(59, 130, 246, 0.2);
+}
+
+.flywheel-card-front h3 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.flywheel-activity {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- The Reveal Mechanic --- */
+.flywheel-card-reveal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 32px;
+  background: #1e3a8a;
+  color: #ffffff;
+  transform: translateY(101%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.flywheel-card:hover .flywheel-card-reveal {
+  transform: translateY(0);
+}
+
+.reveal-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #93c5fd;
+  margin-bottom: 8px;
+}
+
+.flywheel-card-reveal p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* --- Dark Mode Overrides --- */
+body.theme-dark .about-flywheel-section { background-color: #0B1329; }
+body.theme-dark .flywheel-header h2 { color: #ffffff; }
+body.theme-dark .flywheel-header p { color: #94a3b8; }
+body.theme-dark .flywheel-card { background: #121826; border-color: rgba(255, 255, 255, 0.05); }
+body.theme-dark .flywheel-card::before { background: #334155; }
+body.theme-dark .flywheel-card:hover::before { background: #38bdf8; }
+body.theme-dark .flywheel-num { color: #1e293b; }
+body.theme-dark .flywheel-card-front h3 { color: #ffffff; }
+body.theme-dark .flywheel-activity { color: #cbd5e1; }
+body.theme-dark .flywheel-card-reveal { background: #0f172a; border-top-color: #38bdf8; }
+body.theme-dark .reveal-label { color: #38bdf8; }
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+  .flywheel-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .flywheel-grid { grid-template-columns: 1fr; }
+  .flywheel-card { min-height: 240px; }
+  /* On mobile, we keep the reveal slightly visible at the bottom or rely on tap */
+  .flywheel-card-reveal { transform: translateY(0); position: relative; margin-top: 24px; padding: 24px; border-radius: 12px; }
 }
 
 /* ==========================================================================
