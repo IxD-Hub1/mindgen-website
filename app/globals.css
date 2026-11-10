@@ -8556,7 +8556,7 @@ body.theme-dark .ai-accelerator-card:hover {
 }
 
 /* --- 2. Problem Section --- */
-.product-problem-section { padding: 100px 0; background: #ffffff; }
+.product-problem-section { padding: 100px 0; background: #D3DFEE; }
 .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .problem-text h2 { font-size: 2.5rem; font-weight: 800; color: #0f172a; margin: 16px 0 24px; line-height: 1.2; }
 .problem-text p { font-size: 1.1rem; color: #475569; line-height: 1.7; }
@@ -8568,7 +8568,7 @@ body.theme-dark .ai-accelerator-card:hover {
 .p-card p { font-size: 0.95rem; color: #475569; margin: 0; }
 
 /* --- 3. Metrics Banner --- */
-.product-metrics-section { padding: 0 0 100px; background: #ffffff; }
+.product-metrics-section { padding: 100px 0; background: #ffffff; }
 .metrics-banner { background: #1e3a8a; border-radius: 24px; padding: 48px; display: flex; justify-content: space-between; align-items: center; color: #ffffff; }
 .p-metric { flex: 1; text-align: center; }
 .p-metric h3 { 
@@ -8594,8 +8594,10 @@ body.theme-dark .product-badge { color: #38BDF8; }
 body.theme-dark .hero-content h1 { color: #ffffff; }
 body.theme-dark .hero-content p { color: #94a3b8; }
 body.theme-dark .visual-glass-panel { background: rgba(15, 23, 42, 0.7); border-color: rgba(255, 255, 255, 0.1); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
-body.theme-dark .product-problem-section { background: #0f172a; }
+body.theme-dark .product-problem-section { background: #13284F; }
 body.theme-dark .problem-text h2 { color: #ffffff; }
+body.theme-dark .problem-text p { color: #94a3b8; }
+body.theme-dark .p-card p { color: #94a3b8; }
 body.theme-dark .p-card { background: #1e293b; border-color: rgba(255, 255, 255, 0.05); }
 body.theme-dark .p-card:hover { border-color: #38bdf8; }
 body.theme-dark .p-card h3 { color: #ffffff; }
@@ -8616,7 +8618,7 @@ body.theme-dark .metrics-banner { background: #25408E; border: 1px solid rgba(25
 /* --- 4. Product Architecture (Interactive Tabs) --- */
 .product-architecture-section {
   padding: 100px 0;
-  background: #f8fafc;
+  background: #D3DFEE;
   border-top: 1px solid rgba(15, 23, 42, 0.05);
 }
 
@@ -8783,8 +8785,10 @@ body.theme-dark .metrics-banner { background: #25408E; border: 1px solid rgba(25
 }
 
 /* Dark Mode Overrides */
-body.theme-dark .product-architecture-section { background: #0B1329; border-top-color: rgba(255,255,255,0.05); }
+body.theme-dark .product-architecture-section { background: #13284F; border-top-color: rgba(255,255,255,0.05); }
 body.theme-dark .architecture-header h2, body.theme-dark .pane-header h3, body.theme-dark .feature-item { color: #ffffff; }
+body.theme-dark .architecture-header p { color: #94a3b8; }
+body.theme-dark .pane-description { color: #94a3b8; }
 body.theme-dark .architecture-layout { background: #0f172a; border-color: rgba(255,255,255,0.05); }
 body.theme-dark .architecture-sidebar { border-right-color: rgba(255,255,255,0.05); }
 body.theme-dark .module-tab:hover { background: #1e293b; color: #ffffff; }
@@ -8865,6 +8869,17 @@ body.theme-dark .pane-features-grid { border-bottom-color: rgba(255,255,255,0.05
   box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25); 
 }
 
+/* Ensure the enterprise CTA button text is visible */
+.enterprise-cta .strategy-btn {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.enterprise-cta .strategy-btn:hover {
+  background: #38bdf8;
+  color: #ffffff;
+}
+
 .cta-content { 
   max-width: 600px; 
 }
@@ -8887,13 +8902,161 @@ body.theme-dark .pane-features-grid { border-bottom-color: rgba(255,255,255,0.05
 /* Dark Mode Overrides */
 body.theme-dark .integration-section { background: #0f172a; }
 body.theme-dark .integration-header h2 { color: #ffffff; }
+body.theme-dark .integration-header p { color: #94a3b8; }
 body.theme-dark .integration-pill { background: #1e293b; border-color: rgba(255,255,255,0.05); color: #cbd5e1; }
 body.theme-dark .integration-pill:hover { border-color: #38bdf8; color: #38bdf8; }
-body.theme-dark .clinios-cta-section { background: #0f172a; }
-body.theme-dark .clinios-cta-card { background: linear-gradient(135deg, #0B1329 0%, #1e293b 100%); border: 1px solid rgba(255,255,255,0.05); }
+body.theme-dark .clinios-cta-section { background: #13284F; }
+body.theme-dark .clinios-cta-card { background: linear-gradient(135deg, #25408E 0%, #1e293b 100%); border: 1px solid rgba(255,255,255,0.05); }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .clinios-cta-card { flex-direction: column; text-align: center; gap: 32px; padding: 40px 24px; }
   .integration-pill { padding: 12px 20px; font-size: 0.95rem; }
+}
+
+/* ==========================================================================
+   PRODUCT PAGE: Hospital OS AI (Enterprise)
+   ========================================================================== */
+
+/* --- 1. Enterprise Hero (Light Mode Native) --- */
+.enterprise-hero {
+  padding: 160px 0 80px;
+  background: #ffffff;
+}
+
+.enterprise-hero h1 { color: #0f172a; }
+.enterprise-hero p { color: #475569; }
+.enterprise-hero p strong { color: #0f172a; font-weight: 700; }
+
+.enterprise-badge { background: rgba(16, 185, 129, 0.1); color: #059669; }
+.secure-dot { background: #10b981; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+
+/* The Command Center remains dark like a physical terminal */
+.command-center-panel {
+  background: #0f172a; 
+  border-color: #1e293b;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+}
+
+.dark-header { border-bottom-color: rgba(255, 255, 255, 0.1); }
+.dark-header .mock-title { color: #cbd5e1; }
+
+.mock-data-stream {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 24px;
+  background: #020617;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stream-line { margin-bottom: 8px; line-height: 1.4; }
+.stream-line span { color: #3b82f6; font-weight: bold; }
+.stream-line.secure { color: #10b981; }
+.stream-line.secure span { color: #10b981; }
+
+.enterprise-chart {
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.1) 0%, rgba(255,255,255,0) 100%);
+  border-top-color: #10b981;
+}
+
+/* --- 2. DPDP Compliance Section (Light Mode Native) --- */
+.structural-compliance-section {
+  padding: 100px 0;
+  background: #D3DFEE;
+  border-top: 1px solid #e2e8f0;
+}
+
+.compliance-header { text-align: center; max-width: 800px; margin: 0 auto 60px; }
+.secure-label { color: #059669; background: rgba(16, 185, 129, 0.15); }
+.compliance-header h2 { font-size: 2.5rem; color: #0f172a; margin: 16px 0 24px; }
+.compliance-header p { font-size: 1.1rem; color: #475569; line-height: 1.7; }
+.compliance-header em { color: #059669; font-style: normal; font-weight: 700; }
+
+.compliance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.compliance-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px 32px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.compliance-card:hover { 
+  transform: translateY(-5px); 
+  border-color: #10b981; 
+  box-shadow: 0 15px 30px rgba(16, 185, 129, 0.1); 
+}
+
+.c-icon { color: #10b981; margin-bottom: 24px; }
+.compliance-card h3 { font-size: 1.35rem; color: #0f172a; margin-bottom: 16px; }
+.compliance-card p { color: #475569; line-height: 1.6; font-size: 1.05rem; }
+
+/* --- Enterprise AI Layer (Emerald Overrides for Light Mode) --- */
+.enterprise-ai-section .module-tab.active {
+  background: rgba(16, 185, 129, 0.08); /* Light Emerald background */
+  border-left-color: #10b981;           /* Emerald left border */
+  color: #059669;                       /* Darker Emerald text */
+}
+
+.enterprise-ai-section .pane-tagline {
+  color: #10b981; /* Emerald Tagline */
+}
+
+.enterprise-ai-section .feature-item svg {
+  stroke: #10b981; /* Emerald checkmarks */
+}
+
+/* --- 3. Enterprise Value Grid --- */
+.enterprise-value-section { padding: 100px 0; background: #ffffff; border-top: 1px solid #f1f5f9; }
+.value-header { text-align: center; margin-bottom: 60px; }
+.value-header h2 { font-size: 2.5rem; font-weight: 800; color: #0f172a; margin-bottom: 16px; }
+.value-header p { font-size: 1.1rem; color: #475569; }
+
+.value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.value-card { padding: 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 12px; }
+.v-indicator { width: 40px; height: 4px; background: #10b981; border-radius: 2px; margin-bottom: 8px; }
+.value-card h3 { font-size: 1.2rem; font-weight: 800; color: #0f172a; }
+.value-card p { font-size: 1rem; color: #475569; line-height: 1.6; margin: 0; }
+
+/* --- Enterprise CTA Button --- */
+.enterprise-cta .strategy-btn { background: #ffffff; color: #0f172a; }
+.enterprise-cta .strategy-btn:hover { background: #10b981; color: #ffffff; }
+
+/* ==========================================================================
+   HOSPITAL OS: TRUE MIDNIGHT DARK MODE OVERRIDES
+   (Differentiates from CliniOS's Navy Blue)
+   ========================================================================== */
+body.theme-dark .enterprise-hero { background: #020617; } /* True Black instead of Blue */
+body.theme-dark .enterprise-hero h1 { color: #ffffff; }
+body.theme-dark .enterprise-hero p { color: #94a3b8; }
+body.theme-dark .enterprise-hero p strong { color: #ffffff; }
+
+body.theme-dark .structural-compliance-section { background: #13284F; border-top-color: rgba(255,255,255,0.05); }
+body.theme-dark .compliance-header h2 { color: #ffffff; }
+body.theme-dark .compliance-header p { color: #94a3b8; }
+body.theme-dark .compliance-card { background: #020617; border-color: rgba(255, 255, 255, 0.05); }
+body.theme-dark .compliance-card h3 { color: #ffffff; }
+body.theme-dark .compliance-card p { color: #94a3b8; }
+body.theme-dark .compliance-card:hover { border-color: #10b981; box-shadow: 0 15px 30px rgba(16, 185, 129, 0.15); }
+
+/* Apply Midnight Theme to the AI Tabs */
+body.theme-dark .enterprise-ai-section { background: #020617; border-top-color: rgba(255,255,255,0.05); }
+body.theme-dark .enterprise-ai-section .architecture-layout { background: #040a18; border-color: rgba(255,255,255,0.05); }
+body.theme-dark .enterprise-ai-section .module-tab:hover { background: #020617; }
+body.theme-dark .value-header p { color: #94a3b8; }
+body.theme-dark .enterprise-ai-section .module-tab.active { background: rgba(16, 185, 129, 0.1); border-left-color: #10b981; color: #10b981; }
+
+body.theme-dark .enterprise-value-section { background: #13284F; border-top-color: rgba(255,255,255,0.02); }
+body.theme-dark .value-header h2 { color: #ffffff; }
+body.theme-dark .value-card { background: #020617; border-color: rgba(255,255,255,0.05); }
+body.theme-dark .value-card h3 { color: #ffffff; }
+body.theme-dark .value-card p { color: #94a3b8; }
+
+body.theme-dark .enterprise-cta { background: linear-gradient(135deg, #020617 0%, #040a18 100%); border: 1px solid rgba(255,255,255,0.05); }
+
+@media (max-width: 992px) {
+  .compliance-grid, .value-grid { grid-template-columns: 1fr; }
 }
