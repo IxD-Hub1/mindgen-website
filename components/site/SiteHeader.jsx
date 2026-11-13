@@ -1,16 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useTheme } from "../ThemeProvider"; // UPDATE THIS PATH based on where you saved the file!
+import { useTheme } from "../ThemeProvider"; 
 
 export default function SiteHeader() {
-  // 1. Pull the global state directly from our ThemeProvider
   const { isDark, toggleTheme } = useTheme();
-  
-  // Now tracks only 'solutions' and 'industries'
   const [activeMega, setActiveMega] = useState(null); 
 
-  // Helper methods to cleanly manage mouse enter/leave thresholds
   const handleMouseEnter = (menuId) => setActiveMega(menuId);
   const handleMouseLeave = () => setActiveMega(null);
 
@@ -26,7 +22,6 @@ export default function SiteHeader() {
           />
         </a>
 
-        {/* 1. New Streamlined Navigation Hierarchy */}
         <nav className="main-nav" aria-label="Main navigation">
           <a 
             href="#" 
@@ -42,7 +37,6 @@ export default function SiteHeader() {
           >
             Industries
           </a>
-          {/* Single-click links instantly close the mega menu on hover */}
           <a href="/case-studies" onMouseEnter={handleMouseLeave}>Case Studies</a>
           <a href="/insights" onMouseEnter={handleMouseLeave}>Insights</a>
           <a href="/about-us" onMouseEnter={handleMouseLeave}>About</a>
@@ -56,7 +50,7 @@ export default function SiteHeader() {
             type="button"
             aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
             aria-pressed={isDark ? "true" : "false"}
-            onClick={toggleTheme} /* Connects directly to the global context function */
+            onClick={toggleTheme}
           >
             {isDark ? "Light" : "Dark"}
           </button>
@@ -70,29 +64,39 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      {/* 2. MEGA NAV PANELS */}
-      
-      {/* Solutions Panel */}
+      {/* --- SOLUTIONS MEGA MENU --- */}
       <div 
         className={`mega-nav ${activeMega === "solutions" ? "visible-panel" : ""}`} 
         onMouseEnter={() => handleMouseEnter("solutions")}
       >
         <div className="mega-nav-inner">
-          <div className="mega-col" style={{ maxWidth: '280px' }}>
+          <div className="mega-col" style={{ maxWidth: '260px' }}>
             <h3>Solutions</h3>
-            <p>AI-native strategy and workflow transformation for growth-focused businesses.</p>
+            <p>AI-native strategy, software products, and workflow transformation for growth-focused businesses.</p>
           </div>
 
+          {/* New Column: Software Products */}
           <div className="mega-col">
+            <div className="mega-sub-header">Software Products</div>
             <ul>
-              {/* Added className="industries-link" to all anchor tags */}
-              <li><a href="/solutions/ai-strategy" className="industries-link">AI Strategy &amp; Readiness</a></li>
-              <li><a href="/solutions/agentic-workflow" className="industries-link">Agentic Workflow Automation</a></li>
-              <li><a href="/solutions/martech-revops" className="industries-link">Martech &amp; RevOps Transformation</a></li>
+              <li><a href="/solutions/clini-os" className="industries-link">CliniOS (Clinic SaaS)</a></li>
+              <li><a href="/solutions/hospital-os" className="industries-link">Hospital OS AI (Enterprise)</a></li>
             </ul>
           </div>
 
+          {/* Column: Consulting Services 1 */}
           <div className="mega-col">
+            <div className="mega-sub-header">Consulting Services</div>
+            <ul>
+              <li><a href="/solutions/ai-strategy" className="industries-link">AI Strategy &amp; Readiness</a></li>
+              <li><a href="/solutions/agentic-workflow" className="industries-link">Agentic Workflow Automation</a></li>
+              <li><a href="/solutions/martech-revops" className="industries-link">Martech &amp; RevOps</a></li>
+            </ul>
+          </div>
+
+          {/* Column: Consulting Services 2 */}
+          <div className="mega-col">
+            <div className="mega-sub-header" style={{ opacity: 0 }}>Spacer</div> {/* Invisible spacer to align lists */}
             <ul>
               <li><a href="/solutions/data-intelligence" className="industries-link">Data Intelligence &amp; Dashboards</a></li>
               <li><a href="/solutions/ai-training" className="industries-link">AI Training &amp; Adoption</a></li>
@@ -102,7 +106,7 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      {/* Industries Panel */}
+      {/* --- INDUSTRIES MEGA MENU --- */}
       <div 
         className={`mega-nav ${activeMega === "industries" ? "visible-panel" : ""}`}
         onMouseEnter={() => handleMouseEnter("industries")}
