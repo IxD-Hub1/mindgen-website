@@ -9323,6 +9323,7 @@ body.theme-dark .hero-subtext { color: #94a3b8; }
 body.theme-dark .hero-subtext strong { color: #ffffff; }
 
 body.theme-dark .maturity-section { background: #13284F; }
+body.theme-dark .maturity-section p { color: #94a3b8; }
 body.theme-dark .section-header h2 { color: #ffffff; }
 body.theme-dark .maturity-card { background: #1e293b; border-color: rgba(255,255,255,0.05); }
 body.theme-dark .maturity-card h3 { color: #ffffff; }
@@ -9334,7 +9335,7 @@ body.theme-dark .deliverables-section { background: #13284F; }
 body.theme-dark .d-item { background: #1e293b; border-color: rgba(255,255,255,0.05); color: #ffffff; }
 body.theme-dark .d-item:hover { border-color: #38bdf8; }
 body.theme-dark .d-item svg { color: #38bdf8; }
-body.theme-dark .deliverables-section p { color: #dce7f6; }
+body.theme-dark .deliverables-section p { color: #94a3b8; }
 
 /* Responsive */
 @media (max-width: 992px) {
@@ -9434,7 +9435,7 @@ body.theme-dark .deliverables-section p { color: #dce7f6; }
 /* --- 3. Use Cases Grid --- */
 .agent-use-cases-section {
   padding: 100px 0;
-  background: #f8fafc;
+  background: #D3DFEE;
   border-top: 1px solid #e2e8f0;
 }
 
@@ -9563,12 +9564,13 @@ body.theme-dark .deliverables-section p { color: #dce7f6; }
 }
 
 /* Dark Mode Overrides for Agentic Workflow Page */
-body.theme-dark .workflow-pipeline-section { background: #0B1329; }
+body.theme-dark .workflow-pipeline-section { background: #13284F; }
 body.theme-dark .pipeline-node { background: #1e293b; border-color: rgba(255,255,255,0.05); }
 body.theme-dark .pipeline-node h3 { color: #ffffff; }
 body.theme-dark .pipeline-node p { color: #94a3b8; }
-body.theme-dark .pipeline-node.highlight-node { background: rgba(59, 130, 246, 0.1); border-color: #3b82f6; }
-body.theme-dark .pipeline-node.highlight-node .node-icon { background: #3b82f6; }
+body.theme-dark .workflow-pipeline-section p { color: #94a3b8; }
+body.theme-dark .pipeline-node.highlight-node { background: #1E3A8A; border-color: #38BDF8; }
+body.theme-dark .pipeline-node.highlight-node .node-icon { background: #38BDF8; }
 body.theme-dark .pipeline-connector { background: rgba(255,255,255,0.1); }
 
 body.theme-dark .agent-use-cases-section { background: #0f172a; border-top-color: rgba(255,255,255,0.05); }
@@ -9576,8 +9578,9 @@ body.theme-dark .cases-text h2 { color: #ffffff; }
 body.theme-dark .c-card { background: #1e293b; border-left-color: #38bdf8; box-shadow: none; }
 body.theme-dark .c-card h3 { color: #ffffff; }
 body.theme-dark .c-card p { color: #94a3b8; }
+body.theme-dark .agent-use-cases-section p { color: #94a3b8; }
 
-body.theme-dark .engineering-stack-section { background: #0B1329; }
+body.theme-dark .engineering-stack-section { background: #13284F; }
 body.theme-dark .stack-card { background: #040a18; border: 1px solid rgba(255,255,255,0.05); }
 
 /* Responsive */
@@ -9586,4 +9589,1058 @@ body.theme-dark .stack-card { background: #040a18; border: 1px solid rgba(255,25
   .pipeline-connector { width: 2px; height: 24px; margin: 0 auto; }
   .cases-grid, .stack-card { grid-template-columns: 1fr; gap: 48px; }
   .stack-card { padding: 40px 24px; }
+}
+
+/* ==========================================================================
+   SOLUTION PAGE: MarTech & RevOps Transformation
+   ========================================================================== */
+
+/* --- 2. Single Source of Truth Architecture Hub --- */
+.architecture-hub-section {
+  padding: 100px 0 140px;
+  background: #D3DFEE;
+  border-top: 1px solid #e2e8f0;
+}
+
+.hub-visual-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 60px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hub-panel {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.05);
+  position: relative;
+  z-index: 2;
+}
+
+.problem-panel {
+  border-top: 4px solid #ef4444;
+}
+
+.solution-panel {
+  border-top: 4px solid #10b981;
+}
+
+.panel-header {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.panel-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panel-list li {
+  background: #f1f5f9;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #475569;
+  text-align: center;
+}
+
+.success-list li {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.panel-status {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.error-status {
+  background: rgba(239, 68, 68, 0.1);
+  color: #b91c1c;
+}
+
+.success-status {
+  background: rgba(16, 185, 129, 0.1);
+  color: #047857;
+}
+
+/* Center Hub */
+.hub-center {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.hub-core {
+  background: #0f172a;
+  border-radius: 20px;
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+  position: relative;
+  z-index: 3;
+  width: 280px;
+}
+
+.core-icon {
+  width: 64px;
+  height: 64px;
+  background: #3b82f6;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+.hub-core h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.hub-tag {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+/* Data Lines connecting the hub */
+.animated-data-lines {
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.animated-data-lines .line {
+  height: 2px;
+  background: #cbd5e1;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-data-lines .line::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; height: 100%; width: 50%;
+  background: #3b82f6;
+  animation: dataFlow 1.5s infinite linear;
+}
+
+.animated-data-lines.reverse .line::after {
+  animation: dataFlowReverse 1.5s infinite linear;
+}
+
+@keyframes dataFlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes dataFlowReverse {
+  0% { transform: translateX(200%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* --- 3. RevOps Capabilities Grid --- */
+.revops-capabilities-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.cap-card {
+  padding: 40px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.cap-card:hover {
+  background: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.08);
+  transform: translateY(-5px);
+}
+
+.cap-icon {
+  color: #3b82f6;
+  margin-bottom: 24px;
+}
+
+.cap-card h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.cap-card p {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* --- Dark Mode Overrides --- */
+body.theme-dark .architecture-hub-section { background: #13284F; border-top-color: rgba(255,255,255,0.05); }
+body.theme-dark .hub-panel { background: #0f172a; border-color: rgba(255,255,255,0.05); }
+body.theme-dark .panel-header { color: #ffffff; }
+body.theme-dark .panel-list li { background: #1e293b; color: #cbd5e1; }
+body.theme-dark .success-list li { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+body.theme-dark .hub-core { background: #020617; border: 1px solid rgba(255,255,255,0.05); }
+body.theme-dark .animated-data-lines .line { background: rgba(255,255,255,0.1); }
+body.theme-dark .architecture-hub-section p { color: #94a3b8; }
+
+body.theme-dark .revops-capabilities-section { background: #0f172a; }
+body.theme-dark .cap-card { background: #1e293b; border-color: rgba(255,255,255,0.05); }
+body.theme-dark .cap-card h3 { color: #ffffff; }
+body.theme-dark .cap-card p { color: #94a3b8; }
+body.theme-dark .cap-card:hover { border-color: #38bdf8; background: #0B1329; }
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .hub-visual-container { flex-direction: column; }
+  .animated-data-lines { width: 2px; height: 40px; flex-direction: row; }
+  .animated-data-lines .line { width: 2px; height: 100%; }
+  .animated-data-lines .line::after { width: 100%; height: 50%; animation: dataFlowVertical 1.5s infinite linear; }
+  @keyframes dataFlowVertical { 0% { transform: translateY(-100%); } 100% { transform: translateY(200%); } }
+  
+  .capabilities-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   SOLUTION PAGE: Data Intelligence & Dashboards
+   ========================================================================== */
+
+/* --- 2. Executive Dashboard Mockup --- */
+.dashboard-visual-section {
+  padding: 100px 0 140px;
+  background: #D3DFEE;
+  border-top: 1px solid #e2e8f0;
+}
+
+.custom-dashboard-mockup {
+  max-width: 1000px;
+  margin: 60px auto 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
+  display: flex;
+  overflow: hidden;
+  height: 600px;
+}
+
+/* Sidebar */
+.dash-sidebar {
+  width: 80px;
+  background: #0f172a;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.dash-logo {
+  width: 40px;
+  height: 40px;
+  background: #3b82f6;
+  border-radius: 8px;
+  margin-bottom: 32px;
+}
+
+.dash-nav-item {
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+
+.dash-nav-item.active {
+  background: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+/* Main Content */
+.dash-main {
+  flex: 1;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #f8fafc;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.dash-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.dash-user {
+  width: 40px;
+  height: 40px;
+  background: #cbd5e1;
+  border-radius: 50%;
+}
+
+/* Metrics Row */
+.dash-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dash-metric-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 4px 6px rgba(15, 23, 42, 0.02);
+}
+
+.m-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.m-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.m-value.positive { color: #10b981; }
+.m-value.warning { color: #f59e0b; }
+
+/* Chart Area */
+.dash-chart-area {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(15, 23, 42, 0.02);
+}
+
+.chart-header {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 32px;
+}
+
+.simulated-chart {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.chart-bar {
+  flex: 1;
+  background: rgba(59, 130, 246, 0.2);
+  border-radius: 6px 6px 0 0;
+  transition: height 1s ease-out;
+}
+
+.chart-bar.highlight-bar {
+  background: #3b82f6;
+  position: relative;
+}
+
+.chart-bar.highlight-bar::after {
+  content: 'Q3 Peak';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* --- 3. Core Data Capabilities --- */
+.data-capabilities-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.data-cap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.data-cap-card {
+  padding: 40px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+  transition: all 0.3s ease;
+}
+
+.data-cap-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+}
+
+.dc-icon {
+  color: #3b82f6;
+  margin-bottom: 24px;
+}
+
+.data-cap-card h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.data-cap-card p {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Dark Mode Overrides */
+body.theme-dark .dashboard-visual-section { background: #13284F; border-top-color: rgba(255,255,255,0.05); }
+body.theme-dark .dashboard-visual-section p { color: #94a3b8; }
+body.theme-dark .custom-dashboard-mockup { background: #020617; border-color: #1e293b; }
+body.theme-dark .dash-sidebar { background: #040a18; border-right: 1px solid #1e293b; }
+body.theme-dark .dash-main { background: #020617; }
+body.theme-dark .dash-title { color: #ffffff; }
+body.theme-dark .dash-metric-card, body.theme-dark .dash-chart-area { background: #0B1329; border-color: #1e293b; }
+body.theme-dark .chart-header { color: #ffffff; }
+body.theme-dark .chart-bar { background: rgba(56, 189, 248, 0.15); }
+body.theme-dark .chart-bar.highlight-bar { background: #38bdf8; }
+body.theme-dark .simulated-chart { border-bottom-color: #1e293b; }
+
+body.theme-dark .data-capabilities-section { background: #0f172a; }
+body.theme-dark .data-cap-card { background: #1e293b; border-color: rgba(255,255,255,0.05); }
+body.theme-dark .data-cap-card h3 { color: #ffffff; }
+body.theme-dark .data-cap-card p { color: #94a3b8; }
+body.theme-dark .data-cap-card:hover { border-color: #38bdf8; }
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .custom-dashboard-mockup { height: auto; flex-direction: column; }
+  .dash-sidebar { width: 100%; flex-direction: row; justify-content: center; padding: 16px; border-right: none; border-bottom: 1px solid #e2e8f0; }
+  .dash-logo { margin-bottom: 0; margin-right: auto; }
+  .dash-metrics-row { grid-template-columns: 1fr; }
+  .simulated-chart { height: 300px; }
+  .data-cap-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   SOLUTION PAGE: AI Training & Adoption
+   ========================================================================== */
+
+/* --- 2. Training Comparison Section --- */
+.training-comparison-section {
+  padding: 100px 0 140px;
+  background: #D3DFEE;
+  border-top: 1px solid #e2e8f0;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 60px auto 0;
+}
+
+.comp-card {
+  padding: 48px 40px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+}
+
+.negative-card {
+  border-top: 6px solid #ef4444;
+}
+
+.positive-card {
+  border-top: 6px solid #10b981;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.comp-header {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+
+.negative-card .comp-header { color: #0f172a; }
+.positive-card .comp-header { color: #ffffff; }
+
+.comp-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comp-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.negative-card .comp-list li { color: #475569; }
+.negative-card .comp-list li svg { color: #ef4444; flex-shrink: 0; margin-top: 4px; width: 20px; height: 20px; }
+
+.positive-card .comp-list li { color: #cbd5e1; }
+.positive-card .comp-list li svg { color: #10b981; flex-shrink: 0; margin-top: 4px; width: 20px; height: 20px; }
+
+/* --- 3. Curriculum Section --- */
+.curriculum-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.curr-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px;
+  transition: all 0.3s ease;
+}
+
+.curr-card:hover {
+  background: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.08);
+  transform: translateY(-5px);
+}
+
+.curr-tier {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.curr-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.curr-card p {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.curr-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin-bottom: 24px;
+}
+
+.curr-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.curr-card ul li {
+  font-size: 0.95rem;
+  color: #1e293b;
+  font-weight: 600;
+  padding-left: 20px;
+  position: relative;
+}
+
+.curr-card ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+}
+
+/* Dark Mode Overrides */
+body.theme-dark .training-comparison-section { background: #13284F; border-top-color: rgba(255,255,255,0.05); }
+body.theme-dark .training-comparison-section p { color: #94a3b8; }
+body.theme-dark .negative-card { background: #0f172a; border-color: #1e293b; border-top-color: #ef4444; }
+body.theme-dark .negative-card .comp-header { color: #ffffff; }
+body.theme-dark .negative-card .comp-list li { color: #94a3b8; }
+body.theme-dark .positive-card { background: #020617; border: 1px solid rgba(255,255,255,0.05); border-top: 6px solid #10b981; }
+
+body.theme-dark .curriculum-section { background: #0f172a; }
+body.theme-dark .curriculum-section p { color: #94a3b8; }
+body.theme-dark .curr-card { background: #1e293b; border-color: rgba(255,255,255,0.05); }
+body.theme-dark .curr-card h3 { color: #ffffff; }
+body.theme-dark .curr-card p { color: #94a3b8; }
+body.theme-dark .curr-divider { background: rgba(255,255,255,0.05); }
+body.theme-dark .curr-card ul li { color: #cbd5e1; }
+body.theme-dark .curr-card:hover { border-color: #38bdf8; background: #0B1329; }
+body.theme-dark .curr-tier { color: #38bdf8; background: rgba(56, 189, 248, 0.1); }
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .comparison-grid { grid-template-columns: 1fr; gap: 32px; }
+  .curriculum-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   SOLUTION PAGE: Business Growth Consulting
+   ========================================================================== */
+
+/* --- 2. Growth Pillars Section --- */
+.growth-pillars-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.growth-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.growth-card {
+  padding: 40px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.growth-card:hover {
+  background: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.08);
+  transform: translateY(-5px);
+}
+
+.g-metric {
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(59, 130, 246, 0.1);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.growth-card:hover .g-metric {
+  color: rgba(59, 130, 246, 0.2);
+}
+
+.growth-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.growth-card p {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- 3. Fractional CAIO Section --- */
+.fractional-caio-section {
+  padding: 120px 0;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.caio-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.caio-text h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.caio-text p {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.caio-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.caio-list li {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  padding-left: 24px;
+  position: relative;
+}
+
+.caio-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+.caio-list li strong {
+  color: #ffffff;
+}
+
+.boardroom-mockup {
+  background: #1e293b;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.mockup-header {
+  background: #020617;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.status-live {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-live::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulseLight 2s infinite;
+}
+
+@keyframes pulseLight {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.mockup-body {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.roadmap-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 16px;
+  border-radius: 12px;
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.roadmap-item.completed { color: #cbd5e1; }
+.roadmap-item.completed svg { width: 24px; height: 24px; color: #10b981; }
+
+.roadmap-item.in-progress { border-color: #3b82f6; color: #ffffff; }
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(59, 130, 246, 0.3);
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.roadmap-item.pending { color: #64748b; }
+.pending-dot {
+  width: 12px;
+  height: 12px;
+  background: #475569;
+  border-radius: 50%;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+/* Dark Mode Overrides */
+body.theme-dark .growth-pillars-section { background: #13284F; border-top-color: rgba(255,255,255,0.05); }
+body.theme-dark .growth-pillars-section p { color: #94a3b8; }
+body.theme-dark .growth-card { background: #1e293b; border-color: rgba(255,255,255,0.05); }
+body.theme-dark .growth-card h3 { color: #ffffff; }
+body.theme-dark .growth-card p { color: #94a3b8; }
+body.theme-dark .g-metric { color: rgba(255,255,255,0.05); }
+body.theme-dark .growth-card:hover { border-color: #38bdf8; background: #0f172a; }
+body.theme-dark .growth-card:hover .g-metric { color: rgba(56, 189, 248, 0.1); }
+
+body.theme-dark .fractional-caio-section { background: #020617; border-top: 1px solid rgba(255,255,255,0.05); }
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .growth-grid { grid-template-columns: 1fr; }
+  .caio-container { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ==========================================================================
+   INDUSTRY PAGE: Healthcare & Telemedicine
+   ========================================================================== */
+
+/* --- 1. Industry Hero & Challenge --- */
+.industry-hero {
+  background-color: #D3DFEE; /* Added slate-blue background */
+  padding: 160px 0 100px; /* Ensure adequate padding */
+}
+
+.industry-badge {
+  background: rgba(139, 92, 246, 0.1);
+  color: #7c3aed;
+}
+
+.industry-hero h1 { 
+  font-size: 3.5rem; 
+  font-weight: 900; 
+  color: #0f172a; 
+  margin-bottom: 24px; 
+  letter-spacing: -0.02em; 
+  line-height: 1.15; 
+}
+
+/* --- 1. Industry Hero & Challenge --- */
+.industry-badge {
+  background: rgba(139, 92, 246, 0.1);
+  color: #7c3aed;
+}
+
+.industry-hero h1 { font-size: 3.5rem; font-weight: 900; color: #0f172a; margin-bottom: 24px; letter-spacing: -0.02em; line-height: 1.15; }
+
+.industry-challenge-section { padding: 80px 0; background: #ffffff; }
+.challenge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.challenge-text h2 { font-size: 2.5rem; font-weight: 800; color: #0f172a; margin-bottom: 16px; }
+.challenge-text p { font-size: 1.15rem; color: #475569; line-height: 1.7; }
+.challenge-cards { display: flex; flex-direction: column; gap: 20px; }
+
+.c-card.error-themed { border-left: 4px solid #ef4444; background: #fef2f2; }
+.c-card.error-themed h3 { color: #b91c1c; }
+
+/* --- 2. Flagship Architectures (CliniOS & Hospital OS) --- */
+.flagship-architectures-section { padding: 100px 0; background: #D3DFEE; border-top: 1px solid #e2e8f0; }
+
+.architectures-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+
+.arch-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.arch-card:hover { transform: translateY(-8px); }
+
+.arch-badge {
+  padding: 12px 24px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.clinios-arch .arch-badge { background: #eff6ff; color: #1d4ed8; border-bottom: 1px solid #bfdbfe; }
+.hospitalos-arch .arch-badge.enterprise-badge { background: #ecfdf5; color: #047857; border-bottom: 1px solid #a7f3d0; }
+
+.arch-content { padding: 40px; display: flex; flex-direction: column; flex: 1; }
+
+.arch-content h3 { font-size: 2rem; font-weight: 900; color: #0f172a; margin-bottom: 8px; }
+.arch-tagline { font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; }
+.clinios-arch .arch-tagline { color: #3b82f6; }
+.hospitalos-arch .arch-tagline { color: #10b981; }
+
+.arch-desc { font-size: 1rem; color: #475569; line-height: 1.6; margin-bottom: 24px; }
+
+.arch-features { list-style: none; padding: 0; margin: 0 0 40px 0; display: flex; flex-direction: column; gap: 12px; }
+.arch-features li { padding-left: 24px; position: relative; font-weight: 600; color: #1e293b; }
+.arch-features li::before { content: '✓'; position: absolute; left: 0; font-weight: bold; }
+.clinios-arch .arch-features li::before { color: #3b82f6; }
+.hospitalos-arch .arch-features li::before { color: #10b981; }
+
+.arch-link {
+  margin-top: auto;
+  display: inline-block;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: opacity 0.2s ease;
+}
+.arch-link:hover { opacity: 0.7; }
+.clinios-arch .arch-link { color: #2563eb; }
+.hospitalos-arch .arch-link.enterprise-link { color: #059669; }
+
+/* --- 3. Compliance Banner --- */
+.compliance-standard-section { padding: 80px 0 120px; background: #f8fafc; }
+.compliance-banner {
+  background: #0f172a;
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  color: #ffffff;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+}
+.banner-icon { width: 80px; height: 80px; background: rgba(56, 189, 248, 0.1); color: #38bdf8; border-radius: 20px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.banner-text h2 { font-size: 2rem; font-weight: 800; margin-bottom: 16px; color: #ffffff; }
+.banner-text p { font-size: 1.1rem; color: #94a3b8; line-height: 1.7; margin: 0; }
+.banner-text strong { color: #ffffff; }
+
+/* Dark Mode Overrides */
+body.theme-dark .industry-hero { background: #0B1329; }
+body.theme-dark .industry-hero h1 { color: #ffffff; }
+body.theme-dark .industry-challenge-section { background: #13284F; }
+body.theme-dark .industry-challenge-section p { color: #94a3b8; }
+body.theme-dark .challenge-text h2 { color: #ffffff; }
+body.theme-dark .c-card.error-themed { background: #1e293b; border-left-color: #ef4444; }
+
+body.theme-dark .flagship-architectures-section { background: #0B1329; border-top-color: rgba(255,255,255,0.05); }
+body.theme-dark .flagship-architectures-section p { color: #94a3b8; }
+body.theme-dark .arch-card { background: #0f172a; border: 1px solid rgba(255,255,255,0.05); }
+body.theme-dark .clinios-arch .arch-badge { background: rgba(59, 130, 246, 0.1); border-bottom-color: rgba(59, 130, 246, 0.2); }
+body.theme-dark .hospitalos-arch .arch-badge.enterprise-badge { background: rgba(16, 185, 129, 0.1); border-bottom-color: rgba(16, 185, 129, 0.2); }
+body.theme-dark .arch-content h3 { color: #ffffff; }
+body.theme-dark .arch-content { background: #13284F; }
+body.theme-dark .arch-desc { color: #94a3b8; }
+body.theme-dark .arch-features li { color: #cbd5e1; }
+
+body.theme-dark .compliance-standard-section { background: #13284F; }
+body.theme-dark .compliance-banner { background: #020617; border: 1px solid rgba(255,255,255,0.05); }
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .challenge-grid, .architectures-grid { grid-template-columns: 1fr; }
+  .compliance-banner { flex-direction: column; text-align: center; padding: 40px 24px; }
 }
