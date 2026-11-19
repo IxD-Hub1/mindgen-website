@@ -7,19 +7,14 @@ import SiteHeader from "../site/SiteHeader";
 
 const contactCards = [
   {
-    title: "New Business",
-    detail: "share@mindgen.in",
-    copy: "Tell us what you're building, where you're stuck, and what success looks like.",
+    title: "New Business & Partnerships",
+    detail: "coo@mindgen.in",
+    copy: "Tell us what you're building, where you're stuck, or how you want to collaborate on enterprise delivery, platforms, and go-to-market programs.",
   },
   {
-    title: "Careers",
-    detail: "careers@mindgen.in",
-    copy: "Questions about open roles, hiring timelines, or team expectations are welcome.",
-  },
-  {
-    title: "Partnerships",
-    detail: "partners@mindgen.in",
-    copy: "Reach out if you want to collaborate on delivery, platforms, or go-to-market programs.",
+    title: "Careers & Administration",
+    detail: "admin@mindgen.in",
+    copy: "Questions about open roles, hiring timelines, team expectations, or general administrative inquiries are welcome.",
   },
 ];
 
@@ -90,7 +85,7 @@ export default function ContactUsPage() {
 
         <section className="contact-cards-section">
           <div className="company-shell">
-            <div className="contact-card-grid">
+            <div className="contact-card-grid two-col-grid">
               {contactCards.map((item) => (
                 <article key={item.title} className="contact-feature-card premium-hover-card">
                   <h3>{item.title}</h3>
@@ -118,9 +113,9 @@ export default function ContactUsPage() {
                 <div className="form-full-width">
                   <label htmlFor="enquiry-type">Type of Enquiry*</label>
                   <select id="enquiry-type" name="enquiry-type" required value={formData["enquiry-type"]} onChange={handleInputChange}>
-                    <option value="New Business">New Business Strategy & Consulting</option>
-                    <option value="Partnerships">Partnerships & Co-Innovation</option>
-                    <option value="Careers">Careers & Talent Network</option>
+                    <option value="New Business">New Business Strategy &amp; Consulting</option>
+                    <option value="Partnerships">Partnerships &amp; Co-Innovation</option>
+                    <option value="Careers">Careers &amp; Talent Network</option>
                     <option value="General">General Inquiry</option>
                   </select>
                 </div>
@@ -164,12 +159,17 @@ export default function ContactUsPage() {
                     </select>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="service-interest">Service Interest</label>
+                    <label htmlFor="service-interest">Solution / Service Interest</label>
                     <select id="service-interest" name="service-interest" value={formData["service-interest"]} onChange={handleInputChange}>
-                      <option value="">Select service...</option>
-                      <option value="AI Strategy">AI Strategy & Readiness</option>
+                      <option value="">Select solution...</option>
+                      <option value="CliniOS">CliniOS (Clinic SaaS)</option>
+                      <option value="Hospital OS AI">Hospital OS AI (Enterprise)</option>
+                      <option value="AI Strategy">AI Strategy &amp; Readiness</option>
                       <option value="Workflow Automation">Agentic Workflow Automation</option>
-                      <option value="Data Dashboards">Data Intelligence & Dashboards</option>
+                      <option value="MarTech & RevOps">MarTech &amp; RevOps Transformation</option>
+                      <option value="Data Dashboards">Data Intelligence &amp; Dashboards</option>
+                      <option value="AI Training">AI Training &amp; Adoption</option>
+                      <option value="Business Growth">Business Growth Consulting</option>
                       <option value="Other">Other / Not Sure</option>
                     </select>
                   </div>
@@ -212,13 +212,13 @@ export default function ContactUsPage() {
                 )}
                 {formStatus === "error" && (
                   <div className="form-message error-message">
-                    ✕ Submission failed. Please try again or email us directly at admin@mindgen.in.
+                    ✕ Submission failed. Please try again or email us directly at coo@mindgen.in or admin@mindgen.in.
                   </div>
                 )}
 
                 <p className="consent-copy">
                   By clicking submit, you consent to us sending you the communications requested above in accordance with our
-                  <a href="#"> privacy policy</a>.
+                  <a href="/privacy-policy"> privacy policy</a>.
                 </p>
               </form>
             </div>
@@ -243,7 +243,7 @@ export default function ContactUsPage() {
               </div>
 
               <div className="contact-aside-card">
-                <p className="contact-section-kicker">Locations & remote</p>
+                <p className="contact-section-kicker">Locations &amp; remote</p>
                 <div className="contact-office-list">
                   {offices.map((office) => (
                     <span key={office}>{office}</span>

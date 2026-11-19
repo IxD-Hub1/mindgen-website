@@ -7355,8 +7355,10 @@ body.theme-dark .about-principle-item p { color: #ffffff; }
 
 .contact-card-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+  max-width: 920px;
+  margin: 0 auto;
 }
 
 .contact-feature-card {
@@ -7477,13 +7479,6 @@ body.theme-dark .about-principle-item p { color: #ffffff; }
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-.contact-check-list li {
-  position: relative;
-  padding-left: 28px;
-  color: #334155;
-  font-weight: 500;
 }
 
 .contact-check-list li {
